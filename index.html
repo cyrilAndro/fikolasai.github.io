@@ -410,6 +410,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
+        }
+
+        .illustration img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         svg {
@@ -631,7 +638,7 @@
     <section class="hero">
         <div class="hero-content">
             <h1 id="hero-h1">Maîtrisez l'IA, <span class="highlight">sans prise de tête</span></h1>
-            <p id="hero-p">Formations personnalisées et agents IA co-créés pour booster votre productivité — dès maintenant.</p>
+            <p id="hero-p">Formations personnalisées et agents IA co-créés pour booster votre productivité - dès maintenant.</p>
             
             <div class="stats">
                 <div class="stat">
@@ -660,17 +667,17 @@
         <!-- ACADEMY SECTION -->
         <section id="academy">
             <div style="text-align: center; margin-bottom: 2rem;">
-                <img src="https://imgur.com/a/rNYjgYK">
+                <img src="https://imgur.com/ix2QJYA.png" alt="FikolasAI Academy" style="max-width: 300px; height: auto; margin-bottom: 1rem;">
             </div>
             <div class="section-title" id="acad-title">🎓 FikolasAI Academy</div>
-            <p class="section-subtitle" id="acad-desc">Formations IA personnalisées — tu repars chaque semaine avec un livrable.</p>
+            <p class="section-subtitle" id="acad-desc">Formations IA personnalisées - tu repars chaque semaine avec un livrable.</p>
 
             <div class="products">
                 <div class="product-card">
                     <div class="product-icon">📚</div>
                     <h3 id="acad-h3">Formation Actionable</h3>
                     <p class="subtitle" id="acad-s">Pour individus & freelances</p>
-                    <p id="acad-body">Une session hebdomadaire de 1h en visio, entièrement personnalisée à vos besoins. Apprenez à utiliser l'IA pour transformer votre productivité et vos processes.</p>
+                    <p id="acad-body">Une session hebdomadaire de 1h en visio, entièrement personnalisée à vos besoins. Apprenez à utiliser l'IA pour transformer votre productivité et vos process.</p>
                     
                     <div class="product-features">
                         <div class="feature" id="f1">1 session hebdo (1h)</div>
@@ -727,23 +734,7 @@
         <!-- AGENT SECTION -->
         <section id="agent" style="margin-top: 5rem;">
             <div style="text-align: center; margin-bottom: 2rem;">
-                <svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" style="max-width: 300px; height: auto;">
-                    <!-- Background circle -->
-                    <circle cx="75" cy="75" r="65" fill="rgba(59,130,246,0.1)" stroke="#3b82f6" stroke-width="2"/>
-                    <!-- Robot head -->
-                    <rect x="40" y="40" width="70" height="70" rx="8" fill="#8b5cf6" opacity="0.9"/>
-                    <!-- Eyes -->
-                    <rect x="50" y="55" width="12" height="12" rx="2" fill="#fbbf24"/>
-                    <rect x="68" y="55" width="12" height="12" rx="2" fill="#fbbf24"/>
-                    <!-- Antenna -->
-                    <line x1="75" y1="40" x2="75" y2="15" stroke="#3b82f6" stroke-width="3"/>
-                    <circle cx="75" cy="10" r="5" fill="#3b82f6"/>
-                    <!-- Mouth (smile) -->
-                    <path d="M 55 75 Q 75 85 95 75" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
-                    <!-- AI symbol -->
-                    <text x="150" y="90" font-size="60" font-weight="bold" fill="#3b82f6">AI</text>
-                    <text x="160" y="120" font-size="14" fill="#cbd5e1" font-weight="600">AGENT</text>
-                </svg>
+                <img src="https://imgur.com/D2Ue4XC.png" alt="FikolasAI Agent" style="max-width: 300px; height: auto; margin-bottom: 1rem;">
             </div>
             <div class="section-title" id="agent-title">🤖 FikolasAI Agent</div>
             <p class="section-subtitle" id="agent-desc">Co-création d'agents IA pour automatiser vos process métier.</p>
@@ -793,7 +784,7 @@
                 <div class="case-items">
                     <div class="case-item">
                         <strong id="case-agent-before">❌ Avant</strong>
-                        <p>120h/mois de tri manuel, délais longs, mauvaise experience candidat</p>
+                        <p>120h/mois de tri manuel, délais longs, mauvaise expérience candidat</p>
                     </div>
                     <div class="case-item">
                         <strong id="case-agent-method">🎯 Agent créé</strong>
@@ -813,20 +804,22 @@
             
             <div class="about-section">
                 <div class="about-content">
-                    <h3 id="about-h3">Cyril — Passionné par l'IA & l'impact</h3>
+                    <h3 id="about-h3">Cyril - Passionné par l'IA & l'impact</h3>
                     <p id="about-p1">Je suis convaincu que l'IA n'est pas réservée aux tech geeks. C'est un outil pour tous ceux qui veulent travailler smarter, pas harder.</p>
                     
                     <p id="about-p2">Après des années à aider des freelances, des managers et des startups à intégrer l'IA dans leurs process, j'ai créé FikolasAI pour rendre ça accessible, pratique et results-driven.</p>
                     
                     <p id="about-p3">Mon approche :</p>
                     <ul>
+                        <li id="about-li1">Pas de blabla théorique - que du concret</li>
+                        <li id="about-li2">Pas de technologie pour la technologie - que de l'impact</li>
                         <li id="about-li3">Accompagnement personnalisé, pas de one-size-fits-all</li>
                         <li id="about-li4">Tes objectifs = mes objectifs</li>
                     </ul>
                 </div>
 
-                <div class="illustration" style="background: rgba(255,255,255,0.03); border-radius: 12px; overflow: hidden;">
-                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRg">
+                <div class="illustration">
+                    <img src="https://imgur.com/a/3v7GL98.jpg" alt="Cyril" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
             </div>
         </section>
@@ -874,7 +867,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2025 FikolasAI — <span id="footer-made">Créé avec passion</span></p>
+        <p>&copy; 2025 FikolasAI - <span id="footer-made">Créé avec passion</span></p>
         <div class="footer-links">
             <a href="mailto:cyril.fikolasai@gmail.com" id="footer-contact">Nous contacter</a>
             <a href="https://substack.com/@cyrilfikolasai" target="_blank" id="footer-sub">Substack</a>
@@ -889,17 +882,17 @@
                 'nav-test': 'Témoignages',
                 'lang-btn': 'EN',
                 'hero-h1': 'Maîtrisez l\'IA, <span class="highlight">sans prise de tête</span>',
-                'hero-p': 'Formations personnalisées et agents IA co-créés pour booster votre productivité — dès maintenant.',
+                'hero-p': 'Formations personnalisées et agents IA co-créés pour booster votre productivité - dès maintenant.',
                 'stat-1': 'personnes formées en 2025',
                 'stat-2': 'des organisations utilisent l\'IA',
                 'stat-3': 'automatisables par semaine',
                 'btn-1': 'Découvrir Academy',
                 'btn-2': 'Créer un Agent',
                 'acad-title': '🎓 FikolasAI Academy',
-                'acad-desc': 'Formations IA personnalisées — tu repars chaque semaine avec un livrable.',
+                'acad-desc': 'Formations IA personnalisées - tu repars chaque semaine avec un livrable.',
                 'acad-h3': 'Formation Actionable',
                 'acad-s': 'Pour individus & freelances',
-                'acad-body': 'Une session hebdomadaire de 1h en visio, entièrement personnalisée à vos besoins. Apprenez à utiliser l\'IA pour transformer votre productivité et vos processes.',
+                'acad-body': 'Une session hebdomadaire de 1h en visio, entièrement personnalisée à vos besoins. Apprenez à utiliser l\'IA pour transformer votre productivité et vos process.',
                 'f1': '1 session hebdo (1h)',
                 'f2': 'Livrables actionnables',
                 'f3': 'Méthode réutilisable',
@@ -944,12 +937,12 @@
                 'case-agent-method': '🎯 Agent créé',
                 'case-agent-after': '✅ Après 1 mois',
                 'about-title': 'À propos de moi',
-                'about-h3': 'Cyril — Passionné par l\'IA & l\'impact',
+                'about-h3': 'Cyril - Passionné par l\'IA & l\'impact',
                 'about-p1': 'Je suis convaincu que l\'IA n\'est pas réservée aux tech geeks. C\'est un outil pour tous ceux qui veulent travailler smarter, pas harder.',
                 'about-p2': 'Après des années à aider des freelances, des managers et des startups à intégrer l\'IA dans leurs process, j\'ai créé FikolasAI pour rendre ça accessible, pratique et results-driven.',
                 'about-p3': 'Mon approche :',
-                'about-li1': 'Pas de blabla théorique — que du concret',
-                'about-li2': 'Pas de technologie pour la technologie — que de l\'impact',
+                'about-li1': 'Pas de blabla théorique - que du concret',
+                'about-li2': 'Pas de technologie pour la technologie - que de l\'impact',
                 'about-li3': 'Accompagnement personnalisé, pas de one-size-fits-all',
                 'about-li4': 'Tes objectifs = mes objectifs',
                 'test-title': 'Ce qu\'ils en pensent',
@@ -978,14 +971,14 @@
                 'nav-test': 'Testimonials',
                 'lang-btn': 'FR',
                 'hero-h1': 'Master AI, <span class="highlight">without the hassle</span>',
-                'hero-p': 'Personalized training and co-created AI agents to boost your productivity — starting now.',
+                'hero-p': 'Personalized training and co-created AI agents to boost your productivity - starting now.',
                 'stat-1': 'people trained in 2025',
                 'stat-2': 'of organizations use AI',
                 'stat-3': 'hours automatable per week',
                 'btn-1': 'Discover Academy',
                 'btn-2': 'Create an Agent',
                 'acad-title': '🎓 FikolasAI Academy',
-                'acad-desc': 'Personalized AI training — you leave each week with actionable deliverables.',
+                'acad-desc': 'Personalized AI training - you leave each week with actionable deliverables.',
                 'acad-h3': 'Actionable Training',
                 'acad-s': 'For individuals & freelancers',
                 'acad-body': 'One weekly 1-hour session via video, fully personalized to your needs. Learn how to use AI to transform your productivity and processes.',
@@ -1033,12 +1026,12 @@
                 'case-agent-method': '🎯 Agent created',
                 'case-agent-after': '✅ After 1 month',
                 'about-title': 'About me',
-                'about-h3': 'Cyril — Passionate about AI & Impact',
+                'about-h3': 'Cyril - Passionate about AI & Impact',
                 'about-p1': 'I\'m convinced that AI isn\'t just for tech geeks. It\'s a tool for anyone who wants to work smarter, not harder.',
                 'about-p2': 'After years helping freelancers, managers, and startups integrate AI into their processes, I created FikolasAI to make it accessible, practical, and results-driven.',
                 'about-p3': 'My approach:',
-                'about-li1': 'No theoretical nonsense — pure practical stuff',
-                'about-li2': 'No technology for technology\'s sake — only real impact',
+                'about-li1': 'No theoretical nonsense - pure practical stuff',
+                'about-li2': 'No technology for technology\'s sake - only real impact',
                 'about-li3': 'Personalized support, not one-size-fits-all',
                 'about-li4': 'Your goals = my goals',
                 'test-title': 'What they think',
@@ -1085,6 +1078,4 @@
         updateLanguage();
     </script>
 </body>
-</html>1">Pas de blabla théorique — que du concret</li>
-                        <li id="about-li2">Pas de technologie pour la technologie — que de l'impact</li>
-                        <li id="about-li
+</html>

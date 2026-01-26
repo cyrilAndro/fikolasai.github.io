@@ -1,1081 +1,558 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RSN9PNE840"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-RSN9PNE840');
-</script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSN9PNE840"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RSN9PNE840');
+    </script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="FikolasAI - Formation IA et co-création d'agents IA pour boost votre productivité">
+    <meta name="description" content="FikolasAI - Formation IA & Agents IA pour booster votre productivité">
     <meta name="theme-color" content="#0f172a">
     <title>FikolasAI | Formation IA & Agents IA</title>
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        :root {
-            --primary: #3b82f6;
-            --primary-dark: #1e40af;
-            --secondary: #8b5cf6;
-            --accent: #10b981;
-            --dark: #0f172a;
-            --light: #f8fafc;
-            --text: #1e293b;
-            --text-light: #64748b;
-        }
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-        .linkedin-btn {
-            display: inline-block;
-            background-color: #0077b5;
-            color: white !important;
-            padding: 8px 16px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: transform 0.2s;
-        }
-        .linkedin-btn:hover {
-            transform: scale(1.05);
-            background-color: #005a87;
-        }
-     
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, var(--dark) 0%, #1a2847 100%);
-            color: var(--text);
-            line-height: 1.6;
-        }
-
-        /* Correction globale pour le texte blanc */
-        body, p, div, h1, h2, h3, h4, h5, h6, li, span {
-            color: #ffffff !important;
-        }
-
-        /* On garde les boutons et accents en couleur si besoin */
-        .btn, button, a.button {
-            color: #ffffff !important;
-        }
-
-        /* NAVBAR */
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 1rem 0;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: white;
-            text-decoration: none;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: #cbd5e1;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            font-size: 0.95rem;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .lang-switch {
-            background: rgba(59, 130, 246, 0.1);
-            border: 1px solid var(--primary);
-            color: var(--primary);
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .lang-switch:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        /* HERO */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 4rem 2rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -40%;
-            right: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.2), transparent);
-            border-radius: 50%;
-            animation: float 25s ease-in-out infinite;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -5%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(139, 92, 246, 0.15), transparent);
-            border-radius: 50%;
-            animation: float 30s ease-in-out infinite reverse;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            animation: slideUp 0.8s ease-out;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 8vw, 4rem);
-            color: white;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-
-        .highlight {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero p {
-            font-size: clamp(1.1rem, 3vw, 1.4rem);
-            color: #cbd5e1;
-            margin-bottom: 2.5rem;
-            line-height: 1.8;
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-            padding: 2rem 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .stat { color: white; }
-
-        .stat-number {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .stat-text {
-            color: #cbd5e1;
-            font-size: 0.95rem;
-            margin-top: 0.5rem;
-        }
-
-        .cta-group {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        /* BUTTONS */
-        .btn {
-            display: inline-block;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.3);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            color: white;
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: white;
-        }
-
-        /* CONTAINER */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 5rem 2rem;
-        }
-
-        /* SECTIONS */
-        .section-title {
-            font-size: clamp(2rem, 5vw, 3rem);
-            color: white;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: #cbd5e1;
-            margin-bottom: 3rem;
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* PRODUCTS */
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
-        .product-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 2.5rem;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .product-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--primary);
-            box-shadow: 0 20px 60px rgba(59, 130, 246, 0.2);
-            background: rgba(59, 130, 246, 0.05);
-        }
-
-        .product-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .product-card h3 {
-            color: white;
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .product-card .subtitle {
-            color: #cbd5e1;
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .product-card p {
-            color: #cbd5e1;
-            margin-bottom: 1.5rem;
-            flex-grow: 1;
-        }
-
-        .product-features {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .feature {
-            color: #cbd5e1;
-            padding: 0.5rem 0;
-            display: flex;
-            gap: 0.75rem;
-            align-items: flex-start;
-        }
-
-        .feature::before {
-            content: '✓';
-            color: var(--accent);
-            font-weight: bold;
-            min-width: 20px;
-        }
-
-        .price {
-            font-size: 1.8rem;
-            color: var(--primary);
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .price-note {
-            color: #cbd5e1;
-            font-size: 0.85rem;
-            margin-bottom: 1.5rem;
-        }
-
-        /* CASE STUDY */
-        .case-study {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 2.5rem;
-            margin-top: 3rem;
-            backdrop-filter: blur(10px);
-        }
-
-        .case-study h4 {
-            color: var(--accent);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
-        }
-
-        .case-study h3 {
-            color: white;
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-        }
-
-        .case-study p {
-            color: #cbd5e1;
-            margin-bottom: 1rem;
-        }
-
-        .case-items {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .case-item {
-            background: rgba(59, 130, 246, 0.1);
-            padding: 1rem;
-            border-radius: 8px;
-            border-left: 3px solid var(--primary);
-        }
-
-        .case-item strong {
-            color: var(--primary);
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .case-item p { font-size: 0.9rem; }
-
-        /* ILLUSTRATION */
-        .illustration {
-            width: 100%;
-            max-width: 400px;
-            margin: 2rem auto;
-            height: 300px;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .illustration img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        svg { width: 100%; height: 100%; }
-
-        /* ABOUT SECTION */
-        .about-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-            margin-top: 3rem;
-        }
-
-        .about-content h3 {
-            color: white;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .about-content p {
-            color: #cbd5e1;
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-
-        .about-content ul {
-            list-style: none;
-            color: #cbd5e1;
-        }
-
-        .about-content li {
-            padding: 0.75rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .about-content li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-weight: bold;
-        }
-
-        /* TESTIMONIALS */
-        .testimonials {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 3rem 2rem;
-            margin-top: 4rem;
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .testimonial {
-            background: rgba(255, 255, 255, 0.05);
-            border-left: 3px solid var(--primary);
-            padding: 1.5rem;
-            border-radius: 8px;
-        }
-
-        .testimonial-text {
-            color: #e2e8f0;
-            font-style: italic;
-            margin-bottom: 1rem;
-            line-height: 1.8;
-        }
-
-        .testimonial-author {
-            color: white;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-
-        .testimonial-role {
-            color: #cbd5e1;
-            font-size: 0.85rem;
-        }
-
-        /* SUBSTACK */
-        .substack-section {
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            border-radius: 12px;
-            padding: 3rem 2rem;
-            text-align: center;
-            margin-top: 4rem;
-        }
-
-        .substack-section h3 {
-            color: white;
-            margin-bottom: 1rem;
-        }
-
-        .substack-section p {
-            color: #cbd5e1;
-            margin-bottom: 1.5rem;
-        }
-
-        /* FOOTER */
-        footer {
-            background: rgba(0, 0, 0, 0.3);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #cbd5e1;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 1rem 0;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: var(--primary);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
-        /* ANIMATIONS */
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-40px); }
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .nav-links { gap: 1rem; font-size: 0.9rem; }
-            .hero { min-height: auto; padding: 3rem 1rem; }
-            .stats { grid-template-columns: 1fr; gap: 1.5rem; }
-            .cta-group { flex-direction: column; gap: 1rem; }
-            .btn { width: 100%; }
-            .products { grid-template-columns: 1fr; }
-            .container { padding: 3rem 1rem; }
-            .about-section { grid-template-columns: 1fr; }
-            .illustration { max-width: 100%; }
-        }
-    </style>
-   
-</head>
-<body>
-    <!-- NAVBAR -->
-    <nav>
-        <div class="nav-container">
-            <a href="#" class="logo">FikolasAI</a>
-            <ul class="nav-links">
-                <li><a href="#academy">Academy</a></li>
-                <li><a href="#agent">Agent</a></li>
-                <!-- AJOUT STUDIO -->
-                <li><a href="#studio" id="nav-studio">Studio</a></li>
-                <li><a href="#about" id="nav-about">À propos</a></li>
-                <li><a href="#testimonials" id="nav-test">Témoignages</a></li>
-                <li><button class="lang-switch" onclick="toggleLang()" id="lang-btn">EN</button></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 id="hero-h1">Maîtrisez l'IA, <span class="highlight">sans prise de tête</span></h1>
-            <p id="hero-p">Formations personnalisées et agents IA co-créés pour booster votre productivité - dès maintenant.</p>
-            
-            <div class="stats">
-                <div class="stat">
-                    <div class="stat-number">+80</div>
-                    <div class="stat-text" id="stat-1">personnes formées en 2025</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">78%</div>
-                    <div class="stat-text" id="stat-2">des organisations utilisent l'IA</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">≈13h</div>
-                    <div class="stat-text" id="stat-3">automatisables par semaine</div>
-                </div>
-            </div>
-
-            <div class="cta-group">
-                <a href="#academy" class="btn btn-primary" id="btn-1">Découvrir l'academy</a>
-                <a href="#agent" class="btn btn-secondary" id="btn-2">Créer un Agent</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- PRODUCTS -->
-    <div class="container">
-        <!-- ACADEMY SECTION -->
-        <section id="academy">
-            <div style="text-align: center; margin-bottom: 2rem;">
-              <img src="assets/logo-academy.png" alt="FikolasAI Academy" style="max-width: 300px; height: auto; margin-bottom: 1rem;">
-            </div>
-            <div class="section-title" id="acad-title">🎓 FikolasAI Academy</div>
-            <p class="section-subtitle" id="acad-desc">Formations IA personnalisées - tu repars chaque semaine avec un livrable.</p>
-
-            <div class="products">
-                <div class="product-card">
-                    <div class="product-icon">📚</div>
-                    <h3 id="acad-h3">Formation Actionable</h3>
-                    <p class="subtitle" id="acad-s">Pour individus & freelances</p>
-                    <p id="acad-body">Une session hebdomadaire de 1h en visio, entièrement personnalisée à vos besoins. Apprenez à utiliser l'IA pour transformer votre productivité et vos process.</p>
-                    
-                    <div class="product-features">
-                        <div class="feature" id="f1">4 sessions par mois (4 x 1h)</div>
-                        <div class="feature" id="f2">Livrables actionnables</div>
-                        <div class="feature" id="f3">Méthode réutilisable</div>
-                        <div class="feature" id="f4">Confidentialité garantie</div>
-                    </div>
-
-                    <div class="price">499€<span style="font-size: 0.7em; color: #cbd5e1;">/mois HT</span></div>
-                    <p class="price-note" id="p-note">Résultats visibles dès le 1er mois</p>
-                    
-                    <div class="cta-group">
-                        <a href="https://calendly.com/cyril-fikolasai/30min" target="_blank" class="btn btn-primary" id="btn-rdv">Prendre RDV</a>
-                        <a href="mailto:cyril.fikolasai@gmail.com" class="btn btn-secondary" id="btn-q">Questions ?</a>
-                    </div>
-                </div>
-
-                <div class="product-card" style="border-color: var(--accent); background: rgba(16, 185, 129, 0.05);">
-                    <div class="product-icon">✨</div>
-                    <h3 id="ideal">Idéal pour</h3>
-                    <div class="product-features" style="border: none; background: transparent; padding: 0;">
-                        <div class="feature" id="i1">Employés voulant progresser</div>
-                        <div class="feature" id="i2">Freelances cherchant l'avantage</div>
-                        <div class="feature" id="i3">Professionnels pressés</div>
-                        <div class="feature" id="i4">Entrepreneurs innovants</div>
-                    </div>
-                    <p style="margin-top: 2rem; color: #cbd5e1;" id="i-desc">Aucun prérequis technique. On démarre où vous êtes, on finit où vous voulez être.</p>
-                </div>
-            </div>
-
-            <!-- CASE STUDY ACADEMY -->
-            <div class="case-study">
-                <h4 id="case-acad-label">Cas d'usage réel</h4>
-                <h3 id="case-acad-title">Freelance Marketing qui triple son débit</h3>
-                <p id="case-acad-desc">Laurence est freelance en marketing digital depuis 5 ans. Elle passait 2 jours par semaine sur les tâches administratives (emails, propositions, rapports). Objectif : automatiser et gagner du temps.</p>
-                
-                <div class="case-items">
-                    <div class="case-item">
-                        <strong id="case-acad-before">❌ Avant</strong>
-                        <p>20h/semaine de travail facile à automatiser</p>
-                    </div>
-                    <div class="case-item">
-                        <strong id="case-acad-method">🎯 Avec FikolasAI</strong>
-                        <p>Sessions ciblées : IA pour rédaction, prospection, reporting</p>
-                    </div>
-                    <div class="case-item">
-                        <strong id="case-acad-after">✅ Après 2 mois</strong>
-                        <p>+5 clients grâce au temps récupéré, 30% de revenus en plus</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- AGENT SECTION -->
-        <section id="agent" style="margin-top: 5rem;">
-            <div style="text-align: center; margin-bottom: 2rem;">
-               <img src="assets/logo-agent.png" alt="FikolasAI Agent" style="max-width: 300px; height: auto; margin-bottom: 1rem;">
-            </div>
-            <div class="section-title" id="agent-title">🤖 FikolasAI Agent</div>
-            <p class="section-subtitle" id="agent-desc">Co-création d'agents IA pour automatiser vos process métier.</p>
-
-            <div class="products">
-                <div class="product-card" style="border-color: var(--secondary); background: rgba(139, 92, 246, 0.05);">
-                    <div class="product-icon">⚙️</div>
-                    <h3 id="agent-h3">Agent IA Personnalisé</h3>
-                    <p class="subtitle" id="agent-s">Pour entreprises & équipes</p>
-                    <p id="agent-body">Nous co-créons ensemble un agent IA qui travaille pour vous. Du cadrage initial à la mise en place, accompagnement complet pour l'adoption et l'optimisation continue.</p>
-                    
-                    <div class="product-features">
-                        <div class="feature" id="af1">Cadrage des objectifs</div>
-                        <div class="feature" id="af2">Prototype + itérations rapides</div>
-                        <div class="feature" id="af3">Implémentation & adoption</div>
-                        <div class="feature" id="af4">Optimisation continue</div>
-                    </div>
-
-                    <div class="price">À partir de 499€<span style="font-size: 0.7em; color: #cbd5e1;">/mois HT</span></div>
-                    <p class="price-note" id="agent-fee">+ Fee onboarding : +1990€ HT (montant adaptée à la complexité)</p>
-                    
-                    <div class="cta-group">
-                        <a href="https://calendly.com/cyril-fikolasai/30min" target="_blank" class="btn btn-primary" id="btn-audit">Audit gratuit</a>
-                        <a href="mailto:cyril.fikolasai@gmail.com" class="btn btn-secondary" id="btn-need">Décrire mon besoin</a>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-icon">💡</div>
-                    <h3 id="use-cases">Cas d'usage courants</h3>
-                    <div class="product-features" style="border: none; background: transparent; padding: 0; margin-bottom: 2rem;">
-                        <div class="feature" id="c1">📧 Rédaction & synthèse d'emails</div>
-                        <div class="feature" id="c2">📊 Analyse & génération de rapports</div>
-                        <div class="feature" id="c3">👥 Qualification prospects</div>
-                        <div class="feature" id="c4">📝 Documentation automatisée</div>
-                        <div class="feature" id="c5">⏰ Gestion de tâches récurrentes</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CASE STUDY AGENT -->
-            <div class="case-study">
-                <h4 id="case-agent-label">Cas d'usage réel</h4>
-                <h3 id="case-agent-title">Startup SaaS qui divise par 2 le temps RH</h3>
-                <p id="case-agent-desc">TechITFlow, une startup de 15 personnes, passe 120h/mois sur le tri et la qualification des candidatures. Problème : leur responsable RH est submergée et il y a des délais de réponse de 2 semaines.</p>
-                
-                <div class="case-items">
-                    <div class="case-item">
-                        <strong id="case-agent-before">❌ Avant</strong>
-                        <p>120h/mois de tri manuel, délais longs, mauvaise expérience candidat</p>
-                    </div>
-                    <div class="case-item">
-                        <strong id="case-agent-method">🎯 Agent créé</strong>
-                        <p>Agent qui qualifie auto, envoie réponses perso, crée rapports hebdo</p>
-                    </div>
-                    <div class="case-item">
-                        <strong id="case-agent-after">✅ Après 1 mois</strong>
-                        <p>60h économisées, candidats meilleur expérience, RH se concentre sur les interviews</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===================== -->
-        <!-- AJOUT : STUDIO SECTION -->
-        <!-- ===================== -->
-        <section id="studio" style="margin-top: 5rem;">
-            <div class="section-title" id="studio-title">🧠 FikolasAI Studio</div>
-            <p class="section-subtitle" id="studio-desc">Un agent “maître” + 2 à 3 agents satellites pour automatiser votre business de bout en bout.</p>
-
-            <div class="products">
-                <div class="product-card" style="border-color: var(--accent); background: rgba(16, 185, 129, 0.05);">
-                    <div class="product-icon">🚀</div>
-                    <h3 id="studio-h3">AI Studio Personnalisé</h3>
-                    <p class="subtitle" id="studio-s">Pour solopreneurs & PME ambitieuses</p>
-                    <p id="studio-body">
-                        Nous concevons un système d’agents IA interconnectés : un Agent Maître qui orchestre 2 à 3 agents spécialisés (prospection, reporting, support, contenu, RH…).
-                        Vous gagnez du temps, de la qualité, et une scalabilité réelle.
-                    </p>
-
-                    <div class="product-features">
-                        <div class="feature" id="sf1">Agent Maître (orchestration globale)</div>
-                        <div class="feature" id="sf2">2 à 3 agents satellites spécialisés</div>
-                        <div class="feature" id="sf3">Automatisations métier sur mesure</div>
-                        <div class="feature" id="sf4">Maintenance & évolution continue</div>
-                        <div class="feature" id="sf5">Confidentialité & données sécurisées</div>
-                    </div>
-
-                    <div class="price" id="studio-price">799€<span style="font-size: 0.7em; color: #cbd5e1;">/mois HT</span></div>
-                    <p class="price-note" id="studio-fee">+ Fee onboarding : 2990€ HT (audit + architecture + déploiement initial)</p>
-
-                    <div class="cta-group">
-                        <a href="https://calendly.com/cyril-fikolasai/30min" target="_blank" class="btn btn-primary" id="btn-studio">Discuter de mon AI Studio</a>
-                        <a href="mailto:cyril.fikolasai@gmail.com" class="btn btn-secondary" id="btn-studio-need">Décrire mon projet</a>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-icon">🧩</div>
-                    <h3 id="studio-use">Agents satellites possibles</h3>
-                    <div class="product-features" style="border: none; background: transparent; padding: 0; margin-bottom: 2rem;">
-                        <div class="feature" id="sc1">📈 Prospection & scoring</div>
-                        <div class="feature" id="sc2">📊 Reporting & synthèse hebdo</div>
-                        <div class="feature" id="sc3">💬 Support client (FAQ + réponses)</div>
-                        <div class="feature" id="sc4">📝 Création de contenu</div>
-                        <div class="feature" id="sc5">👥 RH & recrutement</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CASE STUDY STUDIO -->
-            <div class="case-study">
-                <h4 id="case-studio-label">Cas d'usage réel</h4>
-                <h3 id="case-studio-title">Solopreneur qui automatise 25h/semaine</h3>
-                <p id="case-studio-desc">
-                    Un entrepreneur gère seul son activité (sales, contenu, support). Le Studio met en place un Agent Maître + 3 agents satellites pour déléguer les tâches répétitives, standardiser la qualité et accélérer la croissance.
-                </p>
-
-                <div class="case-items">
-                    <div class="case-item">
-                        <strong id="case-studio-before">❌ Avant</strong>
-                        <p>50h/semaine, fatigue, peu de scalabilité</p>
-                    </div>
-                    <div class="case-item">
-                        <strong id="case-studio-method">🎯 Studio IA</strong>
-                        <p>Agent Maître + 3 satellites (sales, reporting, support)</p>
-                    </div>
-                    <div class="case-item">
-                        <strong id="case-studio-after">✅ Après 1 mois</strong>
-                        <p>25h gagnées / semaine, meilleure régularité, business piloté</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ABOUT SECTION -->
-        <section id="about">
-            <div class="section-title" id="about-title">À propos de moi</div>
-            
-            <div class="about-section">
-                <div class="about-content">
-                    <h3 id="about-h3">Cyril - Passionné par l'IA & l'impact</h3>
-                    <p id="about-p1">Je suis convaincu que l'IA n'est pas réservée aux tech geeks. C'est un outil pour tous ceux qui veulent travailler smarter, pas harder.</p>
-                    
-                    <p id="about-p2">Après des années à aider des freelances, des managers et des startups à intégrer l'IA dans leurs process, j'ai créé FikolasAI pour rendre ça accessible, pratique et results-driven.</p>
-                    
-                    <p id="about-p3">Mon approche :</p>
-                    <ul>
-                        <li id="about-li1">Pas de blabla théorique - que du concret</li>
-                        <li id="about-li2">Pas de technologie pour la technologie - que de l'impact</li>
-                        <li id="about-li3">Accompagnement personnalisé, pas de one-size-fits-all</li>
-                        <li id="about-li4">Tes objectifs = mes objectifs</li>
-                    </ul>
-                </div>
-
-              <div class="illustration">
-    <div style="width: 250px; height: 250px; border-radius: 50%; overflow: hidden; margin: 0 auto 1.5rem; border: 3px solid rgba(255,255,255,0.1);">
-        <img src="assets/photo-cyril.png" alt="Cyril" style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-
-    <div style="text-align: center;">
-        <a href="https://www.linkedin.com/in/cyrilfikolasaiacademy/" target="_blank" class="linkedin-btn" id="about-linkedin">
-            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 20px; vertical-align: middle; margin-right: 8px;">
-            <span id="linkedin-text">Me retrouver sur LinkedIn</span>
-        </a>
-    </div>
-</div>
-                      
-</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- TESTIMONIALS -->
-       <section id="testimonials">
-    <div class="testimonials">
-        <h2 class="section-title" id="test-title">Un mouvement mondial</h2>
-        <p class="section-subtitle">Ils soutiennent une IA responsable et humaine à travers le monde.</p>
-     
-    <div style="max-width: 1100px; margin: 0 auto; padding: 2rem;">
-
-    <h2 style="text-align: center; font-size: 2.2rem; margin-bottom: 3rem;">🌍 Un mouvement mondial</h2>
-    
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 4rem;">
-        
-        <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 15px; text-align: center; border: 1px solid rgba(255,255,255,0.1);">
-            <a href="https://www.linkedin.com/in/sylvie-almeri/" target="_blank">
-                <img src="assets/photo-sylvie.png" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 3px solid #3b82f6; margin-bottom: 1rem;">
-                <h4 style="margin: 0.5rem 0;">Sylvie Almeri</h4>
-            </a>
-            <p style="color: #3b82f6 !important; font-weight: bold; font-size: 0.85rem; margin-bottom: 1rem;">Directrice French Tech San Diego</p>
-            <p style="font-style: italic; font-size: 0.9rem; opacity: 0.8;">"Rejoindre ce mouvement mondial, c’est contribuer à bâtir une société où l’intelligence artificielle devient un levier d’innovation, d’équité et de développement durable pour les générations à venir."</p>
-        </div>
-
-        <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 15px; text-align: center; border: 1px solid rgba(255,255,255,0.1);">
-            <a href="https://www.linkedin.com/in/katherine-lafourcade/" target="_blank">
-                <img src="assets/photo-katherine.png" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 3px solid #3b82f6; margin-bottom: 1rem;">
-                <h4 style="margin: 0.5rem 0;">Katherine Lafourcade</h4>
-            </a>
-            <p style="color: #3b82f6 !important; font-weight: bold; font-size: 0.85rem; margin-bottom: 1rem;">Executive Director @FACC Atlanta</p>
-            <p style="font-style: italic; font-size: 0.9rem; opacity: 0.8;">"Fière de bâtir des ponts entre cultures et communautés, je rejoins ce mouvement mondial avec enthousiasme pour promouvoir une intelligence artificielle responsable et humaine, au service d’un avenir meilleur."</p>
-        </div>
-
-        <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 15px; text-align: center; border: 1px solid rgba(255,255,255,0.1);">
-            <a href="https://www.linkedin.com/in/ericblanchetete/" target="_blank">
-                <img src="assets/photo-eric.png" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 3px solid #3b82f6; margin-bottom: 1rem;">
-                <h4 style="margin: 0.5rem 0;">Eric Blanchetete</h4>
-            </a>
-            <p style="color: #3b82f6 !important; font-weight: bold; font-size: 0.85rem; margin-bottom: 1rem;">Président de Paxton Equity</p>
-            <p style="font-style: italic; font-size: 0.9rem; opacity: 0.8;">"Fier d’intégrer un mouvement global, j’unis mon parcours bancaire et industriel à mon engagement civique pour promouvoir une intelligence artificielle responsable, créatrice de ponts entre innovation, économie et humanité."</p>
-        </div>
-
-        <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 15px; text-align: center; border: 1px solid rgba(255,255,255,0.1);">
-            <a href="https://www.linkedin.com/in/benjamin-gass-kenya/" target="_blank">
-                <img src="assets/photo-benjamin.png" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 3px solid #3b82f6; margin-bottom: 1rem;">
-                <h4 style="margin: 0.5rem 0;">Benjamin Gass</h4>
-            </a>
-            <p style="color: #3b82f6 !important; font-weight: bold; font-size: 0.85rem; margin-bottom: 1rem;">Business Dev Elephant Vert</p>
-            <p style="font-style: italic; font-size: 0.9rem; opacity: 0.8;">"Heureux d’intégrer un mouvement mondial, depuis la France et le Kenya, où expertise, innovation et humanité s’unissent pour façonner une intelligence artificielle responsable, porteuse d’avenir et de progrès pour nos communautés."</p>
-        </div>
-    </div>
-
-    <div style="background: linear-gradient(145deg, #1e293b, #0f172a); border-radius: 24px; padding: 3rem; border: 2px solid #3b82f6; box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
-        <div style="text-align: center; margin-bottom: 2.5rem;">
-            <h2 style="margin: 0; font-size: 2rem;">🚀 Propulsez votre maîtrise de l'IA</h2>
-            <p style="opacity: 0.8;">Rejoignez la communauté FikolasAI sur Substack.</p>
-        </div>
-
-        <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;">
-            <div style="flex: 1; min-width: 280px; max-width: 400px; background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); display: flex; flex-direction: column;">
-                <span style="color: #94a3b8; font-size: 0.8rem; font-weight: bold; text-transform: uppercase;">Découverte</span>
-                <div style="font-size: 2.2rem; font-weight: bold; margin: 0.5rem 0;">Gratuit</div>
-                <ul style="list-style: none; padding: 0; margin: 1rem 0 2rem 0; flex-grow: 1; line-height: 2;">
-                    <li>✅ 1 Snack Learning mensuel</li>
-                    <li>✅ Accès au billet d'humeur IA de Cyril</li>
-                </ul>
-                <a href="https://substack.com/@cyrilfikolasai" target="_blank" style="text-align: center; padding: 0.8rem; border: 1px solid white; border-radius: 8px; font-weight: bold;">S'inscrire</a>
-            </div>
-
-            <div style="flex: 1; min-width: 280px; max-width: 400px; background: rgba(59, 130, 246, 0.1); padding: 2rem; border-radius: 16px; border: 2px solid #3b82f6; display: flex; flex-direction: column; position: relative;">
-                <div style="position: absolute; top: -12px; right: 20px; background: #3b82f6; color: white; padding: 2px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;">CONSEILLÉ</div>
-                <span style="color: #3b82f6; font-size: 0.8rem; font-weight: bold; text-transform: uppercase;">Full Academy</span>
-                <div style="font-size: 2.2rem; font-weight: bold; margin: 0.5rem 0;">8 € <span style="font-size: 1rem; font-weight: normal; opacity: 0.6;">TTC/mois</span></div>
-                <ul style="list-style: none; padding: 0; margin: 1rem 0 2rem 0; flex-grow: 1; line-height: 2;">
-                    <li>🚀 4 Snack Learnings par mois</li>
-                    <li>🛠️ Accès illimité à la Bibliothèque Snack Learning</li>
-                    <li>🛠️ Accès à l'Atelier Mensuel live tenu par Cyril</li>
-                    <li>🛠️ Accès Substack FikolasAI</li>
-                    <li>🛠️ Accès Billets d'humeur de Cyril</li>
-                    <li>🤝 Accès communauté privée</li>
-                </ul>
-                <a href="https://substack.com/@cyrilfikolasai" target="_blank" style="text-align: center; padding: 0.8rem; background: #3b82f6; border-radius: 8px; font-weight: bold; box-shadow: 0 4px 15px rgba(59,130,246,0.3);">Devenir Membre Premium</a>
-            </div>
-        </div>
-    </div>
-</div>
-    <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2026 FikolasAI - <span id="footer-made">cyril.fikolasai@gmail.com</span></p>
-        <div class="footer-links">
-            <a href="mailto:cyril.fikolasai@gmail.com" id="footer-contact">Nous contacter</a>
-            <a href="https://substack.com/@cyrilfikolasai" target="_blank" id="footer-sub">Substack</a>
-            <a href="https://www.linkedin.com/in/cyrilfikolasaiacademy/" target="_blank" id="footer-acad">Linkedin</a>
-        </div>
-    </footer>
+    <!-- Iconify -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
     <script>
-        const translations = {
-            fr: {
-                "nav-about": "À propos",
-                "nav-test": "Témoignages",
-                "nav-studio": "Studio",
-                "lang-btn": "EN",
-
-                "hero-h1": "Maîtrisez l'IA, <span class='highlight'>sans prise de tête</span>",
-                "hero-p": "Formations personnalisées et agents IA co-créés pour booster votre productivité - dès maintenant.",
-
-                "studio-title": "🧠 FikolasAI Studio",
-                "studio-desc": "Un Agent Maître + 2 à 3 agents satellites pour automatiser votre business de bout en bout.",
-                "studio-h3": "AI Studio Personnalisé",
-                "studio-sub": "Pour entrepreneurs & PME ambitieuses",
-                "studio-body": "Nous concevons un système d’agents IA interconnectés : un Agent Maître qui pilote 2 à 3 agents spécialisés.",
-                "studio-f1": "Agent Maître (orchestration globale)",
-                "studio-f2": "2 à 3 agents satellites spécialisés",
-                "studio-f3": "Automatisations métier sur mesure",
-                "studio-f4": "Maintenance & évolution continue",
-                "studio-f5": "Confidentialité & données sécurisées",
-                "studio-price": "799€ / mois HT",
-                "studio-onboarding": "Onboarding : 2990€ HT",
-                "studio-btn1": "Discuter de mon AI Studio",
-                "studio-btn2": "Décrire mon projet",
-
-                "footer-made": "cyril.fikolasai@gmail.com",
-                "footer-contact": "Nous contacter",
-                "footer-sub": "Substack",
-                "footer-acad": "Linkedin Cyril"
-            },
-
-            en: {
-                "nav-about": "About",
-                "nav-test": "Testimonials",
-                "nav-studio": "Studio",
-                "lang-btn": "FR",
-
-                "hero-h1": "Master AI, <span class='highlight'>without the hassle</span>",
-                "hero-p": "Personalized training and co-created AI agents to boost your productivity - starting now.",
-
-                "studio-title": "🧠 FikolasAI Studio",
-                "studio-desc": "One Master Agent + 2 to 3 satellite agents to automate your business end-to-end.",
-                "studio-h3": "Custom AI Studio",
-                "studio-sub": "For entrepreneurs & ambitious SMBs",
-                "studio-body": "We design a system of interconnected AI agents: one Master Agent orchestrating 2 to 3 specialized agents.",
-                "studio-f1": "Master Agent (global orchestration)",
-                "studio-f2": "2 to 3 specialized satellite agents",
-                "studio-f3": "Custom business automations",
-                "studio-f4": "Continuous maintenance & improvement",
-                "studio-f5": "Confidentiality & secure data",
-                "studio-price": "€799 / month (excl. VAT)",
-                "studio-onboarding": "Onboarding: €2990 (one-time fee)",
-                "studio-btn1": "Discuss my AI Studio",
-                "studio-btn2": "Describe my project",
-
-                "footer-made": "cyril.fikolasai@gmail.com",
-                "footer-contact": "Contact us",
-                "footer-sub": "Substack",
-                "footer-acad": "Linkedin Cyril"
-            }
-        };
-
-        let currentLang = "fr";
-
-        function toggleLang() {
-            currentLang = currentLang === "fr" ? "en" : "fr";
-            updateLanguage();
-        }
-
-        function updateLanguage() {
-            const keys = Object.keys(translations[currentLang]);
-            keys.forEach(key => {
-                const element = document.getElementById(key);
-                if (element) {
-                    element.innerHTML = translations[currentLang][key];
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#8b5cf6',
+                        accent: '#10b981'
+                    }
                 }
-            });
+            }
         }
-
-        // Init language
-        updateLanguage();
     </script>
+
+    <style>
+        body { font-family: Inter, system-ui, sans-serif; }
+        .animate-gradient {
+            background-size: 200% 200%;
+            animation: gradient 8s ease infinite;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+
+<body class="bg-slate-900 text-slate-50 overflow-x-hidden">
+
+<!-- BACKGROUND -->
+<div class="fixed inset-0 pointer-events-none">
+    <div class="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px]"></div>
+    <div class="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-secondary/20 rounded-full blur-[120px]"></div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-slate-900/80 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex justify-between items-center">
+        <a href="#" class="text-xl font-semibold bg-gradient-to-br from-white to-slate-400 bg-clip-text text-transparent">
+            FikolasAI
+        </a>
+        <div class="flex items-center gap-8">
+            <ul class="hidden md:flex gap-6 text-sm text-slate-400">
+                <li><a href="#academy" class="hover:text-white">Academy</a></li>
+                <li><a href="#agent" class="hover:text-white">Agent</a></li>
+                <li><a href="#studio" id="nav-studio" class="hover:text-white text-primary">Studio</a></li>
+                <li><a href="#about" id="nav-about" class="hover:text-white">À propos</a></li>
+                <li><a href="#testimonials" id="nav-test" class="hover:text-white">Témoignages</a></li>
+            </ul>
+            <button onclick="toggleLang()" id="lang-btn"
+                class="text-xs font-semibold text-primary border border-primary/30 bg-primary/5 px-3 py-1.5 rounded-full hover:bg-primary hover:text-white transition">
+                EN
+            </button>
+        </div>
+    </div>
+</nav>
+
+<main class="relative z-10 pt-24">
+
+<!-- HERO -->
+<section class="max-w-5xl mx-auto px-6 py-24 text-center">
+    <h1 id="hero-h1" class="text-5xl md:text-7xl font-semibold mb-6">
+        Maîtrisez l'IA,<br>
+        <span class="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-gradient">
+            sans prise de tête
+        </span>
+    </h1>
+    <p id="hero-p" class="text-lg text-slate-400 max-w-2xl mx-auto mb-10">
+        Formations personnalisées et agents IA co-créés pour booster votre productivité.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 border-y border-white/5 py-8 mb-10">
+        <div>
+            <span class="text-3xl font-semibold">+80</span>
+            <p id="stat-1" class="text-sm text-slate-500">personnes formées en 2025</p>
+        </div>
+        <div>
+            <span class="text-3xl font-semibold">78%</span>
+            <p id="stat-2" class="text-sm text-slate-500">organisations utilisent l'IA</p>
+        </div>
+        <div>
+            <span class="text-3xl font-semibold">≈13h</span>
+            <p id="stat-3" class="text-sm text-slate-500">automatisables par semaine</p>
+        </div>
+    </div>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#academy" id="btn-1" class="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90">
+            Découvrir l'academy
+        </a>
+        <a href="#agent" id="btn-2" class="px-6 py-3 bg-white/5 border border-white/10 rounded-lg hover:bg-white/10">
+            Créer un Agent
+        </a>
+    </div>
+</section>
+
+<!-- ACADEMY -->
+<section id="academy" class="max-w-6xl mx-auto px-6 py-20">
+    <div class="text-center mb-16">
+        <h2 id="acad-title" class="text-3xl md:text-4xl font-semibold mb-4">FikolasAI Academy</h2>
+        <p id="acad-desc" class="text-slate-400">Formations IA personnalisées - tu repars chaque semaine avec un livrable.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-slate-800/50 p-8 rounded-2xl border border-white/5 flex flex-col">
+            <h3 id="acad-h3" class="text-xl font-semibold mb-1">Formation Actionable</h3>
+            <p id="acad-s" class="text-primary mb-4">Pour individus & freelances</p>
+            <p id="acad-body" class="text-slate-400 mb-6">
+                Une session hebdomadaire de 1h en visio, entièrement personnalisée.
+            </p>
+
+            <ul class="space-y-2 mb-6">
+                <li id="f1">✓ 4 sessions par mois</li>
+                <li id="f2">✓ Livrables actionnables</li>
+                <li id="f3">✓ Méthode réutilisable</li>
+                <li id="f4">✓ Confidentialité garantie</li>
+            </ul>
+
+            <div class="mt-auto">
+                <p class="text-3xl font-semibold">499€ <span class="text-sm text-slate-400">/mois HT</span></p>
+                <p id="p-note" class="text-sm text-slate-500 mb-4">Résultats visibles dès le 1er mois</p>
+                <div class="grid grid-cols-2 gap-4">
+                    <a href="https://calendly.com/cyril-fikolasai/30min" target="_blank" id="btn-rdv"
+                       class="text-center py-2 bg-primary rounded-lg">Prendre RDV</a>
+                    <a href="mailto:cyril.fikolasai@gmail.com" id="btn-q"
+                       class="text-center py-2 bg-white/10 rounded-lg">Questions ?</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-accent/5 p-8 rounded-2xl border border-accent/20">
+            <h3 id="ideal" class="text-xl font-semibold mb-4">Idéal pour</h3>
+            <ul class="space-y-2">
+                <li id="i1">Employés voulant progresser</li>
+                <li id="i2">Freelances cherchant l'avantage</li>
+                <li id="i3">Professionnels pressés</li>
+                <li id="i4">Entrepreneurs innovants</li>
+            </ul>
+            <p id="i-desc" class="italic text-slate-400 mt-6">
+                Aucun prérequis technique.
+            </p>
+        </div>
+    </div>
+</section>
+<!-- AGENT SECTION -->
+<section id="agent" class="max-w-6xl mx-auto px-6 py-20 border-t border-white/5">
+    <div class="text-center mb-16">
+        <h2 id="agent-title" class="text-3xl md:text-4xl font-semibold mb-4">FikolasAI Agent</h2>
+        <p id="agent-desc" class="text-slate-400">Co-création d'agents IA pour automatiser vos process métier.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        <div class="bg-slate-800/50 p-8 rounded-2xl border border-white/5 flex flex-col">
+            <h3 id="agent-h3" class="text-xl font-semibold mb-1">Agent IA Personnalisé</h3>
+            <p id="agent-s" class="text-secondary mb-4">Pour entreprises & équipes</p>
+            <p id="agent-body" class="text-slate-400 mb-6">
+                Nous co-créons un agent IA qui travaille pour vous. Du cadrage initial à l’optimisation continue.
+            </p>
+
+            <ul class="space-y-2 mb-6">
+                <li id="af1">✓ Cadrage des objectifs</li>
+                <li id="af2">✓ Prototype + itérations rapides</li>
+                <li id="af3">✓ Implémentation & adoption</li>
+                <li id="af4">✓ Optimisation continue</li>
+            </ul>
+
+            <div class="mt-auto">
+                <p class="text-3xl font-semibold">À partir de 499€ <span class="text-sm text-slate-400">/mois HT</span></p>
+                <p id="agent-fee" class="text-sm text-slate-500 mb-4">+ Onboarding : 1990€ HT</p>
+                <div class="grid grid-cols-2 gap-4">
+                    <a href="https://calendly.com/cyril-fikolasai/30min" target="_blank" id="btn-audit"
+                       class="text-center py-2 bg-secondary rounded-lg">Audit gratuit</a>
+                    <a href="mailto:cyril.fikolasai@gmail.com" id="btn-need"
+                       class="text-center py-2 bg-white/10 rounded-lg">Décrire mon besoin</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white/5 p-8 rounded-2xl border border-white/10">
+            <h3 id="use-cases" class="text-xl font-semibold mb-4">Cas d’usage courants</h3>
+            <ul class="space-y-2 text-slate-300">
+                <li id="c1">📧 Rédaction & synthèse d'emails</li>
+                <li id="c2">📊 Analyse & génération de rapports</li>
+                <li id="c3">👥 Qualification prospects</li>
+                <li id="c4">📝 Documentation automatisée</li>
+                <li id="c5">⏰ Gestion de tâches récurrentes</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- CASE STUDY AGENT -->
+    <div class="bg-white/[0.02] border border-white/5 rounded-2xl p-8">
+        <h4 id="case-agent-label" class="text-secondary uppercase text-xs mb-2">Cas d'usage réel</h4>
+        <h3 id="case-agent-title" class="text-xl font-semibold mb-2">Startup SaaS qui divise par 2 le temps RH</h3>
+        <p id="case-agent-desc" class="text-slate-400 mb-6">
+            TechITFlow passe 120h/mois sur le tri des candidatures.
+        </p>
+        <div class="grid md:grid-cols-3 gap-4">
+            <div>
+                <strong id="case-agent-before">❌ Avant</strong>
+                <p>120h/mois de tri manuel</p>
+            </div>
+            <div>
+                <strong id="case-agent-method">🎯 Agent créé</strong>
+                <p>Qualification automatique</p>
+            </div>
+            <div>
+                <strong id="case-agent-after">✅ Après 1 mois</strong>
+                <p>60h économisées</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- STUDIO SECTION -->
+<section id="studio" class="max-w-6xl mx-auto px-6 py-20 border-t border-white/5">
+    <div class="text-center mb-16">
+        <h2 id="studio-title" class="text-3xl md:text-4xl font-semibold mb-4">FikolasAI Studio</h2>
+        <p id="studio-desc" class="text-slate-400">Un Agent Maître + 2 à 3 agents satellites pour automatiser votre business.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        <div class="bg-emerald-500/5 p-8 rounded-2xl border border-emerald-500/20 flex flex-col">
+            <h3 id="studio-h3" class="text-xl font-semibold mb-1">AI Studio Personnalisé</h3>
+            <p id="studio-s" class="text-emerald-400 mb-4">Pour solopreneurs & PME ambitieuses</p>
+            <p id="studio-body" class="text-slate-400 mb-6">
+                Système d’agents interconnectés : un Agent Maître orchestre 2 à 3 agents spécialisés.
+            </p>
+
+            <ul class="space-y-2 mb-6">
+                <li id="sf1">✓ Agent Maître (orchestration)</li>
+                <li id="sf2">✓ 2 à 3 agents satellites</li>
+                <li id="sf3">✓ Automatisations métier</li>
+                <li id="sf4">✓ Maintenance & évolution</li>
+                <li id="sf5">✓ Sécurité & confidentialité</li>
+            </ul>
+
+            <div class="mt-auto">
+                <p id="studio-price" class="text-3xl font-semibold">799€ <span class="text-sm text-slate-400">/mois HT</span></p>
+                <p id="studio-fee" class="text-sm text-slate-500 mb-4">+ Onboarding : 2990€ HT</p>
+                <div class="grid grid-cols-2 gap-4">
+                    <a href="https://calendly.com/cyril-fikolasai/30min" target="_blank" id="btn-studio"
+                       class="text-center py-2 bg-emerald-600 rounded-lg">Discuter Studio</a>
+                    <a href="mailto:cyril.fikolasai@gmail.com" id="btn-studio-need"
+                       class="text-center py-2 bg-white/10 rounded-lg">Décrire mon projet</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white/5 p-8 rounded-2xl border border-white/10">
+            <h3 id="studio-use" class="text-xl font-semibold mb-4">Agents satellites possibles</h3>
+            <ul class="space-y-2 text-slate-300">
+                <li id="sc1">Prospection & scoring</li>
+                <li id="sc2">Reporting & synthèse</li>
+                <li id="sc3">Support client</li>
+                <li id="sc4">Création de contenu</li>
+                <li id="sc5">RH & recrutement</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="max-w-6xl mx-auto px-6 py-20 border-t border-white/5">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+            <h3 id="about-h3" class="text-3xl font-semibold mb-4">Cyril - Passionné par l'IA & l'impact</h3>
+            <p id="about-p1" class="text-slate-400 mb-3">L’IA est pour tous.</p>
+            <p id="about-p2" class="text-slate-400 mb-3">FikolasAI rend l’IA accessible et utile.</p>
+            <ul class="space-y-2 text-slate-300">
+                <li id="about-li1">→ Concret</li>
+                <li id="about-li2">→ Impact</li>
+                <li id="about-li3">→ Personnalisé</li>
+                <li id="about-li4">→ Objectifs partagés</li>
+            </ul>
+        </div>
+
+        <div class="text-center">
+            <img src="assets/photo-cyril.png" class="w-64 h-64 rounded-full mx-auto mb-6 object-cover"
+                 onerror="this.src='https://ui-avatars.com/api/?name=Cyril'">
+            <a href="https://www.linkedin.com/in/cyrilfikolasaiacademy/" target="_blank"
+               class="inline-block px-5 py-2 bg-[#0077b5] rounded-full">
+                <span id="linkedin-text">Me retrouver sur LinkedIn</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="max-w-6xl mx-auto px-6 py-20">
+    <h2 class="text-center text-3xl font-semibold mb-12">🌍 Un mouvement mondial</h2>
+
+    <div class="grid md:grid-cols-4 gap-6 mb-16">
+        <div class="bg-white/5 p-6 rounded-xl text-center">
+            <img src="assets/photo-sylvie.png" class="w-20 h-20 rounded-full mx-auto mb-4">
+            <h4>Sylvie Almeri</h4>
+            <p class="text-xs text-primary">French Tech San Diego</p>
+        </div>
+        <div class="bg-white/5 p-6 rounded-xl text-center">
+            <img src="assets/photo-katherine.png" class="w-20 h-20 rounded-full mx-auto mb-4">
+            <h4>Katherine Lafourcade</h4>
+            <p class="text-xs text-primary">FACC Atlanta</p>
+        </div>
+        <div class="bg-white/5 p-6 rounded-xl text-center">
+            <img src="assets/photo-eric.png" class="w-20 h-20 rounded-full mx-auto mb-4">
+            <h4>Eric Blanchetete</h4>
+            <p class="text-xs text-primary">Paxton Equity</p>
+        </div>
+        <div class="bg-white/5 p-6 rounded-xl text-center">
+            <img src="assets/photo-benjamin.png" class="w-20 h-20 rounded-full mx-auto mb-4">
+            <h4>Benjamin Gass</h4>
+            <p class="text-xs text-primary">Elephant Vert</p>
+        </div>
+    </div>
+
+    <!-- SUBSTACK -->
+    <div class="bg-slate-800 border border-primary/30 rounded-2xl p-10 text-center">
+        <h2 class="text-2xl font-semibold mb-2">🚀 Propulsez votre maîtrise de l'IA</h2>
+        <p class="text-slate-400 mb-8">Rejoignez la communauté FikolasAI sur Substack.</p>
+
+        <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            <div class="bg-white/5 p-6 rounded-xl">
+                <h3>Gratuit</h3>
+                <p>1 Snack Learning / mois</p>
+                <a href="https://substack.com/@cyrilfikolasai" target="_blank"
+                   class="block mt-4 border border-white/20 py-2 rounded">S'inscrire</a>
+            </div>
+            <div class="bg-primary/10 p-6 rounded-xl">
+                <h3>Full Academy</h3>
+                <p>8€ TTC / mois</p>
+                <a href="https://substack.com/@cyrilfikolasai" target="_blank"
+                   class="block mt-4 bg-primary py-2 rounded">Devenir membre premium</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- FOOTER -->
+<footer class="border-t border-white/5 bg-slate-900 py-12">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+        <p class="text-slate-500 text-sm mb-6">
+            © 2026 FikolasAI - <span id="footer-made" class="text-slate-400">cyril.fikolasai@gmail.com</span>
+        </p>
+        <div class="flex justify-center flex-wrap gap-8 text-sm font-medium">
+            <a href="mailto:cyril.fikolasai@gmail.com" id="footer-contact" class="text-primary hover:text-white transition-colors">
+                Nous contacter
+            </a>
+            <a href="https://substack.com/@cyrilfikolasai" target="_blank" id="footer-sub" class="text-primary hover:text-white transition-colors">
+                Substack
+            </a>
+            <a href="https://www.linkedin.com/in/cyrilfikolasaiacademy/" target="_blank" id="footer-acad" class="text-primary hover:text-white transition-colors">
+                Linkedin
+            </a>
+        </div>
+    </div>
+</footer>
+
+<!-- TRANSLATIONS SCRIPT -->
+<script>
+const translations = {
+  fr: {
+    "nav-about": "À propos",
+    "nav-test": "Témoignages",
+    "nav-studio": "Studio",
+    "lang-btn": "EN",
+
+    "hero-h1": "Maîtrisez l'IA,<br><span class='bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-gradient'>sans prise de tête</span>",
+    "hero-p": "Formations personnalisées et agents IA co-créés pour booster votre productivité.",
+
+    "stat-1": "personnes formées en 2025",
+    "stat-2": "organisations utilisent l'IA",
+    "stat-3": "automatisables par semaine",
+
+    "btn-1": "Découvrir l'academy",
+    "btn-2": "Créer un Agent",
+
+    "acad-title": "FikolasAI Academy",
+    "acad-desc": "Formations IA personnalisées - tu repars chaque semaine avec un livrable.",
+    "acad-h3": "Formation Actionable",
+    "acad-s": "Pour individus & freelances",
+    "acad-body": "Une session hebdomadaire de 1h en visio, entièrement personnalisée.",
+    "f1": "✓ 4 sessions par mois",
+    "f2": "✓ Livrables actionnables",
+    "f3": "✓ Méthode réutilisable",
+    "f4": "✓ Confidentialité garantie",
+    "p-note": "Résultats visibles dès le 1er mois",
+    "ideal": "Idéal pour",
+    "i1": "Employés voulant progresser",
+    "i2": "Freelances cherchant l'avantage",
+    "i3": "Professionnels pressés",
+    "i4": "Entrepreneurs innovants",
+    "i-desc": "Aucun prérequis technique.",
+
+    "agent-title": "FikolasAI Agent",
+    "agent-desc": "Co-création d'agents IA pour automatiser vos process métier.",
+    "agent-h3": "Agent IA Personnalisé",
+    "agent-s": "Pour entreprises & équipes",
+    "agent-body": "Nous co-créons un agent IA qui travaille pour vous.",
+    "af1": "✓ Cadrage des objectifs",
+    "af2": "✓ Prototype + itérations rapides",
+    "af3": "✓ Implémentation & adoption",
+    "af4": "✓ Optimisation continue",
+    "agent-fee": "+ Onboarding : 1990€ HT",
+
+    "use-cases": "Cas d’usage courants",
+    "c1": "📧 Rédaction & synthèse d'emails",
+    "c2": "📊 Analyse & génération de rapports",
+    "c3": "👥 Qualification prospects",
+    "c4": "📝 Documentation automatisée",
+    "c5": "⏰ Gestion de tâches récurrentes",
+
+    "studio-title": "FikolasAI Studio",
+    "studio-desc": "Un Agent Maître + 2 à 3 agents satellites pour automatiser votre business.",
+    "studio-h3": "AI Studio Personnalisé",
+    "studio-s": "Pour solopreneurs & PME ambitieuses",
+    "studio-body": "Système d’agents interconnectés.",
+    "sf1": "✓ Agent Maître (orchestration)",
+    "sf2": "✓ 2 à 3 agents satellites",
+    "sf3": "✓ Automatisations métier",
+    "sf4": "✓ Maintenance & évolution",
+    "sf5": "✓ Sécurité & confidentialité",
+    "studio-price": "799€",
+    "studio-fee": "+ Onboarding : 2990€ HT",
+
+    "about-h3": "Cyril - Passionné par l'IA & l'impact",
+    "about-p1": "L’IA est pour tous.",
+    "about-p2": "FikolasAI rend l’IA accessible et utile.",
+    "about-li1": "→ Concret",
+    "about-li2": "→ Impact",
+    "about-li3": "→ Personnalisé",
+    "about-li4": "→ Objectifs partagés",
+
+    "footer-contact": "Nous contacter",
+    "footer-sub": "Substack",
+    "footer-acad": "Linkedin"
+  },
+
+  en: {
+    "nav-about": "About",
+    "nav-test": "Testimonials",
+    "nav-studio": "Studio",
+    "lang-btn": "FR",
+
+    "hero-h1": "Master AI,<br><span class='bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-gradient'>without the hassle</span>",
+    "hero-p": "Personalized training and co-created AI agents to boost your productivity.",
+
+    "stat-1": "people trained in 2025",
+    "stat-2": "organizations use AI",
+    "stat-3": "automatable hours per week",
+
+    "btn-1": "Discover Academy",
+    "btn-2": "Create an Agent",
+
+    "acad-title": "FikolasAI Academy",
+    "acad-desc": "Personalized AI training with weekly deliverables.",
+    "acad-h3": "Actionable Training",
+    "acad-s": "For individuals & freelancers",
+    "acad-body": "One weekly 1-hour personalized session.",
+    "f1": "✓ 4 sessions per month",
+    "f2": "✓ Actionable deliverables",
+    "f3": "✓ Reusable method",
+    "f4": "✓ Confidentiality guaranteed",
+    "p-note": "Visible results from the first month",
+    "ideal": "Perfect for",
+    "i1": "Employees",
+    "i2": "Freelancers",
+    "i3": "Busy professionals",
+    "i4": "Entrepreneurs",
+    "i-desc": "No technical prerequisites.",
+
+    "agent-title": "FikolasAI Agent",
+    "agent-desc": "Co-create AI agents to automate business processes.",
+    "agent-h3": "Custom AI Agent",
+    "agent-s": "For companies & teams",
+    "agent-body": "We co-create an AI agent that works for you.",
+    "af1": "✓ Objective scoping",
+    "af2": "✓ Rapid iterations",
+    "af3": "✓ Implementation & adoption",
+    "af4": "✓ Continuous optimization",
+    "agent-fee": "+ Onboarding: €1990",
+
+    "use-cases": "Common use cases",
+    "c1": "📧 Email drafting",
+    "c2": "📊 Reports",
+    "c3": "👥 Lead qualification",
+    "c4": "📝 Documentation",
+    "c5": "⏰ Recurring tasks",
+
+    "studio-title": "FikolasAI Studio",
+    "studio-desc": "One Master Agent + 2 to 3 satellite agents.",
+    "studio-h3": "Custom AI Studio",
+    "studio-s": "For solopreneurs & SMBs",
+    "studio-body": "System of interconnected agents.",
+    "sf1": "✓ Master Agent (orchestration)",
+    "sf2": "✓ 2 to 3 satellite agents",
+    "sf3": "✓ Business automations",
+    "sf4": "✓ Maintenance & evolution",
+    "sf5": "✓ Security & confidentiality",
+    "studio-price": "€799",
+    "studio-fee": "+ Onboarding: €2990",
+
+    "about-h3": "Cyril - Passionate about AI & impact",
+    "about-p1": "AI is for everyone.",
+    "about-p2": "FikolasAI makes AI useful and accessible.",
+    "about-li1": "→ Practical",
+    "about-li2": "→ Impact",
+    "about-li3": "→ Personalized",
+    "about-li4": "→ Shared goals",
+
+    "footer-contact": "Contact us",
+    "footer-sub": "Substack",
+    "footer-acad": "Linkedin"
+  }
+};
+
+let currentLang = "fr";
+
+function toggleLang() {
+  currentLang = currentLang === "fr" ? "en" : "fr";
+  updateLanguage();
+}
+
+function updateLanguage() {
+  Object.keys(translations[currentLang]).forEach(key => {
+    const el = document.getElementById(key);
+    if (el) el.innerHTML = translations[currentLang][key];
+  });
+}
+
+updateLanguage();
+</script>
+
 </body>
 </html>

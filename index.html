@@ -26,14 +26,8 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        primary: '#3b82f6',
-                        secondary: '#8b5cf6',
-                        accent: '#10b981'
-                    },
-                    boxShadow: {
-                        glow: '0 24px 80px rgba(59,130,246,0.22)'
-                    }
+                    colors: { primary: '#3b82f6', secondary: '#8b5cf6', accent: '#10b981' },
+                    boxShadow: { glow: '0 24px 80px rgba(59,130,246,0.22)' }
                 }
             }
         }
@@ -62,7 +56,7 @@
                 <li><a href="#proof" class="hover:text-white" data-i18n="navProof">Preuves</a></li>
             </ul>
             <button onclick="toggleLang()" id="lang-btn" class="px-3 py-2 rounded-lg border border-white/15 bg-white/5 text-sm font-semibold hover:bg-white/10 transition">EN</button>
-            <a href="https://calendly.com/cyril-fikolasai/30min" target="_blank" class="hidden sm:inline-flex px-4 py-2 rounded-lg bg-primary text-white text-sm font-semibold hover:bg-primary/90 transition" data-i18n="auditShort">Audit gratuit</a>
+            <a data-email-link href="#" class="hidden sm:inline-flex px-4 py-2 rounded-lg bg-primary text-white text-sm font-semibold hover:bg-primary/90 transition" data-i18n="contactShort">Email</a>
         </div>
     </div>
 </nav>
@@ -81,7 +75,7 @@
                     J'aide les professionnels, indépendants et équipes à passer de la curiosité à l'usage concret de l'IA : formations actionnables, mentorat et agents IA construits autour de vos vrais process.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 mb-10">
-                    <a href="https://calendly.com/cyril-fikolasai/30min" target="_blank" class="inline-flex justify-center px-6 py-3 bg-primary rounded-lg font-semibold hover:bg-primary/90 transition shadow-glow" data-i18n="auditMain">Réserver un audit IA gratuit</a>
+                    <a data-email-link href="#" class="inline-flex justify-center px-6 py-3 bg-primary rounded-lg font-semibold hover:bg-primary/90 transition shadow-glow" data-i18n="emailMain">M'envoyer un email</a>
                     <a href="#offers" class="inline-flex justify-center px-6 py-3 bg-white/5 border border-white/10 rounded-lg font-semibold hover:bg-white/10 transition" data-i18n="seeOffers">Voir les offres</a>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
@@ -126,7 +120,7 @@
                     <li data-i18n="academy3">✓ Prompts, méthodes et workflows réutilisables</li>
                     <li data-i18n="academy4">✓ Aucun prérequis technique</li>
                 </ul>
-                <div class="mt-auto"><p class="text-3xl font-semibold">499€ <span class="text-sm text-slate-400" data-i18n="priceMonth">/mois HT</span></p><a href="https://calendly.com/cyril-fikolasai/30min" target="_blank" class="mt-5 block text-center py-3 bg-primary rounded-lg font-semibold hover:bg-primary/90 transition" data-i18n="academyCta">Démarrer Academy</a></div>
+                <div class="mt-auto"><p class="text-3xl font-semibold">499€ <span class="text-sm text-slate-400" data-i18n="priceMonth">/mois HT</span></p><a data-email-link href="#" class="mt-5 block text-center py-3 bg-primary rounded-lg font-semibold hover:bg-primary/90 transition" data-i18n="academyCta">Me contacter</a></div>
             </article>
 
             <article class="rounded-2xl border border-secondary/40 bg-secondary/10 p-7 flex flex-col relative">
@@ -140,7 +134,7 @@
                     <li data-i18n="agent3">✓ Mise en place et adoption par l'équipe</li>
                     <li data-i18n="agent4">✓ Optimisation continue</li>
                 </ul>
-                <div class="mt-auto"><p class="text-3xl font-semibold"><span data-i18n="from">Dès</span> 499€ <span class="text-sm text-slate-400" data-i18n="priceMonth">/mois HT</span></p><p class="text-sm text-slate-400" data-i18n="agentOnboarding">+ onboarding à partir de 2990€ HT</p><a href="https://calendly.com/cyril-fikolasai/30min" target="_blank" class="mt-5 block text-center py-3 bg-secondary rounded-lg font-semibold hover:bg-secondary/90 transition" data-i18n="agentCta">Auditer mon process</a></div>
+                <div class="mt-auto"><p class="text-3xl font-semibold"><span data-i18n="from">Dès</span> 499€ <span class="text-sm text-slate-400" data-i18n="priceMonth">/mois HT</span></p><p class="text-sm text-slate-400" data-i18n="agentOnboarding">+ onboarding à partir de 2990€ HT</p><a data-email-link href="#" class="mt-5 block text-center py-3 bg-secondary rounded-lg font-semibold hover:bg-secondary/90 transition" data-i18n="agentCta">Me contacter</a></div>
             </article>
 
             <article class="rounded-2xl border border-accent/40 bg-accent/10 p-7 flex flex-col">
@@ -153,7 +147,7 @@
                     <li data-i18n="studio3">✓ Automatisations connectées à vos outils</li>
                     <li data-i18n="studio4">✓ Maintenance, sécurité et évolution</li>
                 </ul>
-                <div class="mt-auto"><p class="text-3xl font-semibold"><span data-i18n="from">Dès</span> 799€ <span class="text-sm text-slate-400" data-i18n="priceMonth">/mois HT</span></p><p class="text-sm text-slate-400" data-i18n="studioOnboarding">+ onboarding à partir de 3990€ HT</p><a href="mailto:cyril.fikolasai@gmail.com?subject=Projet%20FikolasAI%20Studio" class="mt-5 block text-center py-3 bg-emerald-600 rounded-lg font-semibold hover:bg-emerald-500 transition" data-i18n="studioCta">Décrire mon projet</a></div>
+                <div class="mt-auto"><p class="text-3xl font-semibold"><span data-i18n="from">Dès</span> 799€ <span class="text-sm text-slate-400" data-i18n="priceMonth">/mois HT</span></p><p class="text-sm text-slate-400" data-i18n="studioOnboarding">+ onboarding à partir de 3990€ HT</p><a data-email-link href="#" class="mt-5 block text-center py-3 bg-emerald-600 rounded-lg font-semibold hover:bg-emerald-500 transition" data-i18n="studioCta">Me contacter</a></div>
             </article>
         </div>
     </section>
@@ -230,7 +224,7 @@
         <div class="rounded-2xl bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 border border-white/10 p-8 md:p-12 text-center">
             <h2 class="text-3xl md:text-5xl font-semibold mb-4" data-i18n="finalTitle">Vous avez déjà des idées. Transformons-les en usages IA concrets.</h2>
             <p class="text-slate-300 max-w-2xl mx-auto mb-8 leading-relaxed" data-i18n-html="finalText">En 30 minutes, on identifie vos tâches prioritaires.<br>On choisit le bon niveau d'accompagnement.<br>Et on définit le premier livrable utile.</p>
-            <a href="https://calendly.com/cyril-fikolasai/30min" target="_blank" class="inline-flex px-7 py-3 bg-primary rounded-lg font-semibold hover:bg-primary/90 transition shadow-glow" data-i18n="auditMain">Réserver un audit gratuit</a>
+            <a data-email-link href="#" class="inline-flex px-7 py-3 bg-primary rounded-lg font-semibold hover:bg-primary/90 transition shadow-glow" data-i18n="emailMain">M'envoyer un email</a>
         </div>
     </section>
 </main>
@@ -239,20 +233,22 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-6 text-center">
         <p class="text-slate-500 text-sm mb-6">© 2026 FikolasAI - cyril.fikolasai@gmail.com</p>
         <div class="flex justify-center flex-wrap gap-8 text-sm font-medium">
-            <a href="mailto:cyril.fikolasai@gmail.com" class="text-primary hover:text-white transition-colors" data-i18n="contact">Nous contacter</a>
+            <a data-email-link href="#" class="text-primary hover:text-white transition-colors" data-i18n="contact">Nous contacter</a>
             <a href="https://www.linkedin.com/in/cyrilfikolasaiacademy/" target="_blank" class="text-primary hover:text-white transition-colors">LinkedIn</a>
         </div>
     </div>
 </footer>
 
 <script>
+const emailHref = "mailto:cyril.fikolasai@gmail.com?subject=Demande%20FikolasAI&body=Bonjour%20Cyril,%0D%0A%0D%0AJe%20souhaite%20%C3%A9changer%20avec%20vous%20%C3%A0%20propos%20de%20FikolasAI.%0D%0A%0D%0AMon%20besoin%20:%20%0D%0A%0D%0AMerci,%0D%0A";
+
 const translations = {
   fr: {
-    navOffers: "Offres", navMethod: "Méthode", navProof: "Preuves", auditShort: "Audit gratuit",
+    navOffers: "Offres", navMethod: "Méthode", navProof: "Preuves", contactShort: "Email",
     eyebrow: "Formation IA, agents IA et automatisation métier",
     heroTitle: "Faites entrer l'IA dans votre quotidien,<br><span class='bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent animate-gradient'>pas dans vos slides.</span>",
     heroText: "Je suis Cyril Cieslak.<br><br>J'aide les professionnels, indépendants et équipes à passer de la curiosité à l'usage concret de l'IA : formations actionnables, mentorat et agents IA construits autour de vos vrais process.",
-    auditMain: "Réserver un audit IA gratuit", seeOffers: "Voir les offres",
+    emailMain: "M'envoyer un email", seeOffers: "Voir les offres",
     stat1: "personnes formées en 2025", stat2: "abonnés LinkedIn", stat3: "des organisations utilisent l'IA", stat4: "par semaine potentiellement automatisables",
     sources: "Sources : Stanford AI Index 2025 pour l'adoption IA, GoTo Pulse of Work 2025 pour le temps automatisable.",
     role: "Founder & CEO de FikolasAI Academy, créateur de FikolasAI Agent",
@@ -260,10 +256,10 @@ const translations = {
     card2Title: "Résultat attendu", card2Text: "Un livrable utile chaque semaine : prompt, workflow, agent, méthode ou automatisation.",
     card3Title: "Terrain", card3Text: "France, États-Unis, communautés tech et accompagnement de professionnels en reconversion ou en montée en compétence.",
     offersKicker: "Trois façons d'avancer", offersTitle: "Choisissez le niveau d'accompagnement adapté à votre moment.", offersText: "Vous pouvez commencer par vous former.<br>Construire un premier agent IA.<br>Ou structurer un système complet d'agents pour votre activité.",
-    academyTitle: "Formation IA personnalisée", academyText: "Pour apprendre vite, sans se disperser, avec une session hebdomadaire et un livrable concret.", academy1: "✓ 4 sessions de mentorat par mois", academy2: "✓ Cas d'usage adaptés à votre métier", academy3: "✓ Prompts, méthodes et workflows réutilisables", academy4: "✓ Aucun prérequis technique", academyCta: "Démarrer Academy",
+    academyTitle: "Formation IA personnalisée", academyText: "Pour apprendre vite, sans se disperser, avec une session hebdomadaire et un livrable concret.", academy1: "✓ 4 sessions de mentorat par mois", academy2: "✓ Cas d'usage adaptés à votre métier", academy3: "✓ Prompts, méthodes et workflows réutilisables", academy4: "✓ Aucun prérequis technique", academyCta: "Me contacter",
     priceMonth: "/mois HT", directBadge: "Le plus direct", from: "Dès",
-    agentTitle: "Agent IA personnalisé", agentText: "Pour automatiser un process précis : tri, synthèse, qualification, reporting, support ou documentation.", agent1: "✓ Cadrage du besoin et des données", agent2: "✓ Prototype rapide avec itérations", agent3: "✓ Mise en place et adoption par l'équipe", agent4: "✓ Optimisation continue", agentOnboarding: "+ onboarding à partir de 2990€ HT", agentCta: "Auditer mon process",
-    studioTitle: "Système d'agents IA", studioText: "Pour les solopreneurs et PME qui veulent orchestrer plusieurs agents autour d'un même objectif business.", studio1: "✓ Agent maître d'orchestration", studio2: "✓ 2 à 3 agents satellites", studio3: "✓ Automatisations connectées à vos outils", studio4: "✓ Maintenance, sécurité et évolution", studioOnboarding: "+ onboarding à partir de 3990€ HT", studioCta: "Décrire mon projet",
+    agentTitle: "Agent IA personnalisé", agentText: "Pour automatiser un process précis : tri, synthèse, qualification, reporting, support ou documentation.", agent1: "✓ Cadrage du besoin et des données", agent2: "✓ Prototype rapide avec itérations", agent3: "✓ Mise en place et adoption par l'équipe", agent4: "✓ Optimisation continue", agentOnboarding: "+ onboarding à partir de 2990€ HT", agentCta: "Me contacter",
+    studioTitle: "Système d'agents IA", studioText: "Pour les solopreneurs et PME qui veulent orchestrer plusieurs agents autour d'un même objectif business.", studio1: "✓ Agent maître d'orchestration", studio2: "✓ 2 à 3 agents satellites", studio3: "✓ Automatisations connectées à vos outils", studio4: "✓ Maintenance, sécurité et évolution", studioOnboarding: "+ onboarding à partir de 3990€ HT", studioCta: "Me contacter",
     methodKicker: "Méthode", methodTitle: "On transforme un sujet flou en usage mesurable.", methodText: "L'objectif n'est pas d'ajouter un outil de plus.<br><br>L'objectif est de rendre votre travail plus clair, plus rapide et plus transmissible.",
     step1Title: "Cadrer", step1Text: "Identifier les tâches répétitives, les irritants et les décisions qui ralentissent le travail.", step2Title: "Prototyper", step2Text: "Construire vite une première version : prompt, assistant, agent ou workflow automatisé.", step3Title: "Adopter", step3Text: "Former les utilisateurs, définir les limites, sécuriser les données et rendre l'usage naturel.", step4Title: "Mesurer", step4Text: "Suivre le temps gagné, la qualité produite et les nouveaux usages à fort impact.",
     caseKicker: "Cas d'usage concret", caseTitle: "Diviser par deux le temps passé sur un process RH répétitif.", caseText: "Une équipe passe 120h par mois à trier et qualifier des candidatures.<br><br>L'agent IA aide à lire, classer, résumer et prioriser les profils selon des critères métier.", before: "Avant", manualSort: "tri manuel", agentCreated: "Agent créé", qualification: "Qualification", summaryScoring: "résumé et scoring", after: "Après 1 mois", saved: "économisées",
@@ -271,11 +267,11 @@ const translations = {
     proofKicker: "Ils avancent avec FikolasAI", proofTitle: "Des professionnels en France, aux États-Unis et dans des communautés internationales.", proofText: "Le site gagne en force quand les résultats parlent simplement :<br>clarté, temps gagné, confiance et passage à l'action.", finalTitle: "Vous avez déjà des idées. Transformons-les en usages IA concrets.", finalText: "En 30 minutes, on identifie vos tâches prioritaires.<br>On choisit le bon niveau d'accompagnement.<br>Et on définit le premier livrable utile.", contact: "Nous contacter"
   },
   en: {
-    navOffers: "Offers", navMethod: "Method", navProof: "Proof", auditShort: "Free audit",
+    navOffers: "Offers", navMethod: "Method", navProof: "Proof", contactShort: "Email",
     eyebrow: "AI training, AI agents and business automation",
     heroTitle: "Bring AI into daily work,<br><span class='bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent animate-gradient'>not just into slide decks.</span>",
     heroText: "I’m Cyril Cieslak.<br><br>I help professionals, founders and teams move from curiosity to practical AI adoption: actionable training, mentoring, and AI agents built around real business workflows.",
-    auditMain: "Book a free AI audit", seeOffers: "View offers",
+    emailMain: "Send me an email", seeOffers: "View offers",
     stat1: "people trained in 2025", stat2: "LinkedIn followers", stat3: "of organizations use AI", stat4: "per week could be automated",
     sources: "Sources: Stanford AI Index 2025 for AI adoption, GoTo Pulse of Work 2025 for automatable time.",
     role: "Founder & CEO of FikolasAI Academy, creator of FikolasAI Agent",
@@ -283,10 +279,10 @@ const translations = {
     card2Title: "Expected outcome", card2Text: "One useful deliverable every week: prompt, workflow, agent, method or automation.",
     card3Title: "Field experience", card3Text: "France, the United States, tech communities, and mentoring professionals who are upskilling or changing paths.",
     offersKicker: "Three ways to move forward", offersTitle: "Choose the level of support that fits your current stage.", offersText: "You can start by learning AI.<br>Build a first AI agent.<br>Or structure a full agent system for your business.",
-    academyTitle: "Personalized AI training", academyText: "Learn quickly without getting lost, with a weekly session and one concrete deliverable.", academy1: "✓ 4 mentoring sessions per month", academy2: "✓ Use cases adapted to your work", academy3: "✓ Reusable prompts, methods and workflows", academy4: "✓ No technical background required", academyCta: "Start Academy",
+    academyTitle: "Personalized AI training", academyText: "Learn quickly without getting lost, with a weekly session and one concrete deliverable.", academy1: "✓ 4 mentoring sessions per month", academy2: "✓ Use cases adapted to your work", academy3: "✓ Reusable prompts, methods and workflows", academy4: "✓ No technical background required", academyCta: "Contact me",
     priceMonth: "/month excl. VAT", directBadge: "Most direct", from: "From",
-    agentTitle: "Custom AI agent", agentText: "Automate a specific workflow: sorting, synthesis, qualification, reporting, support or documentation.", agent1: "✓ Scoping of needs and data", agent2: "✓ Fast prototype with iterations", agent3: "✓ Implementation and team adoption", agent4: "✓ Continuous optimization", agentOnboarding: "+ onboarding from €2990 excl. VAT", agentCta: "Audit my workflow",
-    studioTitle: "AI agent system", studioText: "For solopreneurs and SMBs who want to orchestrate several agents around one business goal.", studio1: "✓ Master orchestration agent", studio2: "✓ 2 to 3 satellite agents", studio3: "✓ Automations connected to your tools", studio4: "✓ Maintenance, security and evolution", studioOnboarding: "+ onboarding from €3990 excl. VAT", studioCta: "Describe my project",
+    agentTitle: "Custom AI agent", agentText: "Automate a specific workflow: sorting, synthesis, qualification, reporting, support or documentation.", agent1: "✓ Scoping of needs and data", agent2: "✓ Fast prototype with iterations", agent3: "✓ Implementation and team adoption", agent4: "✓ Continuous optimization", agentOnboarding: "+ onboarding from €2990 excl. VAT", agentCta: "Contact me",
+    studioTitle: "AI agent system", studioText: "For solopreneurs and SMBs who want to orchestrate several agents around one business goal.", studio1: "✓ Master orchestration agent", studio2: "✓ 2 to 3 satellite agents", studio3: "✓ Automations connected to your tools", studio4: "✓ Maintenance, security and evolution", studioOnboarding: "+ onboarding from €3990 excl. VAT", studioCta: "Contact me",
     methodKicker: "Method", methodTitle: "We turn a vague topic into measurable usage.", methodText: "The goal is not to add one more tool.<br><br>The goal is to make your work clearer, faster and easier to share.",
     step1Title: "Scope", step1Text: "Identify repetitive tasks, friction points and decisions that slow work down.", step2Title: "Prototype", step2Text: "Quickly build a first version: prompt, assistant, agent or automated workflow.", step3Title: "Adopt", step3Text: "Train users, define limits, secure data and make usage natural.", step4Title: "Measure", step4Text: "Track time saved, output quality and new high-impact use cases.",
     caseKicker: "Concrete use case", caseTitle: "Cut the time spent on a repetitive HR process in half.", caseText: "A team spends 120 hours per month sorting and qualifying applications.<br><br>The AI agent helps read, classify, summarize and prioritize profiles according to business criteria.", before: "Before", manualSort: "manual sorting", agentCreated: "Agent created", qualification: "Qualification", summaryScoring: "summary and scoring", after: "After 1 month", saved: "saved",
@@ -301,6 +297,7 @@ function setLang(lang) {
   document.getElementById('lang-btn').textContent = lang === 'fr' ? 'EN' : 'FR';
   document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = translations[lang][el.dataset.i18n]; });
   document.querySelectorAll('[data-i18n-html]').forEach(el => { el.innerHTML = translations[lang][el.dataset.i18nHtml]; });
+  document.querySelectorAll('[data-email-link]').forEach(el => { el.setAttribute('href', emailHref); });
 }
 function toggleLang() { setLang(currentLang === 'fr' ? 'en' : 'fr'); }
 setLang('fr');

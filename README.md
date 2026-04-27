@@ -1,6 +1,6 @@
 # FikolasAI website
 
-Site vitrine de FikolasAI, publié via GitHub Pages sur https://fikolasai.com/.
+Site vitrine bilingue de FikolasAI, publié via GitHub Pages sur https://fikolasai.com/.
 
 ## Objectif
 
@@ -10,11 +10,11 @@ Présenter les offres FikolasAI autour de trois axes :
 - FikolasAI Agent : co-création d'agents IA pour automatiser des process métier.
 - FikolasAI Studio : système d'agents IA interconnectés pour solopreneurs et PME.
 
-Le site met aussi en avant Cyril Cieslak, son approche pédagogique, ses preuves de crédibilité et les appels à l'action vers Calendly, LinkedIn, Substack et email.
+Le site met aussi en avant Cyril Cieslak, son approche pédagogique, ses preuves de crédibilité et les appels à l'action vers Calendly, LinkedIn et email.
 
 ## Structure
 
-- `index.html` : page principale du site, avec HTML, styles Tailwind via CDN et contenu marketing.
+- `index.html` : page principale du site, avec contenu français/anglais, styles Tailwind via CDN et script de changement de langue.
 - `assets/` : images utilisées sur le site.
 - `CNAME` : configuration du domaine personnalisé `fikolasai.com`.
 
@@ -27,4 +27,4 @@ Le site est déployé automatiquement par GitHub Pages lorsque la branche `main`
 - Ajouter de vrais témoignages courts avec citations validées.
 - Ajouter une image Open Graph dédiée au partage LinkedIn.
 - Séparer le contenu, les styles et les scripts si le site grossit.
-- Ajouter une version anglaise complète si la cible internationale devient prioritaire.
+- Ajouter une page dédiée aux cas clients si les offres Agent et Studio se développent.

@@ -10,7 +10,7 @@ Présenter les offres FikolasAI autour de trois axes :
 - FikolasAI Agent : co-création d'agents IA pour automatiser des process métier.
 - FikolasAI Studio : système d'agents IA interconnectés pour solopreneurs et PME.
 
-Le site met aussi en avant Cyril Cieslak, son approche pédagogique, des exemples d'agents IA, des partenaires issus de la première version du site et les appels à l'action vers le formulaire Tally.
+Le site met aussi en avant Cyril Cieslak, son approche pédagogique, des exemples d'agents IA, les profils clients visés, le process d'accompagnement, une FAQ, des partenaires issus de la première version du site et les appels à l'action vers le formulaire Tally.
 
 ## Structure
 

@@ -24,18 +24,8 @@
     tailwind.config = {
       theme: {
         extend: {
-          colors: {
-            ink: '#050816',
-            panel: '#0f172a',
-            line: 'rgba(255,255,255,0.12)',
-            gold: '#f4c76b',
-            blue: '#3b82f6',
-            green: '#10b981'
-          },
-          boxShadow: {
-            gold: '0 26px 80px rgba(244,199,107,0.22)',
-            soft: '0 24px 70px rgba(15,23,42,0.35)'
-          }
+          colors: { ink: '#050816', panel: '#0f172a', line: 'rgba(255,255,255,0.12)', gold: '#f4c76b', blue: '#3b82f6', green: '#10b981' },
+          boxShadow: { gold: '0 26px 80px rgba(244,199,107,0.22)', soft: '0 24px 70px rgba(15,23,42,0.35)' }
         }
       }
     }
@@ -99,7 +89,7 @@
           <div class="grid gap-3">
             <div class="flex items-start gap-3 rounded-xl bg-white/5 border border-line p-4">
               <span class="mt-1 h-2.5 w-2.5 rounded-full bg-gold"></span>
-              <p data-i18n="card1"><strong>Votre Agent IA</strong><br><span class="text-slate-400">construit pour 1 cas d’usage concret.</span></p>
+              <p data-i18n-html="card1"><strong>Votre Agent IA</strong><br><span class="text-slate-400">construit pour 1 cas d’usage concret.</span></p>
             </div>
             <div class="flex items-start gap-3 rounded-xl bg-white/5 border border-line p-4">
               <span class="mt-1 h-2.5 w-2.5 rounded-full bg-blue"></span>

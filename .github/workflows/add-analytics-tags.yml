@@ -1,0 +1,64 @@
+name: Add Analytics tags once
+
+on:
+  push:
+    paths:
+      - '.github/workflows/add-analytics-tags.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  tag-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Add GA4 tag to HTML pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          GA='<script async src="https://www.googletagmanager.com/gtag/js?id=G-RSN9PNE840"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('\''js'\'',new Date());gtag('\''config'\'','\''G-RSN9PNE840'\'');</script>'
+          pages=(
+            "qui-est-cyril/index.html"
+            "immigration-lawyers-usa/index.html"
+            "sales-b2b-agent-ia/index.html"
+            "agent-ia-rh/index.html"
+            "agent-ia-cabinet-conseil/index.html"
+            "agent-ia-dirigeant-pme/index.html"
+            "agent-ia-chambre-commerce/index.html"
+          )
+          for page in "${pages[@]}"; do
+            if [[ -f "$page" ]] && ! grep -q "G-RSN9PNE840" "$page"; then
+              python - <<PY
+from pathlib import Path
+page = Path("$page")
+ga = '''$GA'''
+text = page.read_text(encoding='utf-8')
+if '<head>' in text:
+    text = text.replace('<head>', '<head>' + ga, 1)
+elif '<head' in text:
+    end = text.index('>', text.index('<head')) + 1
+    text = text[:end] + ga + text[end:]
+else:
+    raise SystemExit(f'No head tag found in {page}')
+page.write_text(text, encoding='utf-8')
+PY
+            fi
+          done
+          rm -f .github/workflows/add-analytics-tags.yml
+      - name: Commit changes
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Add Analytics tracking to all landing pages"
+          git push

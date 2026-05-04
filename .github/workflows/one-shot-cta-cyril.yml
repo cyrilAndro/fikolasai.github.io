@@ -1,0 +1,48 @@
+name: One-shot CTA Cyril update
+
+on:
+  push:
+    paths:
+      - '.github/workflows/one-shot-cta-cyril.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-cta:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update CTA wording
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          pages = [
+              'immigration-lawyers-usa/index.html',
+              'sales-b2b-agent-ia/index.html',
+              'agent-ia-rh/index.html',
+              'agent-ia-cabinet-conseil/index.html',
+              'agent-ia-dirigeant-pme/index.html',
+              'agent-ia-chambre-commerce/index.html',
+          ]
+
+          for page in pages:
+              path = Path(page)
+              text = path.read_text(encoding='utf-8')
+              text = text.replace('data-fr="Lancer mon Agent IA"', 'data-fr="Lancer mon Agent IA avec Cyril"')
+              text = text.replace('>Lancer mon Agent IA<', '>Lancer mon Agent IA avec Cyril<')
+              text = text.replace('data-en="Launch my AI Agent"', 'data-en="Launch my AI Agent with Cyril"')
+              text = text.replace('>Launch my AI Agent<', '>Launch my AI Agent with Cyril<')
+              path.write_text(text, encoding='utf-8')
+
+          Path('.github/workflows/one-shot-cta-cyril.yml').unlink()
+          PY
+      - name: Commit update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add immigration-lawyers-usa/index.html sales-b2b-agent-ia/index.html agent-ia-rh/index.html agent-ia-cabinet-conseil/index.html agent-ia-dirigeant-pme/index.html agent-ia-chambre-commerce/index.html .github/workflows/one-shot-cta-cyril.yml
+          git commit -m "Update vertical CTA wording with Cyril"
+          git push

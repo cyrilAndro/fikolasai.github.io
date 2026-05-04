@@ -1,0 +1,45 @@
+name: One Shot GA Tag Coverage
+on:
+  push:
+    paths:
+      - '.github/workflows/one-shot-ga-all-pages.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ensure Google Analytics tag on every HTML page
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          tag = '''  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSN9PNE840"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-RSN9PNE840');</script>
+'''
+          for p in Path('.').rglob('*.html'):
+              text = p.read_text(encoding='utf-8')
+              if 'G-RSN9PNE840' in text:
+                  continue
+              if '<head>' in text:
+                  text = text.replace('<head>', '<head>\n' + tag, 1)
+              elif '<head' in text:
+                  import re
+                  text = re.sub(r'(<head[^>]*>)', r'\1\n' + tag, text, count=1)
+              else:
+                  continue
+              p.write_text(text, encoding='utf-8')
+          PY
+      - name: Remove workflow and commit
+        run: |
+          rm .github/workflows/one-shot-ga-all-pages.yml
+          if git diff --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Add Google Analytics tag to all pages"
+          git push

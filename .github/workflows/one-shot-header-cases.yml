@@ -1,0 +1,50 @@
+name: One-shot header cases update
+
+on:
+  push:
+    paths:
+      - '.github/workflows/one-shot-header-cases.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-header:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update homepage header
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('index.html')
+          text = path.read_text(encoding='utf-8')
+
+          old_nav = '''<nav class="fixed top-0 w-full z-50 border-b border-line bg-ink/84 backdrop-blur-xl"><div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between"><a href="#top" class="text-xl font-semibold tracking-normal">FikolasAI</a><div class="flex items-center gap-3"><div class="hidden md:flex items-center gap-6 text-sm text-slate-400"><a href="#offer" class="hover:text-white" data-i18n="navOffer">Offre</a><a href="#before-after" class="hover:text-white" data-i18n="navBeforeAfter">Avant / Après</a><a href="#examples" class="hover:text-white" data-i18n="navExamples">Exemples</a><a href="#case-study" class="hover:text-white" data-i18n="navCase">Cas concret</a><a href="#after" class="hover:text-white" data-i18n="navAfter">Après 30 jours</a></div><button onclick="toggleLang()" id="lang-btn" class="h-10 px-3 rounded-lg border border-line bg-white/5 text-sm font-semibold hover:bg-white/10 transition">EN</button><a href="https://tally.so/r/2EbyZL" target="_blank" class="hidden sm:inline-flex h-10 items-center px-4 rounded-lg bg-gold text-slate-950 text-sm font-bold hover:bg-amber-200 transition" data-i18n="navCta">Je veux gagner du temps</a></div></div></nav>'''
+
+          new_nav = '''<nav class="fixed top-0 w-full z-50 border-b border-line bg-ink/84 backdrop-blur-xl"><div class="max-w-6xl mx-auto px-5 min-h-16 py-3 flex flex-wrap items-center justify-between gap-3"><a href="#top" class="text-xl font-semibold tracking-normal">FikolasAI</a><div class="flex items-center gap-3"><div class="hidden lg:flex items-center gap-2 text-sm text-slate-300"><a href="#offer" class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition" data-i18n="navOffer">Offre</a><a href="#verticals" class="px-3 py-2 rounded-lg bg-gold/10 border border-gold/30 text-amber-100 font-semibold hover:bg-gold/20 transition" data-i18n="navVerticals">Cas métiers</a><a href="#examples" class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition" data-i18n="navExamples">Exemples</a><a href="#case-study" class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition" data-i18n="navCase">Cas avocat USA</a><a href="#after" class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition" data-i18n="navAfter">Après 30 jours</a></div><a href="#verticals" class="inline-flex lg:hidden h-10 items-center px-3 rounded-lg border border-gold/35 bg-gold/10 text-amber-100 text-sm font-semibold" data-i18n="navVerticalsShort">Cas métiers</a><button onclick="toggleLang()" id="lang-btn" class="h-10 px-3 rounded-lg border border-line bg-white/5 text-sm font-semibold hover:bg-white/10 transition">EN</button><a href="https://tally.so/r/2EbyZL" target="_blank" class="hidden sm:inline-flex h-10 items-center px-4 rounded-lg bg-gold text-slate-950 text-sm font-bold hover:bg-amber-200 transition" data-i18n="navCta">Je veux gagner du temps</a></div></div></nav>'''
+
+          if old_nav not in text:
+              raise SystemExit('Header pattern not found; no file changed.')
+          text = text.replace(old_nav, new_nav, 1)
+
+          text = text.replace(
+              "title:'FikolasAI | Agent IA prêt en 7 jours',navOffer:'Offre',navBeforeAfter:'Avant / Après',navExamples:'Exemples',navCase:'Cas concret',navAfter:'Après 30 jours',navCta:'Je veux gagner du temps'",
+              "title:'FikolasAI | Agent IA prêt en 7 jours',navOffer:'Offre',navBeforeAfter:'Avant / Après',navVerticals:'Cas métiers',navVerticalsShort:'Cas métiers',navExamples:'Exemples',navCase:'Cas avocat USA',navAfter:'Après 30 jours',navCta:'Je veux gagner du temps'"
+          )
+          text = text.replace(
+              "title:'FikolasAI | AI Agent Ready in 7 Days',navOffer:'Offer',navBeforeAfter:'Before / After',navExamples:'Examples',navCase:'Use case',navAfter:'After 30 days',navCta:'I want to save time'",
+              "title:'FikolasAI | AI Agent Ready in 7 Days',navOffer:'Offer',navBeforeAfter:'Before / After',navVerticals:'Industry cases',navVerticalsShort:'Cases',navExamples:'Examples',navCase:'US lawyer case',navAfter:'After 30 days',navCta:'I want to save time'"
+          )
+
+          path.write_text(text, encoding='utf-8')
+          Path('.github/workflows/one-shot-header-cases.yml').unlink()
+          PY
+      - name: Commit update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html .github/workflows/one-shot-header-cases.yml
+          git commit -m "Reorganize homepage header for case studies"
+          git push

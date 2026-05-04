@@ -1,0 +1,57 @@
+name: One Shot Home CTA Calendly Alignment
+on:
+  push:
+    paths:
+      - '.github/workflows/one-shot-home-cta-calendly.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Align homepage primary CTA with Calendly
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          text = p.read_text(encoding='utf-8')
+          calendly = 'https://calendly.com/cyril-fikolasai/rdv-cyril-fikolasai-agent'
+          # Primary homepage CTAs should reserve the immediate call via Calendly.
+          text = text.replace('href="https://tally.so/r/2EbyZL" target="_blank" class="hidden sm:inline-flex h-10 items-center px-4 rounded-lg bg-gold text-slate-950 text-sm font-bold hover:bg-amber-200 transition" data-i18n="navCta"', f'href="{calendly}" target="_blank" class="hidden sm:inline-flex h-10 items-center px-4 rounded-lg bg-gold text-slate-950 text-sm font-bold hover:bg-amber-200 transition" data-i18n="navCta"')
+          text = text.replace('href="https://tally.so/r/2EbyZL" target="_blank" class="inline-flex justify-center px-6 py-4 rounded-lg bg-gold text-slate-950 font-bold hover:bg-amber-200 transition shadow-gold" data-i18n="primaryCta"', f'href="{calendly}" target="_blank" class="inline-flex justify-center px-6 py-4 rounded-lg bg-gold text-slate-950 font-bold hover:bg-amber-200 transition shadow-gold" data-i18n="primaryCta"')
+          # Add a light Tally path beside the hero CTA if it is not already present there.
+          anchor = '<a href="#verticals" class="inline-flex justify-center px-6 py-4 rounded-lg border border-line bg-white/5 font-semibold hover:bg-white/10 transition" data-i18n="secondaryCta">Voir les cas par métier</a>'
+          if 'data-i18n="diagnosticCta"' not in text:
+              text = text.replace(anchor, anchor + '<a href="https://tally.so/r/2EbyZL" target="_blank" class="inline-flex justify-center px-6 py-4 rounded-lg border border-gold/35 bg-gold/10 font-semibold text-amber-100 hover:bg-gold/20 transition" data-i18n="diagnosticCta">Remplir le diagnostic complet</a>')
+          replacements = {
+              "navCta:'Je veux gagner du temps'": "navCta:'Identifier mon premier Agent IA rentable'",
+              "primaryCta:'Je veux gagner du temps'": "primaryCta:'Identifier mon premier Agent IA rentable'",
+              "finalCta:'Je veux gagner du temps'": "finalCta:'Identifier mon premier Agent IA rentable'",
+              "stickyCta:'Je veux gagner du temps'": "stickyCta:'Identifier mon premier Agent IA rentable'",
+              "navCta:'I want to save time'": "navCta:'Identify my first profitable AI Agent'",
+              "primaryCta:'I want to save time'": "primaryCta:'Identify my first profitable AI Agent'",
+              "finalCta:'I want to save time'": "finalCta:'Identify my first profitable AI Agent'",
+              "stickyCta:'I want to save time'": "stickyCta:'Identify my first profitable AI Agent'",
+          }
+          for old, new in replacements.items():
+              text = text.replace(old, new)
+          if "secondaryCta:'Voir les cas par métier'" in text and "diagnosticCta:" not in text:
+              text = text.replace("secondaryCta:'Voir les cas par métier'", "secondaryCta:'Voir les cas par métier',diagnosticCta:'Remplir le diagnostic complet'")
+              text = text.replace("secondaryCta:'See cases by industry'", "secondaryCta:'See cases by industry',diagnosticCta:'Complete the full diagnostic'")
+          # Remaining homepage Tally primary final/sticky buttons are intentional only if they are diagnostic; primary labels should use Calendly.
+          p.write_text(text, encoding='utf-8')
+          PY
+      - name: Remove workflow and commit
+        run: |
+          rm .github/workflows/one-shot-home-cta-calendly.yml
+          if git diff --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Align homepage primary CTA with Calendly"
+          git push

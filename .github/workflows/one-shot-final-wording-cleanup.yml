@@ -1,0 +1,62 @@
+name: One Shot Final Wording Cleanup
+on:
+  push:
+    paths:
+      - '.github/workflows/one-shot-final-wording-cleanup.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Polish remaining wording
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          pages = [
+              'immigration-lawyers-usa/index.html',
+              'sales-b2b-agent-ia/index.html',
+              'agent-ia-rh/index.html',
+              'agent-ia-cabinet-conseil/index.html',
+              'agent-ia-dirigeant-pme/index.html',
+              'agent-ia-chambre-commerce/index.html',
+          ]
+          replacements = {
+              'Je construis un agent simple qui prepare': 'Je construis un agent simple qui prépare',
+              'et prepare': 'et prépare',
+              'qui prepare': 'qui prépare',
+              'Il prepare': 'Il prépare',
+              'L agent prepare': "L'agent prépare",
+              'L’agent prepare': 'L’agent prépare',
+              'l agent prepare': "l'agent prépare",
+              'Vous travaillez avec un opérateur.': 'Vous travaillez avec Cyril, directement.',
+              'Vous travaillez avec un operateur.': 'Vous travaillez avec Cyril, directement.',
+              'You work with an operator.': 'You work directly with Cyril.',
+              'data-fr="Vous travaillez avec un opérateur."': 'data-fr="Vous travaillez avec Cyril, directement."',
+              'data-en="You work with an operator."': 'data-en="You work directly with Cyril."',
+          }
+          for page in pages:
+              p = Path(page)
+              if not p.exists():
+                  continue
+              text = p.read_text(encoding='utf-8')
+              before = text
+              for old, new in replacements.items():
+                  text = text.replace(old, new)
+              if text != before:
+                  p.write_text(text, encoding='utf-8')
+          PY
+      - name: Remove workflow and commit
+        run: |
+          rm .github/workflows/one-shot-final-wording-cleanup.yml
+          if git diff --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Clean up final wording on vertical pages"
+          git push

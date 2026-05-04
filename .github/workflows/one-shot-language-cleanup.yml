@@ -1,0 +1,53 @@
+name: One-shot language cleanup
+
+on:
+  push:
+    paths:
+      - '.github/workflows/one-shot-language-cleanup.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Clean bilingual copy
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          pages = [
+              'immigration-lawyers-usa/index.html',
+              'sales-b2b-agent-ia/index.html',
+              'agent-ia-rh/index.html',
+              'agent-ia-cabinet-conseil/index.html',
+              'agent-ia-dirigeant-pme/index.html',
+              'agent-ia-chambre-commerce/index.html',
+          ]
+          repl = {
+              'pr\u00e9pares': 'prepares',
+              'pr\u00e9pare ': 'prepare ',
+              'L agent': 'L’agent',
+              'l agent': 'l’agent',
+              'Vous ne d\u00e9l\u00e9guez pas a une plateforme': 'Vous ne déléguez pas à une plateforme',
+              'Comprendre la m\u00e9thode de Cyril': 'Comprendre la méthode de Cyril',
+              'L’agent doit entrer': 'L’agent doit entrer',
+              'Votre jugement reste central : l’agent pr\u00e9pare': 'Votre jugement reste central : l’agent prépare',
+          }
+          for page in pages:
+              path = Path(page)
+              text = path.read_text(encoding='utf-8')
+              for old, new in repl.items():
+                  text = text.replace(old, new)
+              path.write_text(text, encoding='utf-8')
+          Path('.github/workflows/one-shot-language-cleanup.yml').unlink()
+          PY
+      - name: Commit update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add immigration-lawyers-usa/index.html sales-b2b-agent-ia/index.html agent-ia-rh/index.html agent-ia-cabinet-conseil/index.html agent-ia-dirigeant-pme/index.html agent-ia-chambre-commerce/index.html .github/workflows/one-shot-language-cleanup.yml
+          git commit -m "Clean bilingual vertical page copy"
+          git push

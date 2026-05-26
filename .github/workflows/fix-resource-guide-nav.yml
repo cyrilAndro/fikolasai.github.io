@@ -1,0 +1,45 @@
+name: Fix resource and guide navigation
+
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-resource-guide-nav.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix-nav:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add Resources IA to homepage header
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          text = p.read_text(encoding='utf-8')
+          if 'data-fr="Ressources"' not in text:
+              text = text.replace(
+                  '<a href="/guides-ia/" class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition" data-fr="Guides IA" data-en="AI guides">Guides IA</a>',
+                  '<a href="/ressources-ia/" class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition" data-fr="Ressources" data-en="Resources">Ressources</a><a href="/guides-ia/" class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition" data-fr="Guides IA" data-en="AI guides">Guides IA</a>',
+                  1
+              )
+              text = text.replace(
+                  '<a href="/guides-ia/" class="rounded-xl border border-line bg-white/[0.04] px-3 py-3 text-sm font-semibold hover:bg-white/10" data-fr="Guides IA" data-en="AI guides">Guides IA</a>',
+                  '<a href="/ressources-ia/" class="rounded-xl border border-line bg-white/[0.04] px-3 py-3 text-sm font-semibold hover:bg-white/10" data-fr="Ressources" data-en="Resources">Ressources</a><a href="/guides-ia/" class="rounded-xl border border-line bg-white/[0.04] px-3 py-3 text-sm font-semibold hover:bg-white/10" data-fr="Guides IA" data-en="AI guides">Guides IA</a>',
+                  1
+              )
+          p.write_text(text, encoding='utf-8')
+          PY
+      - name: Commit changes
+        run: |
+          if git diff --quiet index.html; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Clarify resources and guides navigation"
+          git push

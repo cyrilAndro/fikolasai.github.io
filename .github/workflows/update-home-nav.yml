@@ -1,0 +1,37 @@
+name: Update home navigation
+
+on:
+  push:
+    paths:
+      - '.github/workflows/update-home-nav.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update-nav:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replace home navigation
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+          path = Path('index.html')
+          text = path.read_text(encoding='utf-8')
+          old = '''<nav class="fixed top-0 w-full z-50 border-b border-line bg-ink/84 backdrop-blur-xl"><div class="max-w-6xl mx-auto px-5 min-h-16 py-3 flex flex-wrap items-center justify-between gap-3"><a href="#top" class="text-xl font-semibold tracking-normal">FikolasAI</a><div class="flex items-center gap-3"><div class="hidden lg:flex items-center gap-2 text-sm text-slate-300"><a href="#offer" class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition" data-i18n="navOffer">Offre</a><a href="#verticals" class="px-3 py-2 rounded-lg bg-gold/10 border border-gold/30 text-amber-100 font-semibold hover:bg-gold/20 transition" data-i18n="navVerticals">Cas métiers</a><a href="#examples" class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition" data-i18n="navExamples">Exemples</a><a href="/qui-est-cyril/" class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition" data-i18n="navCase">Qui est Cyril</a><a href="#after" class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition" data-i18n="navAfter">Après 30 jours</a></div><a href="#verticals" class="inline-flex lg:hidden h-10 items-center px-3 rounded-lg border border-gold/35 bg-gold/10 text-amber-100 text-sm font-semibold" data-i18n="navVerticalsShort">Cas métiers</a><button onclick="toggleLang()" id="lang-btn" class="h-10 px-3 rounded-lg border border-line bg-white/5 text-sm font-semibold hover:bg-white/10 transition">EN</button><a href="https://calendly.com/cyril-fikolasai/rdv-cyril-fikolasai-agent" target="_blank" class="hidden sm:inline-flex h-10 items-center px-4 rounded-lg bg-gold text-slate-950 text-sm font-bold hover:bg-amber-200 transition" data-i18n="navCta" rel="noreferrer">Identifier mon premier Agent IA rentable</a></div></div></nav>'''
+          new = '''<nav class="fixed top-0 w-full z-50 border-b border-line bg-ink/88 backdrop-blur-xl"><div class="max-w-6xl mx-auto px-5 min-h-16 py-3 flex flex-wrap items-center justify-between gap-3"><a href="#top" class="text-xl font-semibold tracking-normal">FikolasAI</a><div class="flex items-center gap-3"><div class="hidden lg:flex items-center gap-1 text-sm text-slate-300"><a href="#offer" class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition" data-i18n="navOffer">Offre</a><a href="#verticals" class="px-3 py-2 rounded-lg bg-gold/10 border border-gold/30 text-amber-100 font-semibold hover:bg-gold/20 transition" data-i18n="navVerticals">Cas métiers</a><a href="/ressources-ia/" class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition" data-i18n="navResources">Ressources IA</a><a href="/qui-est-cyril/" class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition" data-i18n="navCase">Qui est Cyril</a></div><details class="relative lg:hidden"><summary class="list-none cursor-pointer inline-flex h-10 items-center gap-2 rounded-lg border border-line bg-white/5 px-3 text-sm font-semibold text-slate-100 hover:bg-white/10 [&::-webkit-details-marker]:hidden"><span data-i18n="navMenu">Menu</span><span class="text-xs text-slate-400">▾</span></summary><div class="absolute right-0 mt-2 w-64 rounded-2xl border border-line bg-[#080d1d] p-2 shadow-2xl grid gap-2"><a href="#offer" class="rounded-xl border border-line bg-white/[0.04] px-3 py-3 text-sm font-semibold hover:bg-white/10" data-i18n="navOffer">Offre</a><a href="#verticals" class="rounded-xl border border-gold/30 bg-gold/10 px-3 py-3 text-sm font-semibold text-amber-100 hover:bg-gold/20" data-i18n="navVerticals">Cas métiers</a><a href="/ressources-ia/" class="rounded-xl border border-line bg-white/[0.04] px-3 py-3 text-sm font-semibold hover:bg-white/10" data-i18n="navResources">Ressources IA</a><a href="/qui-est-cyril/" class="rounded-xl border border-line bg-white/[0.04] px-3 py-3 text-sm font-semibold hover:bg-white/10" data-i18n="navCase">Qui est Cyril</a></div></details><button onclick="toggleLang()" id="lang-btn" class="h-10 px-3 rounded-lg border border-line bg-white/5 text-sm font-semibold hover:bg-white/10 transition">EN</button><a href="https://calendly.com/cyril-fikolasai/rdv-cyril-fikolasai-agent" target="_blank" class="hidden sm:inline-flex h-10 items-center px-4 rounded-lg bg-gold text-slate-950 text-sm font-bold hover:bg-amber-200 transition" data-i18n="navCta" rel="noreferrer">Identifier mon premier Agent IA rentable</a></div></div></nav>'''
+          if old not in text:
+              raise SystemExit('Navigation block not found')
+          text = text.replace(old, new, 1)
+          text = text.replace("navExamples:'Exemples',navCase:'Qui est Cyril'", "navExamples:'Exemples',navResources:'Ressources IA',navMenu:'Menu',navCase:'Qui est Cyril'", 1)
+          text = text.replace("navExamples:'Examples',navCase:'Who is Cyril'", "navExamples:'Examples',navResources:'AI resources',navMenu:'Menu',navCase:'Who is Cyril'", 1)
+          path.write_text(text, encoding='utf-8')
+          PY
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Simplify home navigation" || exit 0
+          git push

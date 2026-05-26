@@ -1,0 +1,147 @@
+name: GEO vertical FAQ
+
+on:
+  push:
+    paths:
+      - '.github/workflows/geo-vertical-faq.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add vertical FAQ sections and schema
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+
+          pages = {
+            'immigration-lawyers-usa/index.html': {
+              'title': 'Questions fréquentes des avocats immigration USA',
+              'title_en': 'Frequently asked questions for US immigration lawyers',
+              'crumb': 'Avocats immigration USA',
+              'url': 'https://fikolasai.com/immigration-lawyers-usa/',
+              'items': [
+                ('Est-ce que l’Agent IA donne un avis juridique ?', 'Non. L’agent prépare le tri, les questions utiles, les checklists et les réponses à valider. La décision juridique et l’envoi final restent toujours entre vos mains.', 'Does the AI Agent give legal advice?', 'No. The agent prepares triage, useful questions, checklists and replies to approve. Legal judgment and final sending always remain in your hands.'),
+                ('Quel premier agent choisir pour un cabinet immigration ?', 'Le meilleur premier agent est souvent celui qui qualifie les demandes entrantes : type de visa, situation, délai, informations manquantes et priorité de traitement.', 'Which first agent should an immigration firm choose?', 'The best first agent is often the one that qualifies inbound requests: visa type, situation, timeline, missing information and processing priority.'),
+                ('Les données clients sont-elles envoyées automatiquement ?', 'Non par défaut. On cadre précisément les informations utilisées, les limites, et ce qui doit rester hors de l’agent.', 'Are client data sent automatically?', 'Not by default. We define exactly what information is used, the limits, and what must stay outside the agent.'),
+                ('Puis-je garder l’agent après le mois inclus ?', 'Oui. Après le mois inclus, vous pouvez le récupérer ou continuer avec un accompagnement mensuel à partir de 500€ HT.', 'Can I keep the agent after the included month?', 'Yes. After the included month, you can keep it or continue with monthly support from €500 excl. VAT.')
+              ]
+            },
+            'sales-b2b-agent-ia/index.html': {
+              'title': 'Questions fréquentes des équipes commerciales B2B',
+              'title_en': 'Frequently asked questions for B2B sales teams',
+              'crumb': 'Commercial B2B',
+              'url': 'https://fikolasai.com/sales-b2b-agent-ia/',
+              'items': [
+                ('L’Agent IA remplace-t-il les commerciaux ?', 'Non. Il prépare les relances, les fiches leads, les messages et les prochaines actions pour permettre aux commerciaux de vendre avec plus de régularité.', 'Does the AI Agent replace salespeople?', 'No. It prepares follow-ups, lead briefs, messages and next actions so salespeople can sell with more consistency.'),
+                ('Quel cas d’usage commercial choisir en premier ?', 'Le plus rentable est souvent une relance ou une qualification de lead répétitive : un flux fréquent, simple à mesurer et directement lié au chiffre d’affaires.', 'Which sales use case should we choose first?', 'The most profitable one is often a recurring follow-up or lead qualification flow: frequent, measurable and directly tied to revenue.'),
+                ('L’envoi des messages est-il automatique ?', 'Pas nécessairement. Le plus souvent, l’agent prépare un message prêt à envoyer et l’équipe garde la main sur la validation.', 'Are messages sent automatically?', 'Not necessarily. Most often, the agent prepares a ready-to-send message and the team keeps control over approval.'),
+                ('Que se passe-t-il après 30 jours ?', 'Vous choisissez : récupérer l’agent ou continuer avec un suivi mensuel à partir de 500€ HT pour maintenir et améliorer 1, 2 ou 3 agents actifs.', 'What happens after 30 days?', 'You choose: keep the agent or continue with monthly support from €500 excl. VAT to maintain and improve 1, 2 or 3 active agents.')
+              ]
+            },
+            'agent-ia-rh/index.html': {
+              'title': 'Questions fréquentes RH et recrutement',
+              'title_en': 'Frequently asked HR and recruiting questions',
+              'crumb': 'RH et recrutement',
+              'url': 'https://fikolasai.com/agent-ia-rh/',
+              'items': [
+                ('L’Agent IA prend-il des décisions de recrutement ?', 'Non. Il aide à résumer, comparer, préparer et répondre. La décision humaine reste centrale.', 'Does the AI Agent make hiring decisions?', 'No. It helps summarize, compare, prepare and reply. Human decision-making remains central.'),
+                ('Quel premier agent RH est le plus utile ?', 'Un bon premier agent transforme souvent CV, notes ou entretiens en synthèses claires avec points forts, alertes, questions et prochaines étapes.', 'Which first HR agent is most useful?', 'A good first agent often turns resumes, notes or interviews into clear briefs with strengths, alerts, questions and next steps.'),
+                ('Comment gérer les données candidat ?', 'On définit dès le départ les informations utilisées, les limites et les règles internes à respecter.', 'How do we handle candidate data?', 'We define from the start what information is used, the limits and the internal rules to respect.'),
+                ('L’agent peut-il améliorer l’expérience candidat ?', 'Oui, en préparant des réponses plus rapides, plus claires et plus cohérentes, toujours validées par l’équipe RH.', 'Can the agent improve candidate experience?', 'Yes, by preparing faster, clearer and more consistent replies, always approved by the HR team.')
+              ]
+            },
+            'agent-ia-cabinet-conseil/index.html': {
+              'title': 'Questions fréquentes des cabinets de conseil',
+              'title_en': 'Frequently asked questions for consulting firms',
+              'crumb': 'Cabinet de conseil',
+              'url': 'https://fikolasai.com/agent-ia-cabinet-conseil/',
+              'items': [
+                ('L’Agent IA remplace-t-il le consultant ?', 'Non. Il prépare les comptes rendus, analyses, plans d’action ou livrables intermédiaires. Le consultant garde la réflexion, la décision et la relation client.', 'Does the AI Agent replace the consultant?', 'No. It prepares meeting notes, analyses, action plans or intermediate deliverables. The consultant keeps judgment, decision-making and client relationship.'),
+                ('Quel premier agent choisir en conseil ?', 'Un excellent premier cas est souvent la transformation de notes d’atelier ou d’entretien en synthèse claire, plan d’action et prochaines décisions.', 'Which first agent should a consulting firm choose?', 'A strong first case is often turning workshop or interview notes into a clear summary, action plan and next decisions.'),
+                ('Peut-on garder un ton premium dans les livrables ?', 'Oui. L’agent est construit à partir de vos exemples, votre structure et votre niveau d’exigence.', 'Can deliverables keep a premium tone?', 'Yes. The agent is built from your examples, structure and quality standards.'),
+                ('Est-ce utile pour un petit cabinet ?', 'Oui, surtout quand le dirigeant ou les consultants seniors perdent du temps sur des tâches répétitives à faible valeur.', 'Is it useful for a small firm?', 'Yes, especially when the founder or senior consultants lose time on low-value repetitive tasks.')
+              ]
+            },
+            'agent-ia-dirigeant-pme/index.html': {
+              'title': 'Questions fréquentes des dirigeants de PME',
+              'title_en': 'Frequently asked questions for SMB owners',
+              'crumb': 'Dirigeant de PME',
+              'url': 'https://fikolasai.com/agent-ia-dirigeant-pme/',
+              'items': [
+                ('Par où commencer quand on dirige une PME ?', 'On commence par une seule tâche qui revient souvent, prend du temps et crée une friction visible : relances, suivi, synthèses, priorisation ou reporting.', 'Where should an SMB owner start?', 'Start with one task that comes back often, takes time and creates visible friction: follow-ups, tracking, summaries, prioritization or reporting.'),
+                ('Est-ce que je dois déjà avoir des outils IA ?', 'Non. Le cadrage sert justement à choisir un premier cas concret et à créer un agent utilisable sans complexité inutile.', 'Do I need existing AI tools?', 'No. The framing step is precisely used to choose a concrete first case and create a usable agent without unnecessary complexity.'),
+                ('Quel est le risque si ça ne convient pas ?', 'Le risque est limité : prix fixe, délai court, 1 mois inclus et aucun abonnement imposé.', 'What is the risk if it does not fit?', 'Risk is limited: fixed price, short timeline, 1 month included and no forced subscription.'),
+                ('L’agent peut-il réduire la charge mentale ?', 'Oui, quand il prépare les informations, classe les priorités ou transforme des demandes dispersées en actions claires.', 'Can the agent reduce mental load?', 'Yes, when it prepares information, sorts priorities or turns scattered requests into clear actions.')
+              ]
+            },
+            'agent-ia-chambre-commerce/index.html': {
+              'title': 'Questions fréquentes des chambres de commerce',
+              'title_en': 'Frequently asked questions for chambers of commerce',
+              'crumb': 'Chambre de commerce',
+              'url': 'https://fikolasai.com/agent-ia-chambre-commerce/',
+              'items': [
+                ('Quel premier Agent IA pour une chambre de commerce ?', 'Un bon premier agent peut qualifier les demandes membres, préparer des mises en relation ou structurer les informations avant un événement.', 'Which first AI Agent for a chamber of commerce?', 'A good first agent can qualify member requests, prepare business matching or structure information before an event.'),
+                ('L’agent s’adapte-t-il aux membres et partenaires ?', 'Oui. On le construit autour de vos catégories de membres, vos événements, vos offres et votre manière de traiter les demandes.', 'Can the agent adapt to members and partners?', 'Yes. We build it around your member categories, events, offers and the way you handle requests.'),
+                ('Peut-il aider sur les événements ?', 'Oui, il peut préparer des fiches participants, suggestions de mise en relation, emails de suivi ou synthèses post-événement.', 'Can it help with events?', 'Yes, it can prepare attendee briefs, business matching suggestions, follow-up emails or post-event summaries.'),
+                ('Que se passe-t-il après le mois inclus ?', 'Vous pouvez garder l’agent ou continuer avec un accompagnement mensuel à partir de 500€ HT pour maintenir 1, 2 ou 3 agents actifs.', 'What happens after the included month?', 'You can keep the agent or continue with monthly support from €500 excl. VAT to maintain 1, 2 or 3 active agents.')
+              ]
+            }
+          }
+
+          marker = '<!-- GEO_VERTICAL_FAQ -->'
+          insert_before = '<section class="max-w-6xl mx-auto px-5 py-14 border-t border-line"><div class="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-6">'
+
+          for rel, cfg in pages.items():
+              path = Path(rel)
+              text = path.read_text(encoding='utf-8')
+              if marker not in text:
+                  cards = []
+                  for fr_q, fr_a, en_q, en_a in cfg['items']:
+                      cards.append(f'''<article class="card p-6"><h3 class="text-xl font-semibold mb-3" data-fr="{fr_q}" data-en="{en_q}">{fr_q}</h3><p class="text-slate-300 leading-relaxed" data-fr="{fr_a}" data-en="{en_a}">{fr_a}</p></article>''')
+                  section = f'''{marker}<section id="faq" class="max-w-6xl mx-auto px-5 py-14 border-t border-line"><div class="max-w-3xl mb-8"><p class="text-gold font-semibold mb-3">FAQ</p><h2 class="text-3xl md:text-5xl font-semibold leading-tight" data-fr="{cfg['title']}" data-en="{cfg['title_en']}">{cfg['title']}</h2></div><div class="grid md:grid-cols-2 gap-4">{''.join(cards)}</div></section>'''
+                  if insert_before in text:
+                      text = text.replace(insert_before, section + insert_before, 1)
+                  else:
+                      text = text.replace('</main>', section + '</main>', 1)
+
+              if 'GEO_VERTICAL_SCHEMA' not in text:
+                  faq_entities = []
+                  for fr_q, fr_a, _, _ in cfg['items']:
+                      faq_entities.append({'@type': 'Question', 'name': fr_q, 'acceptedAnswer': {'@type': 'Answer', 'text': fr_a}})
+                  graph = {
+                    '@context': 'https://schema.org',
+                    '@graph': [
+                      {
+                        '@type': 'BreadcrumbList',
+                        '@id': cfg['url'] + '#breadcrumb',
+                        'itemListElement': [
+                          {'@type': 'ListItem', 'position': 1, 'name': 'Accueil', 'item': 'https://fikolasai.com/'},
+                          {'@type': 'ListItem', 'position': 2, 'name': 'Cas métiers', 'item': 'https://fikolasai.com/#verticals'},
+                          {'@type': 'ListItem', 'position': 3, 'name': cfg['crumb'], 'item': cfg['url']}
+                        ]
+                      },
+                      {
+                        '@type': 'FAQPage',
+                        '@id': cfg['url'] + '#faq',
+                        'mainEntity': faq_entities
+                      }
+                    ]
+                  }
+                  schema = '<script id="GEO_VERTICAL_SCHEMA" type="application/ld+json">' + json.dumps(graph, ensure_ascii=False, separators=(',', ':')) + '</script>'
+                  text = text.replace('</head>', schema + '</head>', 1)
+
+              path.write_text(text, encoding='utf-8')
+          PY
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git diff --cached --quiet || git commit -m "Add GEO FAQs to vertical landing pages"
+          git push

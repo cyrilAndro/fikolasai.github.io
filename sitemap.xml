@@ -96,4 +96,46 @@
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
+  <url>
+    <loc>https://fikolasai.com/guides-ia/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://fikolasai.com/guide-premier-agent-ia-rentable/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://fikolasai.com/exemples-agents-ia-metier/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://fikolasai.com/agent-ia-vs-chatbot-automation/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://fikolasai.com/chatgpt-entreprise-sans-chaos/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://fikolasai.com/mesurer-valeur-agent-ia/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://fikolasai.com/methode-fikolasai-agent-ia/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
 </urlset>

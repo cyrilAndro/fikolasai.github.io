@@ -1,0 +1,165 @@
+name: UX conversion pass
+
+on:
+  push:
+    paths:
+      - '.github/workflows/ux-conversion-pass.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  ux-pass:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Improve homepage UX and trust flow
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          path = Path('index.html')
+          text = path.read_text(encoding='utf-8')
+
+          # Simplify header: keep Guides IA as the resource entry, remove duplicated Ressources IA from primary nav.
+          text = text.replace('<a href="/ressources-ia/" class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition" data-i18n="navResources">Ressources IA</a>', '')
+          text = text.replace('<a href="/ressources-ia/" class="rounded-xl border border-line bg-white/[0.04] px-3 py-3 text-sm font-semibold hover:bg-white/10" data-i18n="navResources">Ressources IA</a>', '')
+
+          # Shorter, punchier CTA.
+          replacements = {
+              'Identifier mon premier Agent IA rentable': 'Trouver mon Agent IA rentable',
+              'Identifier my first profitable AI Agent': 'Find my profitable AI Agent',
+              'Identify my first profitable AI Agent': 'Find my profitable AI Agent',
+          }
+          for old, new in replacements.items():
+              text = text.replace(old, new)
+
+          # Add a small decision-helper line above the hero CTAs.
+          if 'data-i18n="heroCtaHint"' not in text:
+              text = text.replace(
+                  '<div class="flex flex-col sm:flex-row gap-3 mb-7"><a href="https://calendly.com/cyril-fikolasai/rdv-cyril-fikolasai-agent"',
+                  '<p class="text-sm text-amber-100 font-semibold mb-3" data-i18n="heroCtaHint">En 15 minutes, on identifie la tâche à automatiser en priorité.</p><div class="flex flex-col sm:flex-row gap-3 mb-7"><a href="https://calendly.com/cyril-fikolasai/rdv-cyril-fikolasai-agent"',
+                  1
+              )
+
+          # Make vertical cards feel more obviously clickable and business-oriented.
+          text = text.replace('data-i18n="verticalsTitle">Vous voulez voir ce que cela donne dans votre métier ?', 'data-i18n="verticalsTitle">Vous êtes avocat, commercial, RH, dirigeant ou consultant ?')
+          text = text.replace('data-i18n="verticalsText">Choisissez le cas qui vous ressemble et découvrez les Agents IA les plus utiles pour votre contexte.', 'data-i18n="verticalsText">Choisissez votre cas métier. Chaque page montre le problème, l’Agent IA possible et le résultat attendu.')
+          text = text.replace('data-i18n="verticalCardCta">Voir le cas concret →', 'data-i18n="verticalCardCta">Voir ce cas métier →')
+          text = text.replace('class="group overflow-hidden rounded-2xl border border-line bg-slate-950/45 hover:border-gold/60 hover:bg-white/10 transition"', 'class="group overflow-hidden rounded-2xl border border-line bg-slate-950/45 ring-1 ring-gold/15 hover:ring-gold/45 hover:border-gold/60 hover:bg-white/10 transition"')
+
+          # Replace the two explanatory blocks after verticals with one clearer compact block.
+          start = text.find('<div class="mt-10 rounded-3xl border border-line bg-white/[0.04]')
+          end_marker = '\n    </section>\n    <section id="offer"'
+          end = text.find(end_marker)
+          if start != -1 and end != -1:
+              compact = '''<div class="mt-10 rounded-3xl border border-line bg-white/[0.04] p-5 md:p-6">
+        <div class="grid lg:grid-cols-[0.85fr_1.15fr] gap-5 items-start">
+          <div>
+            <p class="text-gold font-semibold mb-2" data-i18n="howKicker">Comment ça marche</p>
+            <h2 class="text-2xl md:text-3xl font-semibold leading-tight mb-3" data-i18n="howTitle">Vous donnez une tâche répétitive. Vous récupérez un résultat prêt à utiliser.</h2>
+            <p class="text-slate-400 leading-relaxed" data-i18n="howText">Pas de grand chantier IA. On part d’un vrai irritant métier et on construit un agent qui produit un livrable clair : message, fiche, synthèse, checklist ou brouillon.</p>
+          </div>
+          <div class="grid md:grid-cols-3 gap-3">
+            <article class="rounded-2xl border border-line bg-white/5 p-4"><span class="text-xs text-slate-500" data-i18n="howStep1Label">1. Vous donnez</span><p class="font-semibold mt-2" data-i18n="howStep1Title">Une matière brute</p><p class="text-sm text-slate-400 mt-2" data-i18n="howStep1Text">email, notes, formulaire, transcription ou demande client.</p></article>
+            <article class="rounded-2xl border border-gold/35 bg-gold/10 p-4"><span class="text-xs text-amber-100" data-i18n="howStep2Label">2. L’Agent prépare</span><p class="font-semibold mt-2" data-i18n="howStep2Title">Le travail structuré</p><p class="text-sm text-slate-300 mt-2" data-i18n="howStep2Text">analyse, tri, qualification, synthèse ou brouillon à valider.</p></article>
+            <article class="rounded-2xl border border-line bg-white/5 p-4"><span class="text-xs text-slate-500" data-i18n="howStep3Label">3. Vous validez</span><p class="font-semibold mt-2" data-i18n="howStep3Title">Un résultat utilisable</p><p class="text-sm text-slate-400 mt-2" data-i18n="howStep3Text">message prêt, fiche claire, checklist ou prochaines actions.</p></article>
+          </div>
+        </div>
+      </div>'''
+              text = text[:start] + compact + text[end:end+len('\n    </section>')] + text[end+len('\n    </section>'):]
+
+          # Replace offer section with a clearer product-style package.
+          new_offer = '''<section id="offer" class="max-w-6xl mx-auto px-5 py-14 border-t border-line">
+      <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-8 items-start">
+        <div>
+          <p class="text-gold font-semibold mb-3" data-i18n="offerKicker">L’offre d’entrée</p>
+          <h2 class="text-3xl md:text-5xl font-semibold leading-tight mb-4" data-i18n-html="offerTitle">Votre premier Agent IA.<br><span class="text-gold">1000€ HT.</span><br>Prêt en 7 jours.</h2>
+          <p class="text-slate-400 text-lg leading-relaxed mb-5" data-i18n="offerText">Une offre simple pour transformer une tâche répétitive en agent utilisable, sans abonnement imposé et sans projet interminable.</p>
+          <a href="https://calendly.com/cyril-fikolasai/rdv-cyril-fikolasai-agent" target="_blank" rel="noreferrer" class="inline-flex justify-center bg-gold text-slate-950 px-6 py-4 rounded-lg font-bold shadow-gold" data-i18n="offerCta">Trouver mon Agent IA rentable</a>
+        </div>
+        <div class="rounded-3xl border border-gold/40 bg-gold/10 p-6 md:p-8 shadow-gold">
+          <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 pb-6 border-b border-gold/25">
+            <div><p class="text-sm text-amber-100 font-semibold" data-i18n="packageLabel">Pack Agent IA</p><p class="text-5xl md:text-6xl font-semibold text-gold leading-none">1000€</p><p class="text-slate-300 mt-1" data-i18n="packageVat">HT, prix fixe</p></div>
+            <p class="rounded-full border border-gold/35 bg-slate-950/35 px-4 py-2 text-sm text-amber-100" data-i18n="packageDelay">Livré en 7 jours</p>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-3 mt-6">
+            <div class="rounded-2xl border border-line bg-white/5 p-4"><strong data-i18n="package1Title">1 tâche métier</strong><p class="text-sm text-slate-400 mt-2" data-i18n="package1Text">relancer, qualifier, résumer, préparer, classer ou rédiger.</p></div>
+            <div class="rounded-2xl border border-line bg-white/5 p-4"><strong data-i18n="package2Title">1 Agent IA prêt</strong><p class="text-sm text-slate-400 mt-2" data-i18n="package2Text">adapté à vos mots, vos exemples et votre façon de travailler.</p></div>
+            <div class="rounded-2xl border border-line bg-white/5 p-4"><strong data-i18n="package3Title">1 mois inclus</strong><p class="text-sm text-slate-400 mt-2" data-i18n="package3Text">hébergement, test en conditions réelles et ajustements.</p></div>
+            <div class="rounded-2xl border border-line bg-white/5 p-4"><strong data-i18n="package4Title">Libre ensuite</strong><p class="text-sm text-slate-400 mt-2" data-i18n="package4Text">vous récupérez l’agent ou vous continuez avec Agent Care.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>'''
+          text = re.sub(r'<section id="offer".*?</section>\s*<section id="before-after"', new_offer + '\n    <section id="before-after"', text, count=1, flags=re.S)
+
+          # Insert a concise trust section after before/after if not present.
+          if 'id="why-cyril-home"' not in text:
+              insert_before = '<section id="examples"'
+              trust = '''<section id="why-cyril-home" class="max-w-6xl mx-auto px-5 py-14 border-t border-line">
+      <div class="grid lg:grid-cols-[0.85fr_1.15fr] gap-6 items-start">
+        <div><p class="text-gold font-semibold mb-3" data-i18n="trustKicker">Pourquoi Cyril</p><h2 class="text-3xl md:text-4xl font-semibold leading-tight" data-i18n="trustTitle">Un accompagnement direct, concret, orienté usage réel.</h2></div>
+        <div class="grid sm:grid-cols-3 gap-3">
+          <div class="rounded-2xl border border-line bg-white/5 p-5"><strong data-i18n="trust1Title">France + États-Unis</strong><p class="text-sm text-slate-400 mt-2" data-i18n="trust1Text">agents IA déployés dans des contextes professionnels réels.</p></div>
+          <div class="rounded-2xl border border-line bg-white/5 p-5"><strong data-i18n="trust2Title">Vous gardez la main</strong><p class="text-sm text-slate-400 mt-2" data-i18n="trust2Text">l’agent prépare, vous validez les décisions sensibles.</p></div>
+          <div class="rounded-2xl border border-line bg-white/5 p-5"><strong data-i18n="trust3Title">Pas de gadget</strong><p class="text-sm text-slate-400 mt-2" data-i18n="trust3Text">on construit seulement si le résultat sert vraiment votre activité.</p></div>
+        </div>
+      </div>
+    </section>
+    '''
+              text = text.replace(insert_before, trust + insert_before, 1)
+
+          # Translation additions and edits.
+          additions_fr = "heroCtaHint:'En 15 minutes, on identifie la tâche à automatiser en priorité.',howKicker:'Comment ça marche',howTitle:'Vous donnez une tâche répétitive. Vous récupérez un résultat prêt à utiliser.',howText:'Pas de grand chantier IA. On part d’un vrai irritant métier et on construit un agent qui produit un livrable clair : message, fiche, synthèse, checklist ou brouillon.',howStep1Label:'1. Vous donnez',howStep1Title:'Une matière brute',howStep1Text:'email, notes, formulaire, transcription ou demande client.',howStep2Label:'2. L’Agent prépare',howStep2Title:'Le travail structuré',howStep2Text:'analyse, tri, qualification, synthèse ou brouillon à valider.',howStep3Label:'3. Vous validez',howStep3Title:'Un résultat utilisable',howStep3Text:'message prêt, fiche claire, checklist ou prochaines actions.',offerCta:'Trouver mon Agent IA rentable',packageLabel:'Pack Agent IA',packageVat:'HT, prix fixe',packageDelay:'Livré en 7 jours',package1Title:'1 tâche métier',package1Text:'relancer, qualifier, résumer, préparer, classer ou rédiger.',package2Title:'1 Agent IA prêt',package2Text:'adapté à vos mots, vos exemples et votre façon de travailler.',package3Title:'1 mois inclus',package3Text:'hébergement, test en conditions réelles et ajustements.',package4Title:'Libre ensuite',package4Text:'vous récupérez l’agent ou vous continuez avec Agent Care.',trustKicker:'Pourquoi Cyril',trustTitle:'Un accompagnement direct, concret, orienté usage réel.',trust1Title:'France + États-Unis',trust1Text:'agents IA déployés dans des contextes professionnels réels.',trust2Title:'Vous gardez la main',trust2Text:'l’agent prépare, vous validez les décisions sensibles.',trust3Title:'Pas de gadget',trust3Text:'on construit seulement si le résultat sert vraiment votre activité.',"
+          additions_en = "heroCtaHint:'In 15 minutes, we identify the task to automate first.',howKicker:'How it works',howTitle:'You provide one repetitive task. You get a ready-to-use result.',howText:'No huge AI project. We start from a real business irritation and build an agent that produces a clear deliverable: message, brief, summary, checklist or draft.',howStep1Label:'1. You provide',howStep1Title:'Raw material',howStep1Text:'email, notes, form, transcript or client request.',howStep2Label:'2. The Agent prepares',howStep2Title:'Structured work',howStep2Text:'analysis, sorting, qualification, summary or draft to review.',howStep3Label:'3. You validate',howStep3Title:'A usable result',howStep3Text:'ready message, clear brief, checklist or next actions.',offerCta:'Find my profitable AI Agent',packageLabel:'AI Agent package',packageVat:'excl. VAT, fixed price',packageDelay:'Delivered in 7 days',package1Title:'1 business task',package1Text:'follow up, qualify, summarize, prepare, classify or draft.',package2Title:'1 ready AI Agent',package2Text:'adapted to your words, examples and way of working.',package3Title:'1 month included',package3Text:'hosting, real-world testing and adjustments.',package4Title:'Free after',package4Text:'retrieve the agent or continue with Agent Care.',trustKicker:'Why Cyril',trustTitle:'Direct, concrete support focused on real usage.',trust1Title:'France + United States',trust1Text:'AI agents deployed in real professional contexts.',trust2Title:'You stay in control',trust2Text:'the agent prepares, you validate sensitive decisions.',trust3Title:'No gadget',trust3Text:'we build only if the result truly serves your business.',"
+          if "heroCtaHint:" not in text:
+              text = text.replace("navOffer:'Offre',", additions_fr + "navOffer:'Offre',", 1)
+              text = text.replace("title:'FikolasAI | AI Agent Ready in 7 Days',", "title:'FikolasAI | AI Agent Ready in 7 Days'," + additions_en, 1)
+
+          # Update existing translation strings.
+          text = text.replace("navResources:'Ressources IA',", "")
+          text = text.replace("navResources:'AI resources',", "")
+          text = text.replace("verticalsTitle:'Vous voulez voir ce que cela donne dans votre métier?'", "verticalsTitle:'Vous êtes avocat, commercial, RH, dirigeant ou consultant ?'")
+          text = text.replace("verticalsText:'Choisissez le cas qui vous ressemble et découvrez les Agents IA les plus utiles pour votre contexte.'", "verticalsText:'Choisissez votre cas métier. Chaque page montre le problème, l’Agent IA possible et le résultat attendu.'")
+          text = text.replace("verticalCardCta:'Voir le cas concret →'", "verticalCardCta:'Voir ce cas métier →'")
+          text = text.replace("offerKicker:'Simple et sans flou'", "offerKicker:'L’offre d’entrée'")
+          text = text.replace("offerTitle:'Une tâche.<br>Un agent.<br>Un résultat utilisable.'", "offerTitle:'Votre premier Agent IA.<br><span class=\"text-gold\">1000€ HT.</span><br>Prêt en 7 jours.'")
+          text = text.replace("offerText:'On ne lance pas un grand chantier IA. On choisit une tâche répétitive qui vous coûte du temps, puis je construis l’agent qui l’exécute mieux, plus vite, ou plus proprement.'", "offerText:'Une offre simple pour transformer une tâche répétitive en agent utilisable, sans abonnement imposé et sans projet interminable.'")
+          text = text.replace("verticalsTitle:'Want to see what this looks like in your field?'", "verticalsTitle:'Are you a lawyer, sales leader, HR manager, business owner or consultant?'")
+          text = text.replace("verticalsText:'Choose the case closest to your situation and discover the most useful AI Agents for your context.'", "verticalsText:'Choose your industry case. Each page shows the problem, the possible AI Agent and the expected result.'")
+          text = text.replace("verticalCardCta:'See the concrete case →'", "verticalCardCta:'See this industry case →'")
+          text = text.replace("offerKicker:'Simple and clear'", "offerKicker:'The entry offer'")
+          text = text.replace("offerTitle:'One task.<br>One agent.<br>One usable result.'", "offerTitle:'Your first AI Agent.<br><span class=\"text-gold\">€1000 excl. VAT.</span><br>Ready in 7 days.'")
+          text = text.replace("offerText:'We do not start a huge AI project. We choose one repetitive task that costs you time, then I build the agent that performs it better, faster or more cleanly.'", "offerText:'A simple offer to turn one repetitive task into a usable agent, with no forced subscription and no endless project.'")
+
+          path.write_text(text, encoding='utf-8')
+          PY
+      - name: Improve Cyril page CTA wording
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('qui-est-cyril/index.html')
+          text = path.read_text(encoding='utf-8')
+          text = text.replace('Identifier mon premier Agent IA rentable', 'Trouver mon Agent IA rentable')
+          text = text.replace('Pourquoi travailler avec Cyril ?', 'Pourquoi travailler avec Cyril ?')
+          if 'pas une agence IA classique' not in text:
+              text = text.replace(
+                  '<p class="text-lg text-slate-400 leading-relaxed mb-8">Le reste vient ensuite seulement si cela crée de la valeur.</p>',
+                  '<p class="text-lg text-slate-400 leading-relaxed mb-4">Le reste vient ensuite seulement si cela crée de la valeur.</p><p class="text-lg text-slate-400 leading-relaxed mb-8">FikolasAI n’est pas une agence IA classique : je travaille directement avec vous, sur un cas prioritaire, jusqu’à obtenir un usage clair et concret.</p>',
+                  1
+              )
+          path.write_text(text, encoding='utf-8')
+          PY
+      - name: Commit UX improvements
+        run: |
+          if git diff --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html qui-est-cyril/index.html
+          git commit -m "Improve homepage UX and conversion flow"
+          git push

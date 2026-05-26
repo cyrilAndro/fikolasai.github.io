@@ -21,15 +21,16 @@ jobs:
           path = Path('index.html')
           text = path.read_text(encoding='utf-8')
 
-          if '/guides-ia/' not in text:
-              text = text.replace(
-                  '<a href="/ressources-ia/" class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition" data-i18n="navResources">Ressources IA</a><a href="/qui-est-cyril/" class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition" data-i18n="navCase">Qui est Cyril ?</a>',
-                  '<a href="/ressources-ia/" class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition" data-i18n="navResources">Ressources IA</a><a href="/guides-ia/" class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition" data-i18n="navGuides">Guides IA</a><a href="/qui-est-cyril/" class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition" data-i18n="navCase">Qui est Cyril ?</a>'
-              )
-              text = text.replace(
-                  '<a href="/ressources-ia/" class="rounded-xl border border-line bg-white/[0.04] px-3 py-3 text-sm font-semibold hover:bg-white/10" data-i18n="navResources">Ressources IA</a><a href="/qui-est-cyril/" class="rounded-xl border border-line bg-white/[0.04] px-3 py-3 text-sm font-semibold hover:bg-white/10" data-i18n="navCase">Qui est Cyril ?</a>',
-                  '<a href="/ressources-ia/" class="rounded-xl border border-line bg-white/[0.04] px-3 py-3 text-sm font-semibold hover:bg-white/10" data-i18n="navResources">Ressources IA</a><a href="/guides-ia/" class="rounded-xl border border-line bg-white/[0.04] px-3 py-3 text-sm font-semibold hover:bg-white/10" data-i18n="navGuides">Guides IA</a><a href="/qui-est-cyril/" class="rounded-xl border border-line bg-white/[0.04] px-3 py-3 text-sm font-semibold hover:bg-white/10" data-i18n="navCase">Qui est Cyril ?</a>'
-              )
+          text = text.replace(
+              '<a href="/ressources-ia/" class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition" data-i18n="navResources">Ressources IA</a><a href="/qui-est-cyril/" class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition" data-i18n="navCase">Qui est Cyril ?</a>',
+              '<a href="/ressources-ia/" class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition" data-i18n="navResources">Ressources IA</a><a href="/guides-ia/" class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition" data-i18n="navGuides">Guides IA</a><a href="/qui-est-cyril/" class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition" data-i18n="navCase">Qui est Cyril ?</a>',
+              1
+          )
+          text = text.replace(
+              '<a href="/ressources-ia/" class="rounded-xl border border-line bg-white/[0.04] px-3 py-3 text-sm font-semibold hover:bg-white/10" data-i18n="navResources">Ressources IA</a><a href="/qui-est-cyril/" class="rounded-xl border border-line bg-white/[0.04] px-3 py-3 text-sm font-semibold hover:bg-white/10" data-i18n="navCase">Qui est Cyril ?</a>',
+              '<a href="/ressources-ia/" class="rounded-xl border border-line bg-white/[0.04] px-3 py-3 text-sm font-semibold hover:bg-white/10" data-i18n="navResources">Ressources IA</a><a href="/guides-ia/" class="rounded-xl border border-line bg-white/[0.04] px-3 py-3 text-sm font-semibold hover:bg-white/10" data-i18n="navGuides">Guides IA</a><a href="/qui-est-cyril/" class="rounded-xl border border-line bg-white/[0.04] px-3 py-3 text-sm font-semibold hover:bg-white/10" data-i18n="navCase">Qui est Cyril ?</a>',
+              1
+          )
 
           if "navGuides:'Guides IA'" not in text:
               text = text.replace("navResources:'Ressources IA',navMenu:'Menu'", "navResources:'Ressources IA',navGuides:'Guides IA',navMenu:'Menu'")

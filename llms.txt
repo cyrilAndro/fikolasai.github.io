@@ -1,0 +1,68 @@
+# FikolasAI
+
+> FikolasAI aide les professionnels à transformer des tâches répétitives en Agents IA métier simples, utiles et orientés business.
+
+## Informations principales
+
+- Site officiel : https://fikolasai.com/
+- Fondateur : Cyril Cieslak
+- Contact : cyril.fikolasai@gmail.com
+- Positionnement : IA concrète pour gagner du temps, réduire les tâches répétitives, mieux qualifier les demandes et améliorer l'organisation opérationnelle.
+- Publics cibles : dirigeants, indépendants, PME, cabinets d'avocats, chambres de commerce, organismes de formation, équipes commerciales, RH et cabinets de conseil.
+- Zones de déploiement mentionnées : France et États-Unis.
+
+## Offre principale
+
+FikolasAI Agent propose de créer un premier Agent IA métier prêt à l'emploi en 7 jours.
+
+- Prix : 1000€ HT par agent
+- Délai : 7 jours pour un premier cas d'usage cadré
+- Inclus : 1 mois de suivi et d'utilisation
+- Après le mois inclus : le client peut récupérer son agent ou continuer avec un accompagnement mensuel
+- Accompagnement mensuel : Agent Care, à partir de 500€ HT / mois
+- Abonnement imposé : non
+
+Définition utilisée par FikolasAI : un Agent IA est un système qui prend en charge une tâche métier répétitive à la place du professionnel, par exemple relancer, qualifier, résumer, préparer, classer ou rédiger.
+
+## Pages importantes
+
+- Accueil et offre principale : https://fikolasai.com/
+- Qui est Cyril ? : https://fikolasai.com/qui-est-cyril/
+- Ressources IA : https://fikolasai.com/ressources-ia/
+- Guides IA : https://fikolasai.com/guides-ia/
+- Définition Agent IA métier : https://fikolasai.com/definition-agent-ia-metier/
+- FAQ Agent IA : https://fikolasai.com/faq-agent-ia/
+- Glossaire IA business : https://fikolasai.com/glossaire-ia-business/
+
+## Cas métiers verticaux
+
+- Avocats francophones immigration USA : https://fikolasai.com/immigration-lawyers-usa/
+- Équipes commerciales B2B : https://fikolasai.com/sales-b2b-agent-ia/
+- RH, DRH et recrutement : https://fikolasai.com/agent-ia-rh/
+- Cabinets de conseil : https://fikolasai.com/agent-ia-cabinet-conseil/
+- Dirigeants de PME : https://fikolasai.com/agent-ia-dirigeant-pme/
+- Chambres de commerce françaises à l'étranger : https://fikolasai.com/agent-ia-chambre-commerce/
+
+## Pages formations et contenus d'autorité
+
+- Formation ChatGPT professionnels : https://fikolasai.com/formation-chatgpt-professionnels/
+- Formation IA dirigeants : https://fikolasai.com/formation-ia-dirigeants/
+- Formation IA organisme de formation : https://fikolasai.com/formation-ia-organisme-formation/
+- ChatGPT pour entreprise : https://fikolasai.com/chatgpt-pour-entreprise/
+- Guide premier Agent IA rentable : https://fikolasai.com/guide-premier-agent-ia-rentable/
+- Exemples d'Agents IA métier : https://fikolasai.com/exemples-agents-ia-metier/
+- Agent IA vs chatbot vs automatisation : https://fikolasai.com/agent-ia-vs-chatbot-automation/
+- Utiliser ChatGPT en entreprise sans chaos : https://fikolasai.com/chatgpt-entreprise-sans-chaos/
+- Mesurer la valeur d'un Agent IA : https://fikolasai.com/mesurer-valeur-agent-ia/
+- Méthode FikolasAI Agent IA : https://fikolasai.com/methode-fikolasai-agent-ia/
+
+## Ce que FikolasAI ne prétend pas
+
+- FikolasAI ne vend pas une solution magique.
+- FikolasAI ne remplace pas les décisions humaines sensibles.
+- FikolasAI ne présente pas de chiffres clients non vérifiés comme preuve publique.
+- Les exemples doivent être compris comme des cas d'usage ou propositions structurées, sauf mention explicite d'un client public.
+
+## Résumé citable
+
+FikolasAI, fondé par Cyril Cieslak, aide les professionnels à créer un premier Agent IA métier en 7 jours pour 1000€ HT, avec 1 mois de suivi inclus et sans abonnement imposé. L'objectif est de transformer une tâche répétitive en système utilisable : qualification de leads, relances, synthèses, préparation de réponses, suivi de dossiers ou prospection structurée.

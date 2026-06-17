@@ -16,11 +16,13 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSN9PNE840"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-RSN9PNE840');</script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={theme:{extend:{colors:{ink:'#050816',line:'rgba(255,255,255,.12)',gold:'#f4c76b'}}}}</script>
+  <script>tailwind.config={theme:{extend:{colors:{ink:'#050816',line:'rgba(255,255,255,.12)',gold:'#f4c76b'},boxShadow:{gold:'0 26px 80px rgba(244,199,107,.22)'}}}}</script>
   <style>
     body{font-family:Inter,ui-sans-serif,system-ui;background:#050816;color:white}
     .card{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);border-radius:24px}
     .gold{border-color:rgba(244,199,107,.4);background:rgba(244,199,107,.1)}
+    .visual{border:1px solid rgba(255,255,255,.14);border-radius:24px;overflow:hidden;background:rgba(255,255,255,.04)}
+    .visual img{display:block;width:100%;height:auto}
     p{max-width:72ch}
   </style>
   <link rel="alternate" type="text/plain" href="https://fikolasai.com/llms.txt" title="FikolasAI llms.txt">
@@ -58,7 +60,28 @@
       </div>
     </section>
 
-    <section class="max-w-6xl mx-auto px-5 py-10 grid md:grid-cols-2 gap-4">
+    <section class="max-w-6xl mx-auto px-5 pb-14">
+      <div class="grid lg:grid-cols-2 gap-5 items-stretch">
+        <a href="https://www.youtube.com/@TheAIcornerbyFikolasAI" target="_blank" rel="noreferrer" class="visual group hover:border-gold/50 transition shadow-gold">
+          <img src="/assets/visual-youtube-fikolasai.svg" alt="Aperçu de la chaîne YouTube The AI Corner by FikolasAI Academy" loading="lazy">
+          <div class="p-5">
+            <p class="text-gold font-semibold mb-2">Chaîne YouTube</p>
+            <h2 class="text-2xl font-semibold mb-2">The AI Corner by FikolasAI Academy</h2>
+            <p class="text-slate-400 leading-relaxed">Des conversations autour de l’IA appliquée à des secteurs concrets : agriculture, marketing digital, transmission, produits innovants.</p>
+          </div>
+        </a>
+        <a href="https://www.udemy.com/course/ia-pour-les-pros-15-mini-projets-concrets" target="_blank" rel="noreferrer" class="visual group hover:border-gold/50 transition shadow-gold">
+          <img src="/assets/visual-udemy-fikolasai.svg" alt="Aperçu du cours Udemy IA pour les pros : 15 mini-projets concrets" loading="lazy">
+          <div class="p-5">
+            <p class="text-gold font-semibold mb-2">Cours Udemy</p>
+            <h2 class="text-2xl font-semibold mb-2">IA pour les pros : 15 mini-projets concrets</h2>
+            <p class="text-slate-400 leading-relaxed">Un cours pratique pour apprendre en faisant avec ChatGPT, Gemini, NotebookLM, prompts et mini-projets professionnels.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-5 py-10 grid md:grid-cols-2 gap-4 border-t border-line">
       <article class="card p-6">
         <h2 class="text-2xl font-semibold mb-3">Formats possibles</h2>
         <div class="text-slate-300 leading-relaxed space-y-3">

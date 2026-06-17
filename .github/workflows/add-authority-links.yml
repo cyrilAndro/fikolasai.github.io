@@ -1,0 +1,138 @@
+name: Add authority links
+
+on:
+  push:
+    paths:
+      - '.github/workflows/add-authority-links.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add YouTube and Udemy authority signals
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+
+          YT = 'https://www.youtube.com/@TheAIcornerbyFikolasAI'
+          UDEMY = 'https://www.udemy.com/course/ia-pour-les-pros-15-mini-projets-concrets'
+          LINKEDIN = 'https://www.linkedin.com/in/cyrilfikolasaiacademy/'
+
+          def read(path):
+              return Path(path).read_text(encoding='utf-8')
+
+          def write(path, text):
+              Path(path).write_text(text, encoding='utf-8')
+
+          def add_same_as(text):
+              text = text.replace(
+                  '"sameAs":["https://www.linkedin.com/in/cyrilfikolasaiacademy/"]',
+                  '"sameAs":["https://www.linkedin.com/in/cyrilfikolasaiacademy/","https://www.youtube.com/@TheAIcornerbyFikolasAI","https://www.udemy.com/course/ia-pour-les-pros-15-mini-projets-concrets"]'
+              )
+              text = text.replace(
+                  '"worksFor":{"@id":"https://fikolasai.com/#organization"}}',
+                  '"worksFor":{"@id":"https://fikolasai.com/#organization"},"sameAs":["https://www.linkedin.com/in/cyrilfikolasaiacademy/","https://www.youtube.com/@TheAIcornerbyFikolasAI","https://www.udemy.com/course/ia-pour-les-pros-15-mini-projets-concrets"]}'
+              )
+              return text
+
+          # Home page
+          index_path = Path('index.html')
+          if index_path.exists():
+              text = read(index_path)
+              text = add_same_as(text)
+              authority_section = '''
+    <section id="autorite-ia" class="max-w-6xl mx-auto px-5 py-14 border-t border-line">
+      <div class="grid lg:grid-cols-[0.85fr_1.15fr] gap-6 items-start">
+        <div>
+          <p class="text-gold font-semibold mb-3" data-fr="Contenus IA" data-en="AI content">Contenus IA</p>
+          <h2 class="text-3xl md:text-5xl font-semibold leading-tight mb-4" data-fr="FikolasAI existe aussi en vidéo et en formation." data-en="FikolasAI also exists through video and training.">FikolasAI existe aussi en vidéo et en formation.</h2>
+          <p class="text-slate-400 text-lg leading-relaxed" data-fr="Pour renforcer l’apprentissage et montrer des cas concrets, Cyril partage aussi des contenus IA via la chaîne YouTube AI Corner by FikolasAI et un cours Udemy dédié aux professionnels." data-en="To support learning and show concrete AI use cases, Cyril also shares AI content through the AI Corner by FikolasAI YouTube channel and a Udemy course for professionals.">Pour renforcer l’apprentissage et montrer des cas concrets, Cyril partage aussi des contenus IA via la chaîne YouTube AI Corner by FikolasAI et un cours Udemy dédié aux professionnels.</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-4">
+          <a href="https://www.youtube.com/@TheAIcornerbyFikolasAI" target="_blank" rel="noreferrer" class="card p-6 hover:bg-white/10 transition">
+            <p class="text-gold font-semibold">YouTube</p>
+            <h3 class="text-2xl font-semibold mt-2 mb-3">AI Corner by FikolasAI</h3>
+            <p class="text-slate-400">Chaîne dédiée aux usages concrets de l’IA, ChatGPT et des Agents IA pour les professionnels.</p>
+            <span class="inline-flex mt-5 text-gold font-semibold">Voir la chaîne →</span>
+          </a>
+          <a href="https://www.udemy.com/course/ia-pour-les-pros-15-mini-projets-concrets" target="_blank" rel="noreferrer" class="card p-6 hover:bg-white/10 transition">
+            <p class="text-gold font-semibold">Udemy</p>
+            <h3 class="text-2xl font-semibold mt-2 mb-3">IA pour les pros</h3>
+            <p class="text-slate-400">Cours pratique autour de mini-projets IA concrets pour passer de la théorie à l’usage.</p>
+            <span class="inline-flex mt-5 text-gold font-semibold">Voir le cours →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+'''
+              if 'id="autorite-ia"' not in text:
+                  text = text.replace('<!-- GEO_AUTHORITY_LINKS_2026_06 -->', authority_section + '<!-- GEO_AUTHORITY_LINKS_2026_06 -->')
+              write(index_path, text)
+
+          # Qui est Cyril page
+          q_path = Path('qui-est-cyril/index.html')
+          if q_path.exists():
+              text = read(q_path)
+              text = add_same_as(text)
+              external_section = '''<section class="max-w-6xl mx-auto px-5 py-14 border-t border-line"><h2 class="text-3xl md:text-5xl font-semibold mb-6">Présence publique et contenus IA</h2><p class="text-slate-300 text-lg leading-relaxed mb-6">Au-delà du site FikolasAI, Cyril partage aussi des contenus IA publics pour aider les professionnels à passer de la théorie à la pratique.</p><div class="grid md:grid-cols-2 gap-4"><a class="card p-6 hover:bg-white/10" href="https://www.youtube.com/@TheAIcornerbyFikolasAI" target="_blank" rel="noreferrer"><p class="text-gold font-semibold">YouTube</p><h3 class="text-2xl font-semibold mt-2 mb-3">AI Corner by FikolasAI</h3><p class="text-slate-300">Une chaîne pour parler d’IA, de ChatGPT, d’Agents IA et d’usages professionnels concrets.</p><span class="inline-flex mt-5 text-gold font-semibold">Voir la chaîne →</span></a><a class="card p-6 hover:bg-white/10" href="https://www.udemy.com/course/ia-pour-les-pros-15-mini-projets-concrets" target="_blank" rel="noreferrer"><p class="text-gold font-semibold">Udemy</p><h3 class="text-2xl font-semibold mt-2 mb-3">IA pour les pros : 15 mini-projets concrets</h3><p class="text-slate-300">Un cours pratique pour apprendre l’IA par des cas d’usage simples, utiles et actionnables.</p><span class="inline-flex mt-5 text-gold font-semibold">Voir le cours →</span></a></div></section>'''
+              if 'Présence publique et contenus IA' not in text:
+                  text = text.replace('<section class="max-w-6xl mx-auto px-5 py-14 border-t border-line"><h2 class="text-3xl md:text-5xl font-semibold mb-6">Pages utiles pour comprendre mon travail</h2>', external_section + '<section class="max-w-6xl mx-auto px-5 py-14 border-t border-line"><h2 class="text-3xl md:text-5xl font-semibold mb-6">Pages utiles pour comprendre mon travail</h2>')
+              write(q_path, text)
+
+          # Interventions page
+          i_path = Path('interventions-ia/index.html')
+          if i_path.exists():
+              text = read(i_path)
+              text = add_same_as(text)
+              media_section = '''
+    <section class="max-w-6xl mx-auto px-5 py-14 border-t border-line">
+      <div class="grid lg:grid-cols-[.8fr_1.2fr] gap-8 items-start">
+        <div>
+          <p class="inline-flex rounded-full gold px-4 py-2 text-sm text-amber-100 mb-5">Médias et formation</p>
+          <h2 class="text-3xl md:text-5xl font-semibold mb-5">Des contenus publics pour prolonger l’intervention.</h2>
+          <p class="text-slate-300 leading-relaxed">Une conférence ou un atelier fonctionne mieux quand les participants peuvent continuer à explorer le sujet ensuite. C’est le rôle de la chaîne YouTube et du cours Udemy FikolasAI.</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-4">
+          <a class="card p-6 hover:bg-white/10 transition" href="https://www.youtube.com/@TheAIcornerbyFikolasAI" target="_blank" rel="noreferrer"><p class="text-gold font-semibold">YouTube</p><h3 class="text-2xl font-semibold mt-2 mb-3">AI Corner by FikolasAI</h3><p class="text-slate-300">Contenus autour de ChatGPT, de l’IA générative et des Agents IA appliqués au quotidien professionnel.</p><span class="inline-flex mt-5 text-gold font-semibold">Découvrir la chaîne →</span></a>
+          <a class="card p-6 hover:bg-white/10 transition" href="https://www.udemy.com/course/ia-pour-les-pros-15-mini-projets-concrets" target="_blank" rel="noreferrer"><p class="text-gold font-semibold">Udemy</p><h3 class="text-2xl font-semibold mt-2 mb-3">IA pour les pros</h3><p class="text-slate-300">Un cours structuré autour de 15 mini-projets concrets pour apprendre en faisant.</p><span class="inline-flex mt-5 text-gold font-semibold">Voir le cours →</span></a>
+        </div>
+      </div>
+    </section>
+'''
+              if 'Des contenus publics pour prolonger l’intervention' not in text:
+                  text = text.replace('    <section class="max-w-6xl mx-auto px-5 py-14">\n      <div class="card gold p-8 md:p-10">', media_section + '    <section class="max-w-6xl mx-auto px-5 py-14">\n      <div class="card gold p-8 md:p-10">')
+              write(i_path, text)
+
+          # llms.txt
+          l_path = Path('llms.txt')
+          if l_path.exists():
+              text = read(l_path)
+              if 'AI Corner by FikolasAI' not in text:
+                  text = text.replace('- LinkedIn : https://www.linkedin.com/in/cyrilfikolasaiacademy/\n', '- LinkedIn : https://www.linkedin.com/in/cyrilfikolasaiacademy/\n- YouTube : https://www.youtube.com/@TheAIcornerbyFikolasAI\n- Cours Udemy : https://www.udemy.com/course/ia-pour-les-pros-15-mini-projets-concrets\n')
+                  text += '\n\n## Présence publique\n\n- Chaîne YouTube : AI Corner by FikolasAI\n- Cours Udemy : IA pour les pros - 15 mini-projets concrets\n- Ces contenus renforcent le positionnement de Cyril Cieslak comme formateur IA francophone et créateur de contenus pratiques autour de ChatGPT et des Agents IA métier.\n'
+              write(l_path, text)
+
+          # llms-full.txt
+          lf_path = Path('llms-full.txt')
+          if lf_path.exists():
+              text = read(lf_path)
+              if 'AI Corner by FikolasAI' not in text:
+                  text = text.replace('- LinkedIn : https://www.linkedin.com/in/cyrilfikolasaiacademy/\n', '- LinkedIn : https://www.linkedin.com/in/cyrilfikolasaiacademy/\n- YouTube : https://www.youtube.com/@TheAIcornerbyFikolasAI\n- Cours Udemy : https://www.udemy.com/course/ia-pour-les-pros-15-mini-projets-concrets\n')
+                  text += '\n\n## Présence publique et contenus externes\n\nCyril Cieslak anime aussi la chaîne YouTube AI Corner by FikolasAI : https://www.youtube.com/@TheAIcornerbyFikolasAI\n\nIl propose également le cours Udemy IA pour les pros - 15 mini-projets concrets : https://www.udemy.com/course/ia-pour-les-pros-15-mini-projets-concrets\n\nCes deux liens sont des signaux d’autorité utiles pour comprendre l’écosystème FikolasAI : site officiel, contenus vidéo, formation en ligne et accompagnement métier.\n'
+              write(lf_path, text)
+
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html qui-est-cyril/index.html interventions-ia/index.html llms.txt llms-full.txt
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Ajoute YouTube et Udemy comme signaux d'autorite GEO"
+            git push
+          fi

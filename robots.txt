@@ -5,3 +5,4 @@ Sitemap: https://fikolasai.com/sitemap.xml
 
 # AI discovery
 # llms.txt: https://fikolasai.com/llms.txt
+# llms-full.txt: https://fikolasai.com/llms-full.txt

@@ -80,3 +80,16 @@ Objectif : rendre le site plus lisible, compréhensible et citable par les moteu
 - Ne pas multiplier les images externes trop lourdes sans optimisation.
 - Ne pas créer de pages anglaises sans vraie stratégie `hreflang`.
 - Ne pas mettre de schema FAQ sans FAQ visible sur la page.
+
+
+## Expansion LLMO juin 2026
+
+- [x] Créer `/creer-agent-ia-pme/`.
+- [x] Créer `/formation-chatgpt-dirigeants/`.
+- [x] Créer `/formateur-ia-francophone/`.
+- [x] Créer `/conferencier-ia-french-tech/`.
+- [x] Créer `/formation-chatgpt-vs-agent-ia/`.
+- [x] Créer `/interventions-ia/` avec placeholders de preuves.
+- [x] Réécrire `llms.txt` et créer `llms-full.txt`.
+- [ ] Ajouter les preuves publiques validées : replays, logos, témoignages, liens French Tech ou médias.
+- [ ] Vérifier les nouvelles pages dans Google Search Console après déploiement GitHub Pages.

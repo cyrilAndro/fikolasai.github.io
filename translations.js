@@ -1,0 +1,1 @@
+/* FikolasAI bilingual homepage translations. */

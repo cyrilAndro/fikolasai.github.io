@@ -10,7 +10,7 @@
   </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="FikolasAI installe votre propre Agent IA en moins de 7 jours pour 1000€ HT, puis accompagne votre montée en puissance avec formation, agents personnalisés et systèmes d'agents.">
+  <meta name="description" content="Agent IA métier prêt en 7 jours pour PME et dirigeants : 1000€ HT, 1 mois inclus, sans abonnement imposé. Exemples concrets et méthode FikolasAI.">
   <meta name="theme-color" content="#0f172a">
   <meta property="og:title" content="FikolasAI | Votre Agent IA en 7 jours">
   <meta property="og:description" content="Votre propre Agent IA opérationnel en moins de 7 jours pour 1000€ HT. Simple, concret, prêt à utiliser.">
@@ -19,6 +19,7 @@
   <meta property="og:image" content="https://fikolasai.com/assets/photo-cyril.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://fikolasai.com/">
+  <link rel="alternate" type="text/plain" href="https://fikolasai.com/llms.txt" title="FikolasAI llms.txt">
   <title>FikolasAI | Votre Agent IA en 7 jours</title>
   <script type="application/ld+json">
   {
@@ -29,6 +30,7 @@
         "@id": "https://fikolasai.com/#organization",
         "name": "FikolasAI",
         "url": "https://fikolasai.com/",
+        "logo": "https://fikolasai.com/assets/photo-cyril.png",
         "founder": { "@id": "https://fikolasai.com/#cyril-cieslak" },
         "sameAs": [
           "https://www.linkedin.com/in/cyrilfikolasaiacademy/",
@@ -48,21 +50,88 @@
           "https://www.youtube.com/@TheAIcornerbyFikolasAI",
           "https://www.udemy.com/course/ia-pour-les-pros-15-mini-projets-concrets"
         ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://fikolasai.com/#ai-agent-service",
+        "name": "Création d'un Agent IA métier en 7 jours",
+        "serviceType": "Conception et mise en place d'Agent IA métier",
+        "provider": { "@id": "https://fikolasai.com/#organization" },
+        "areaServed": ["France", "United States"],
+        "audience": {
+          "@type": "BusinessAudience",
+          "audienceType": "Dirigeants, PME et équipes professionnelles"
+        },
+        "description": "Transformation d'une tâche métier répétitive en Agent IA utilisable, testé sur les exemples du client et livré en 7 jours.",
+        "offers": {
+          "@type": "Offer",
+          "price": "1000",
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/InStock",
+          "url": "https://fikolasai.com/#offers",
+          "description": "Prix fixe de 1000€ HT, livraison en 7 jours et 1 mois d'utilisation inclus, sans abonnement imposé."
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://fikolasai.com/#website",
+        "name": "FikolasAI",
+        "url": "https://fikolasai.com/",
+        "publisher": { "@id": "https://fikolasai.com/#organization" },
+        "inLanguage": "fr"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://fikolasai.com/#webpage",
+        "url": "https://fikolasai.com/",
+        "name": "FikolasAI | Votre Agent IA en 7 jours",
+        "description": "Agent IA métier prêt en 7 jours pour PME et dirigeants.",
+        "isPartOf": { "@id": "https://fikolasai.com/#website" },
+        "about": { "@id": "https://fikolasai.com/#ai-agent-service" },
+        "inLanguage": "fr"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://fikolasai.com/#faq-schema",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Qu'est-ce que je reçois pour 1000€ HT ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Votre propre Agent IA, cadré autour d'un cas d'usage clair, testé sur vos exemples et livré avec une prise en main simple."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Est-ce vraiment livré en moins de 7 jours ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui. L'offre est volontairement cadrée pour livrer vite un premier agent utile, sans transformer cela en grand projet."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Et après ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Vous pouvez rester autonome, passer sur l'offre Agent pour optimiser, rejoindre Academy pour monter en compétence, ou évoluer vers Studio."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Dois-je être technique ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non. L'objectif est de rendre l'IA utilisable sans jargon, à partir de vos tâches réelles."
+            }
+          }
+        ]
       }
     ]
   }
   </script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: { primary: '#3b82f6', secondary: '#8b5cf6', accent: '#10b981', gold: '#f4c76b' },
-          boxShadow: { glow: '0 24px 80px rgba(59,130,246,0.22)', gold: '0 28px 90px rgba(244,199,107,0.25)' }
-        }
-      }
-    }
-  </script>
+  <link rel="stylesheet" href="/assets/site.css">
   <style>
     body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
     .animate-gradient { background-size: 200% 200%; animation: gradient 8s ease infinite; }
@@ -236,6 +305,7 @@
               <p><strong class="text-white">L'agent prépare</strong><span class="block text-slate-400">Un résumé du contexte, un niveau de priorité et une relance personnalisée.</span></p>
               <p><strong class="text-white">Vous validez</strong><span class="block text-slate-400">Le message final et la prochaine action commerciale.</span></p>
             </div>
+            <a href="/sales-b2b-agent-ia/" class="mt-6 inline-flex font-semibold text-blue-300 hover:text-white">Voir le cas métier →</a>
           </div>
         </article>
 
@@ -258,6 +328,7 @@
               <p><strong class="text-white">L'agent prépare</strong><span class="block text-slate-400">Une synthèse factuelle, les points à approfondir et une trame d'entretien.</span></p>
               <p><strong class="text-white">Vous validez</strong><span class="block text-slate-400">L'évaluation humaine et la réponse au candidat.</span></p>
             </div>
+            <a href="/agent-ia-rh/" class="mt-6 inline-flex font-semibold text-violet-300 hover:text-white">Voir le cas métier →</a>
           </div>
         </article>
 
@@ -279,6 +350,7 @@
               <p><strong class="text-white">L'agent prépare</strong><span class="block text-slate-400">Une fiche de dossier, les informations manquantes et une checklist.</span></p>
               <p><strong class="text-white">Vous validez</strong><span class="block text-slate-400">L'analyse, le conseil et toute décision juridique.</span></p>
             </div>
+            <a href="/agent-ia-avocat/" class="mt-6 inline-flex font-semibold text-amber-300 hover:text-white">Voir le cas métier →</a>
           </div>
         </article>
 
@@ -301,6 +373,7 @@
               <p><strong class="text-white">L'agent prépare</strong><span class="block text-slate-400">Un compte rendu, une synthèse et un premier plan de recommandations.</span></p>
               <p><strong class="text-white">Vous validez</strong><span class="block text-slate-400">L'analyse, les recommandations et le livrable client.</span></p>
             </div>
+            <a href="/agent-ia-cabinet-conseil/" class="mt-6 inline-flex font-semibold text-emerald-300 hover:text-white">Voir le cas métier →</a>
           </div>
         </article>
 
@@ -322,6 +395,7 @@
               <p><strong class="text-white">L'agent prépare</strong><span class="block text-slate-400">Un briefing synthétique, les alertes et les décisions à prendre.</span></p>
               <p><strong class="text-white">Vous validez</strong><span class="block text-slate-400">Les priorités et les actions confiées à l'équipe.</span></p>
             </div>
+            <a href="/agent-ia-dirigeant-pme/" class="mt-6 inline-flex font-semibold text-cyan-300 hover:text-white">Voir le cas métier →</a>
           </div>
         </article>
 
@@ -346,6 +420,7 @@
               <p><strong class="text-white">L'agent prépare</strong><span class="block text-slate-400">Une synthèse, des contacts pertinents et un message d'introduction.</span></p>
               <p><strong class="text-white">Vous validez</strong><span class="block text-slate-400">La pertinence des contacts et l'envoi de l'introduction.</span></p>
             </div>
+            <a href="/agent-ia-chambre-commerce/" class="mt-6 inline-flex font-semibold text-rose-300 hover:text-white">Voir le cas métier →</a>
           </div>
         </article>
       </div>
@@ -532,6 +607,15 @@
         <a href="https://tally.so/r/2EbyZL" target="_blank" class="text-gold hover:text-white transition-colors">Nous contacter</a>
         <a href="https://www.linkedin.com/in/cyrilfikolasaiacademy/" target="_blank" class="text-gold hover:text-white transition-colors">LinkedIn</a>
       </div>
+      <nav aria-label="Ressources FikolasAI" class="mt-8 flex justify-center flex-wrap gap-x-7 gap-y-3 text-sm text-slate-400">
+        <a href="/ressources-ia/" class="hover:text-white">Ressources IA</a>
+        <a href="/guides-ia/" class="hover:text-white">Guides IA</a>
+        <a href="/creer-agent-ia-pme/" class="hover:text-white">Créer un Agent IA</a>
+        <a href="/formation-chatgpt-dirigeants/" class="hover:text-white">Formation ChatGPT</a>
+        <a href="/qui-est-cyril/" class="hover:text-white">Qui est Cyril ?</a>
+        <a href="/faq-agent-ia/" class="hover:text-white">FAQ Agent IA</a>
+        <a href="/glossaire-ia-business/" class="hover:text-white">Glossaire IA</a>
+      </nav>
     </div>
   </footer>
   <script src="translations.js"></script>

@@ -3,6 +3,7 @@
     ["FikolasAI | Votre Agent IA en 7 jours", "FikolasAI | Your AI Agent in 7 days"],
     ["Offres", "Offers"],
     ["Métiers", "Industries"],
+    ["Voir toutes les solutions IA par métier", "View all AI solutions by industry"],
     ["Preuves", "Proof"],
     ["Créer mon Agent IA", "Create my AI Agent"],
     ["Offre principale · Livraison sous 7 jours", "Main offer · Delivered within 7 days"],

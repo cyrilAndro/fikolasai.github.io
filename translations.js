@@ -120,6 +120,7 @@
     ["Votre métier n'est pas dans la liste ?", "Your industry is not listed?"],
     ["Décrivez une tâche répétitive. Le diagnostic sert précisément à déterminer si elle mérite un agent.", "Describe a repetitive task. The assessment determines whether it is a good candidate for an agent."],
     ["Décrire ma tâche", "Describe my task"],
+    ["Voir le cas métier →", "View the industry case →"],
     ["Cas pilote proposé", "Proposed pilot case"],
     ["Entreprise de services", "Service company"],
     ["Agent de préparation de devis", "Proposal preparation agent"],
@@ -202,6 +203,13 @@
     ["Non. L'objectif est justement de rendre l'IA utilisable sans jargon, à partir de vos tâches réelles.", "No. The goal is to make AI usable without jargon, starting from your real tasks."],
     ["Votre Agent IA peut être prêt la semaine prochaine.", "Your AI Agent could be ready next week."],
     ["Décrivez votre besoin en 2 minutes. Je vous réponds avec le meilleur cas d'usage pour démarrer vite.", "Describe your need in 2 minutes. I will reply with the best use case for a fast start."],
+    ["Ressources IA", "AI resources"],
+    ["Guides IA", "AI guides"],
+    ["Créer un Agent IA", "Build an AI Agent"],
+    ["Formation ChatGPT", "ChatGPT training"],
+    ["Qui est Cyril ?", "Who is Cyril?"],
+    ["FAQ Agent IA", "AI Agent FAQ"],
+    ["Glossaire IA", "AI glossary"],
     ["Nous contacter", "Contact us"]
   ]);
 

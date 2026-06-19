@@ -54,6 +54,8 @@ Sujets visibles du cours : NotebookLM, prompts, contenus professionnels, présen
 
 ## Pages importantes
 
+- Solutions IA par métier : https://fikolasai.com/solutions-ia-metiers/
+
 - Accueil : https://fikolasai.com/
 - Qui est Cyril ? : https://fikolasai.com/qui-est-cyril/
 - Ressources IA : https://fikolasai.com/ressources-ia/

@@ -2,134 +2,373 @@
 <html lang="fr" class="scroll-smooth">
 <head>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSN9PNE840"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-RSN9PNE840');</script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RSN9PNE840');
+  </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Transformez une tâche répétitive en Agent IA prêt à l'emploi en 7 jours. 1000€ HT, 1 mois inclus, pas d'abonnement imposé.">
-  <meta name="theme-color" content="#050816">
-  <link rel="canonical" href="https://fikolasai.com/">
-  <meta property="og:title" content="FikolasAI | Agent IA prêt en 7 jours">
-  <meta property="og:description" content="Votre premier Agent IA métier : 1000€ HT, livré en 7 jours, utilisable pendant 1 mois inclus.">
+  <meta name="description" content="FikolasAI installe votre propre Agent IA en moins de 7 jours pour 1000€ HT, puis accompagne votre montée en puissance avec formation, agents personnalisés et systèmes d'agents.">
+  <meta name="theme-color" content="#0f172a">
+  <meta property="og:title" content="FikolasAI | Votre Agent IA en 7 jours">
+  <meta property="og:description" content="Votre propre Agent IA opérationnel en moins de 7 jours pour 1000€ HT. Simple, concret, prêt à utiliser.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://fikolasai.com/">
   <meta property="og:image" content="https://fikolasai.com/assets/photo-cyril.png">
   <meta name="twitter:card" content="summary_large_image">
-  <title>FikolasAI | Agent IA prêt en 7 jours</title>
+  <link rel="canonical" href="https://fikolasai.com/">
+  <title>FikolasAI | Votre Agent IA en 7 jours</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://fikolasai.com/#organization",
+        "name": "FikolasAI",
+        "url": "https://fikolasai.com/",
+        "founder": { "@id": "https://fikolasai.com/#cyril-cieslak" },
+        "sameAs": [
+          "https://www.linkedin.com/in/cyrilfikolasaiacademy/",
+          "https://www.youtube.com/@TheAIcornerbyFikolasAI",
+          "https://www.udemy.com/course/ia-pour-les-pros-15-mini-projets-concrets"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://fikolasai.com/#cyril-cieslak",
+        "name": "Cyril Cieslak",
+        "url": "https://fikolasai.com/qui-est-cyril/",
+        "jobTitle": "Fondateur de FikolasAI",
+        "worksFor": { "@id": "https://fikolasai.com/#organization" },
+        "sameAs": [
+          "https://www.linkedin.com/in/cyrilfikolasaiacademy/",
+          "https://www.youtube.com/@TheAIcornerbyFikolasAI",
+          "https://www.udemy.com/course/ia-pour-les-pros-15-mini-projets-concrets"
+        ]
+      }
+    ]
+  }
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={theme:{extend:{colors:{ink:'#050816',line:'rgba(255,255,255,0.12)',gold:'#f4c76b'},boxShadow:{gold:'0 26px 80px rgba(244,199,107,0.22)',soft:'0 24px 70px rgba(15,23,42,0.35)'}}}}</script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: '#3b82f6', secondary: '#8b5cf6', accent: '#10b981', gold: '#f4c76b' },
+          boxShadow: { glow: '0 24px 80px rgba(59,130,246,0.22)', gold: '0 28px 90px rgba(244,199,107,0.25)' }
+        }
+      }
+    }
+  </script>
   <style>
-    body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-    .glass{background:rgba(15,23,42,.72);backdrop-filter:blur(18px)}
-    .card{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);border-radius:24px}
-    .gold-card{border:1px solid rgba(244,199,107,.38);background:rgba(244,199,107,.10)}
-    .case-img{height:128px;background-size:cover;background-position:center}
-    .lang-active{background:#f4c76b;color:#07111f}
+    body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    .animate-gradient { background-size: 200% 200%; animation: gradient 8s ease infinite; }
+    @keyframes gradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
   </style>
-<link rel="alternate" type="text/plain" href="https://fikolasai.com/llms.txt" title="FikolasAI llms.txt"><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://fikolasai.com/#organization","name":"FikolasAI","url":"https://fikolasai.com/","logo":"https://fikolasai.com/assets/photo-cyril.png","founder":{"@id":"https://fikolasai.com/qui-est-cyril/#person"},"sameAs":["https://www.linkedin.com/in/cyrilfikolasaiacademy/"]},{"@type":"Person","@id":"https://fikolasai.com/qui-est-cyril/#person","name":"Cyril Cieslak","url":"https://fikolasai.com/qui-est-cyril/","email":"cyril.fikolasai@gmail.com","jobTitle":"Fondateur de FikolasAI","worksFor":{"@id":"https://fikolasai.com/#organization"}},{"@type":"Service","@id":"https://fikolasai.com/#fikolasai-agent","name":"FikolasAI Agent - premier Agent IA métier","serviceType":"Création d’Agent IA métier","provider":{"@id":"https://fikolasai.com/#organization"},"areaServed":["France","United States"],"description":"Création d’un premier Agent IA métier prêt à l’emploi en 7 jours pour transformer une tâche répétitive en système utilisable.","offers":{"@type":"Offer","price":"1000","priceCurrency":"EUR","availability":"https://schema.org/InStock","description":"1000€ HT par Agent IA, livraison en 7 jours, 1 mois de suivi inclus, sans abonnement imposé."}},{"@type":"WebSite","@id":"https://fikolasai.com/#website","name":"FikolasAI","url":"https://fikolasai.com/","publisher":{"@id":"https://fikolasai.com/#organization"},"inLanguage":["fr","en"]}]}</script></head>
-<body class="bg-ink text-white overflow-x-hidden pb-24 sm:pb-0">
-  <div class="fixed inset-0 pointer-events-none -z-10"><div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(244,199,107,0.18),transparent_32%),radial-gradient(circle_at_82%_12%,rgba(59,130,246,0.14),transparent_34%),linear-gradient(180deg,#050816_0%,#0b1120_48%,#050816_100%)]"></div><div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:72px_72px] opacity-30"></div></div>
+</head>
+<body class="bg-slate-950 text-slate-50 overflow-x-hidden">
+  <div class="fixed inset-0 pointer-events-none">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.18),transparent_34%),radial-gradient(circle_at_bottom_left,rgba(16,185,129,0.14),transparent_32%)]"></div>
+    <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:64px_64px] opacity-40"></div>
+  </div>
 
-  <nav class="fixed top-0 w-full z-50 border-b border-line bg-ink/88 backdrop-blur-xl">
-    <div class="max-w-6xl mx-auto px-5 min-h-16 py-3 flex flex-wrap items-center justify-between gap-3">
-      <a href="#top" class="text-xl font-semibold tracking-normal">FikolasAI</a>
-      <div class="flex items-center gap-3">
-        <div class="hidden lg:flex items-center gap-1 text-sm text-slate-300">
-          <a href="#offer" class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition" data-fr="Offre" data-en="Offer">Offre</a>
-          <a href="#verticals" class="px-3 py-2 rounded-lg bg-gold/10 border border-gold/30 text-amber-100 font-semibold hover:bg-gold/20 transition" data-fr="Cas métiers" data-en="Industry cases">Cas métiers</a>
-          <a href="/ressources-ia/" class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition" data-fr="Ressources" data-en="Resources">Ressources</a><a href="/guides-ia/" class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition" data-fr="Guides IA" data-en="AI guides">Guides IA</a>
-          <a href="/qui-est-cyril/" class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition" data-fr="Qui est Cyril ?" data-en="Who is Cyril?">Qui est Cyril ?</a><a href="/formation-chatgpt-dirigeants/" class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition" data-fr="Formation IA" data-en="AI training">Formation IA</a>
-        </div>
-        <details class="relative lg:hidden">
-          <summary class="list-none cursor-pointer inline-flex h-10 items-center gap-2 rounded-lg border border-line bg-white/5 px-3 text-sm font-semibold text-slate-100 hover:bg-white/10 [&::-webkit-details-marker]:hidden"><span data-fr="Menu" data-en="Menu">Menu</span><span class="text-xs text-slate-400">▾</span></summary>
-          <div class="absolute right-0 mt-2 w-64 rounded-2xl border border-line bg-[#080d1d] p-2 shadow-2xl grid gap-2">
-            <a href="#offer" class="rounded-xl border border-line bg-white/[0.04] px-3 py-3 text-sm font-semibold hover:bg-white/10" data-fr="Offre" data-en="Offer">Offre</a>
-            <a href="#verticals" class="rounded-xl border border-gold/30 bg-gold/10 px-3 py-3 text-sm font-semibold text-amber-100 hover:bg-gold/20" data-fr="Cas métiers" data-en="Industry cases">Cas métiers</a>
-            <a href="/ressources-ia/" class="rounded-xl border border-line bg-white/[0.04] px-3 py-3 text-sm font-semibold hover:bg-white/10" data-fr="Ressources" data-en="Resources">Ressources</a><a href="/guides-ia/" class="rounded-xl border border-line bg-white/[0.04] px-3 py-3 text-sm font-semibold hover:bg-white/10" data-fr="Guides IA" data-en="AI guides">Guides IA</a>
-            <a href="/qui-est-cyril/" class="rounded-xl border border-line bg-white/[0.04] px-3 py-3 text-sm font-semibold hover:bg-white/10" data-fr="Qui est Cyril ?" data-en="Who is Cyril?">Qui est Cyril ?</a>
-          </div>
-        </details>
-        <button onclick="toggleLang()" id="lang-btn" class="h-10 px-3 rounded-lg border border-line bg-white/5 text-sm font-semibold hover:bg-white/10 transition">EN</button>
-        <a href="https://calendly.com/cyril-fikolasai/rdv-cyril-fikolasai-agent" target="_blank" rel="noreferrer" class="hidden sm:inline-flex h-10 items-center px-4 rounded-lg bg-gold text-slate-950 text-sm font-bold hover:bg-amber-200 transition" data-fr="Trouver mon Agent IA rentable" data-en="Find my profitable AI Agent">Trouver mon Agent IA rentable</a>
+  <nav class="fixed top-0 w-full z-50 border-b border-white/10 bg-slate-950/82 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 h-16 flex justify-between items-center">
+      <a href="#" class="text-xl font-semibold bg-gradient-to-br from-white to-slate-400 bg-clip-text text-transparent">FikolasAI</a>
+      <div class="flex items-center gap-4">
+        <ul class="hidden lg:flex gap-6 text-sm text-slate-400">
+          <li><a href="#offers" class="hover:text-white">Offres</a></li>
+          <li><a href="#metiers" class="hover:text-white">Métiers</a></li>
+          <li><a href="#process" class="hover:text-white">Process</a></li>
+          <li><a href="#about" class="hover:text-white">Cyril</a></li>
+          <li><a href="#preuves" class="hover:text-white">Preuves</a></li>
+          <li><a href="#faq" class="hover:text-white">FAQ</a></li>
+        </ul>
+        <button type="button" id="language-toggle" class="px-3 py-2 rounded-lg border border-white/15 bg-white/5 text-sm font-semibold hover:bg-white/10 transition" aria-label="Switch to English" aria-pressed="false">EN</button>
+        <a href="https://tally.so/r/2EbyZL" target="_blank" class="hidden sm:inline-flex px-4 py-2 rounded-lg bg-gold text-slate-950 text-sm font-semibold hover:bg-amber-200 transition">Créer mon Agent IA</a>
       </div>
     </div>
   </nav>
 
-  <main id="top" class="relative z-10 pt-16">
-    <section class="max-w-6xl mx-auto px-5 py-12 md:py-18">
-      <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-12 items-center">
+  <main class="relative z-10 pt-16">
+    <section class="max-w-7xl mx-auto px-5 sm:px-6 py-20 md:py-28">
+      <div class="grid lg:grid-cols-[1.04fr_0.96fr] gap-12 items-center">
         <div>
-          <p class="inline-flex rounded-full border border-gold/35 bg-gold/10 px-4 py-2 text-sm text-amber-100 mb-6" data-fr="Offre best-seller · 1000€ HT · livré sous 7 jours" data-en="Best-seller offer · €1000 excl. VAT · delivered in 7 days">Offre best-seller · 1000€ HT · livré sous 7 jours</p>
-          <h1 class="text-4xl sm:text-5xl md:text-7xl font-semibold leading-[1.03] tracking-normal mb-6" data-fr-html="Transformez une tâche répétitive<br><span class='text-gold'>en Agent IA prêt à l’emploi</span><br>en 7 jours." data-en-html="Turn one repetitive task<br><span class='text-gold'>into a ready-to-use AI Agent</span><br>in 7 days.">Transformez une tâche répétitive<br><span class="text-gold">en Agent IA prêt à l’emploi</span><br>en 7 jours.</h1>
-          <p class="text-xl md:text-2xl text-slate-200 leading-relaxed mb-5" data-fr="Vous me donnez une tâche métier qui vous prend du temps. Je vous livre un agent simple, utilisable, et adapté à votre façon de travailler." data-en="You give me one business task that takes your time. I deliver a simple, usable agent adapted to the way you work.">Vous me donnez une tâche métier qui vous prend du temps. Je vous livre un agent simple, utilisable, et adapté à votre façon de travailler.</p>
-          <div class="rounded-2xl border border-line bg-white/5 p-5 mb-6"><p class="text-base md:text-lg text-slate-300 leading-relaxed" data-fr-html="<strong class='text-white'>Un Agent IA</strong>, c’est un assistant métier qui prend en charge une tâche répétitive : relancer, qualifier, résumer, préparer, classer ou rédiger." data-en-html="<strong class='text-white'>An AI Agent</strong> is a business assistant that handles one repetitive task: follow up, qualify, summarize, prepare, classify or draft."><strong class="text-white">Un Agent IA</strong>, c’est un assistant métier qui prend en charge une tâche répétitive : relancer, qualifier, résumer, préparer, classer ou rédiger.</p></div>
-          <p class="text-sm text-amber-100 font-semibold mb-3" data-fr="En 15 minutes, on identifie la tâche à automatiser en priorité." data-en="In 15 minutes, we identify the task to automate first.">En 15 minutes, on identifie la tâche à automatiser en priorité.</p>
-          <div class="flex flex-col sm:flex-row gap-3 mb-7">
-            <a href="https://calendly.com/cyril-fikolasai/rdv-cyril-fikolasai-agent" target="_blank" rel="noreferrer" class="inline-flex justify-center px-6 py-4 rounded-lg bg-gold text-slate-950 font-bold hover:bg-amber-200 transition shadow-gold" data-fr="Trouver mon Agent IA rentable" data-en="Find my profitable AI Agent">Trouver mon Agent IA rentable</a>
-            <a href="#verticals" class="inline-flex justify-center px-6 py-4 rounded-lg border border-line bg-white/5 font-semibold hover:bg-white/10 transition" data-fr="Voir les cas métiers" data-en="See industry cases">Voir les cas métiers</a>
-            <a href="https://tally.so/r/2EbyZL" target="_blank" rel="noreferrer" class="inline-flex justify-center px-6 py-4 rounded-lg border border-gold/35 bg-gold/10 font-semibold text-amber-100 hover:bg-gold/20 transition" data-fr="Remplir le diagnostic complet" data-en="Complete the full diagnostic">Remplir le diagnostic complet</a>
+          <p class="inline-flex items-center rounded-full border border-gold/40 bg-gold/10 px-4 py-2 text-sm text-amber-100 mb-6">Offre principale · Livraison sous 7 jours</p>
+          <h1 class="text-4xl sm:text-5xl md:text-7xl font-semibold tracking-normal leading-tight mb-6">Votre propre Agent IA,<br><span class="bg-gradient-to-r from-gold via-primary to-accent bg-clip-text text-transparent animate-gradient">opérationnel en 7 jours.</span></h1>
+          <p class="text-lg md:text-xl text-slate-300 max-w-3xl mb-8 leading-relaxed">FikolasAI met en place un Agent IA adapté à votre activité, vos tâches et vos objectifs. Pas une démo gadget. Un agent concret, prêt à utiliser, pour gagner du temps et retirer une friction métier dès la première semaine.</p>
+          <div class="flex flex-col sm:flex-row gap-4 mb-10">
+            <a href="https://tally.so/r/2EbyZL" target="_blank" class="inline-flex justify-center px-6 py-3 bg-gold text-slate-950 rounded-lg font-semibold hover:bg-amber-200 transition shadow-gold">Créer mon Agent IA</a>
+            <a href="#offers" class="inline-flex justify-center px-6 py-3 bg-white/5 border border-white/10 rounded-lg font-semibold hover:bg-white/10 transition">Voir les offres</a>
           </div>
-          <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 text-sm">
-            <div class="rounded-xl border border-gold/25 bg-gold/10 p-4"><strong class="block text-white" data-fr="Prix fixe" data-en="Fixed price">Prix fixe</strong><span class="text-3xl font-semibold text-gold leading-tight">1000€ HT</span></div>
-            <div class="rounded-xl border border-gold/25 bg-gold/10 p-4"><strong class="block text-white" data-fr="Livré vite" data-en="Fast delivery">Livré vite</strong><span class="text-slate-300" data-fr="7 jours" data-en="7 days">7 jours</span></div>
-            <div class="rounded-xl border border-gold/25 bg-gold/10 p-4"><strong class="block text-white" data-fr="1 mois inclus" data-en="1 month included">1 mois inclus</strong><span class="text-slate-300" data-fr="hébergé" data-en="hosted">hébergé</span></div>
-            <div class="rounded-xl border border-gold/25 bg-gold/10 p-4"><strong class="block text-white" data-fr="Libre après" data-en="Free after">Libre après</strong><span class="text-slate-300" data-fr="pas d’abonnement imposé" data-en="no forced subscription">pas d’abonnement imposé</span></div>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+            <div class="rounded-xl bg-white/5 border border-white/10 p-4"><strong class="block text-2xl text-white">1000€</strong><span class="text-slate-400">HT, prix clair</span></div>
+            <div class="rounded-xl bg-white/5 border border-white/10 p-4"><strong class="block text-2xl text-white">7 jours</strong><span class="text-slate-400">livraison rapide</span></div>
+            <div class="rounded-xl bg-white/5 border border-white/10 p-4"><strong class="block text-2xl text-white">1 agent</strong><span class="text-slate-400">adapté à votre métier</span></div>
+            <div class="rounded-xl bg-white/5 border border-white/10 p-4"><strong class="block text-2xl text-white">0 jargon</strong><span class="text-slate-400">prise en main simple</span></div>
           </div>
         </div>
-        <aside class="glass rounded-3xl border border-gold/35 p-5 md:p-6 shadow-soft">
-          <div class="relative overflow-hidden rounded-2xl border border-white/15 bg-slate-950/40 mb-5">
-            <img src="assets/photo-cyril.png" alt="Cyril Cieslak" class="h-[420px] sm:h-[500px] lg:h-[560px] w-full object-cover object-center">
-            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent p-6 pt-24"><p class="text-sm text-amber-100 mb-2" data-fr="Votre agent est construit avec Cyril" data-en="Your agent is built with Cyril">Votre agent est construit avec Cyril</p><p class="text-3xl md:text-4xl font-semibold">Cyril Cieslak</p><p class="text-slate-300 mt-1" data-fr="Fondateur de FikolasAI" data-en="Founder of FikolasAI">Fondateur de FikolasAI</p></div>
-            <a href="https://www.linkedin.com/in/cyrilfikolasaiacademy/" target="_blank" rel="noreferrer" aria-label="Voir le profil LinkedIn de Cyril Cieslak" class="absolute right-4 top-4 inline-flex h-11 w-11 items-center justify-center rounded-lg bg-[#0A66C2] text-white ring-4 ring-slate-950/70 hover:bg-[#0b5cad] transition"><svg viewBox="0 0 24 24" class="h-5 w-5" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.02H3.54V9H7.1v11.45Z"/></svg></a>
+        <div class="rounded-2xl border border-gold/30 bg-slate-900/80 p-6 md:p-8 shadow-gold">
+          <div class="flex items-center gap-5 mb-8">
+            <img src="assets/photo-cyril.png" alt="Cyril Cieslak, fondateur de FikolasAI" width="112" height="128" class="w-28 h-32 shrink-0 rounded-2xl object-cover object-top border border-gold/30 bg-slate-950">
+            <div>
+              <p class="text-xl font-semibold">Cyril Cieslak</p>
+              <p class="text-slate-400">Founder & CEO de FikolasAI Academy, créateur de FikolasAI Agent</p>
+            </div>
           </div>
-          <p class="text-base text-slate-300 leading-relaxed mb-5" data-fr="Un accompagnement direct, simple et concret. Vous savez avec qui vous allez cadrer, tester et faire évoluer votre Agent IA." data-en="Direct, simple and concrete support. You know who you will frame, test and improve your AI Agent with.">Un accompagnement direct, simple et concret. Vous savez avec qui vous allez cadrer, tester et faire évoluer votre Agent IA.</p>
-          <div class="rounded-2xl border border-gold/35 bg-gold/10 p-4"><p class="font-semibold text-amber-100" data-fr="Ce que vous achetez" data-en="What you buy">Ce que vous achetez</p><p class="text-slate-300 text-sm" data-fr="Un Agent IA utilisable pendant 30 jours inclus, construit pour une vraie tâche de votre activité." data-en="A usable AI Agent for 30 included days, built for a real task in your business.">Un Agent IA utilisable pendant 30 jours inclus, construit pour une vraie tâche de votre activité.</p></div>
-        </aside>
-      </div>
-    </section>
-
-    <section id="verticals" class="max-w-6xl mx-auto px-5 py-10">
-      <div class="rounded-3xl border border-gold/35 bg-gold/10 p-5 md:p-6 shadow-gold">
-        <div class="mb-5"><p class="text-gold font-semibold mb-2" data-fr="Cas concrets par métier" data-en="Concrete cases by industry">Cas concrets par métier</p><h2 class="text-2xl md:text-3xl font-semibold" data-fr="Vous êtes avocat, commercial, RH, dirigeant ou consultant ?" data-en="Are you a lawyer, sales leader, HR manager, business owner or consultant?">Vous êtes avocat, commercial, RH, dirigeant ou consultant ?</h2><p class="text-slate-300 mt-2" data-fr="Choisissez votre cas métier. Chaque page montre le problème, l’Agent IA possible et le résultat attendu." data-en="Choose your industry case. Each page shows the problem, the possible AI Agent and the expected result.">Choisissez votre cas métier. Chaque page montre le problème, l’Agent IA possible et le résultat attendu.</p></div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          <a href="/immigration-lawyers-usa/" class="group overflow-hidden rounded-2xl border border-line bg-slate-950/45 ring-1 ring-gold/15 hover:ring-gold/45 hover:border-gold/60 hover:bg-white/10 transition"><div class="case-img" style="background-image:linear-gradient(180deg,rgba(5,8,22,.10),rgba(5,8,22,.75)),url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=900&q=80')"></div><div class="p-4"><span class="text-xs text-amber-100" data-fr="Juridique" data-en="Legal">Juridique</span><strong class="block mt-2 group-hover:text-gold" data-fr="Avocat immigration USA" data-en="US immigration lawyer">Avocat immigration USA</strong><p class="text-sm text-slate-400 mt-2" data-fr="Qualifier les demandes visa et structurer les dossiers." data-en="Qualify visa requests and structure case files.">Qualifier les demandes visa et structurer les dossiers.</p><span class="mt-4 inline-flex text-sm font-semibold text-gold" data-fr="Voir ce cas métier →" data-en="See this industry case →">Voir ce cas métier →</span></div></a>
-          <a href="/sales-b2b-agent-ia/" class="group overflow-hidden rounded-2xl border border-line bg-slate-950/45 ring-1 ring-gold/15 hover:ring-gold/45 hover:border-gold/60 hover:bg-white/10 transition"><div class="case-img" style="background-image:linear-gradient(180deg,rgba(5,8,22,.10),rgba(5,8,22,.75)),url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80')"></div><div class="p-4"><span class="text-xs text-amber-100">Sales</span><strong class="block mt-2 group-hover:text-gold" data-fr="Équipe commerciale B2B" data-en="B2B sales team">Équipe commerciale B2B</strong><p class="text-sm text-slate-400 mt-2" data-fr="Relances, qualification de leads et prospection." data-en="Follow-ups, lead qualification and prospecting.">Relances, qualification de leads et prospection.</p><span class="mt-4 inline-flex text-sm font-semibold text-gold" data-fr="Voir ce cas métier →" data-en="See this industry case →">Voir ce cas métier →</span></div></a>
-          <a href="/agent-ia-rh/" class="group overflow-hidden rounded-2xl border border-line bg-slate-950/45 ring-1 ring-gold/15 hover:ring-gold/45 hover:border-gold/60 hover:bg-white/10 transition"><div class="case-img" style="background-image:linear-gradient(180deg,rgba(5,8,22,.10),rgba(5,8,22,.75)),url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=900&q=80')"></div><div class="p-4"><span class="text-xs text-amber-100">RH</span><strong class="block mt-2 group-hover:text-gold" data-fr="RH / recrutement" data-en="HR / recruiting">RH / recrutement</strong><p class="text-sm text-slate-400 mt-2" data-fr="Synthèses candidats, entretiens et réponses." data-en="Candidate summaries, interviews and replies.">Synthèses candidats, entretiens et réponses.</p><span class="mt-4 inline-flex text-sm font-semibold text-gold" data-fr="Voir ce cas métier →" data-en="See this industry case →">Voir ce cas métier →</span></div></a>
-          <a href="/agent-ia-cabinet-conseil/" class="group overflow-hidden rounded-2xl border border-line bg-slate-950/45 ring-1 ring-gold/15 hover:ring-gold/45 hover:border-gold/60 hover:bg-white/10 transition"><div class="case-img" style="background-image:linear-gradient(180deg,rgba(5,8,22,.10),rgba(5,8,22,.75)),url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80')"></div><div class="p-4"><span class="text-xs text-amber-100" data-fr="Conseil" data-en="Consulting">Conseil</span><strong class="block mt-2 group-hover:text-gold" data-fr="Cabinet de conseil" data-en="Consulting firm">Cabinet de conseil</strong><p class="text-sm text-slate-400 mt-2" data-fr="Audits, comptes rendus, propositions et livrables." data-en="Audits, meeting notes, proposals and deliverables.">Audits, comptes rendus, propositions et livrables.</p><span class="mt-4 inline-flex text-sm font-semibold text-gold" data-fr="Voir ce cas métier →" data-en="See this industry case →">Voir ce cas métier →</span></div></a>
-          <a href="/agent-ia-dirigeant-pme/" class="group overflow-hidden rounded-2xl border border-line bg-slate-950/45 ring-1 ring-gold/15 hover:ring-gold/45 hover:border-gold/60 hover:bg-white/10 transition"><div class="case-img" style="background-image:linear-gradient(180deg,rgba(5,8,22,.10),rgba(5,8,22,.75)),url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80')"></div><div class="p-4"><span class="text-xs text-amber-100">PME</span><strong class="block mt-2 group-hover:text-gold" data-fr="Dirigeant de PME" data-en="SMB owner">Dirigeant de PME</strong><p class="text-sm text-slate-400 mt-2" data-fr="Moins de charge mentale et plus de suivi." data-en="Less mental load and better follow-up.">Moins de charge mentale et plus de suivi.</p><span class="mt-4 inline-flex text-sm font-semibold text-gold" data-fr="Voir ce cas métier →" data-en="See this industry case →">Voir ce cas métier →</span></div></a>
-          <a href="/agent-ia-chambre-commerce/" class="group overflow-hidden rounded-2xl border border-line bg-slate-950/45 ring-1 ring-gold/15 hover:ring-gold/45 hover:border-gold/60 hover:bg-white/10 transition"><div class="case-img" style="background-image:linear-gradient(180deg,rgba(5,8,22,.10),rgba(5,8,22,.75)),url('https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=900&q=80')"></div><div class="p-4"><span class="text-xs text-amber-100" data-fr="Institutionnel" data-en="Institutional">Institutionnel</span><strong class="block mt-2 group-hover:text-gold" data-fr="Chambre de commerce" data-en="Chamber of commerce">Chambre de commerce</strong><p class="text-sm text-slate-400 mt-2" data-fr="Demandes membres, mises en relation et événements." data-en="Member requests, business matching and events.">Demandes membres, mises en relation et événements.</p><span class="mt-4 inline-flex text-sm font-semibold text-gold" data-fr="Voir ce cas métier →" data-en="See this industry case →">Voir ce cas métier →</span></div></a>
+          <div class="space-y-4 text-slate-300">
+            <div class="rounded-xl bg-gold/10 border border-gold/30 p-5"><p class="text-sm text-amber-100 mb-1">Promesse</p><p class="font-semibold text-white">Votre Agent IA mis en place en moins de 7 jours pour 1000€ HT.</p></div>
+            <div class="rounded-xl bg-white/5 border border-white/10 p-5"><p class="text-sm text-slate-400 mb-1">Pourquoi cette offre</p><p class="font-semibold text-white">Un périmètre volontairement limité pour livrer un premier usage concret rapidement.</p></div>
+            <div class="rounded-xl bg-white/5 border border-white/10 p-5"><p class="text-sm text-slate-400 mb-1">Après</p><p class="font-semibold text-white">Vous pouvez ensuite évoluer vers Agent, Studio ou accompagnement mensuel.</p></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="max-w-6xl mx-auto px-5 py-12 border-t border-line"><div class="grid lg:grid-cols-[0.85fr_1.15fr] gap-5 items-start"><div><p class="text-gold font-semibold mb-2" data-fr="Comment ça marche" data-en="How it works">Comment ça marche</p><h2 class="text-2xl md:text-3xl font-semibold leading-tight mb-3" data-fr="Vous donnez une tâche répétitive. Vous récupérez un résultat prêt à utiliser." data-en="You provide one repetitive task. You get a ready-to-use result.">Vous donnez une tâche répétitive. Vous récupérez un résultat prêt à utiliser.</h2><p class="text-slate-400 leading-relaxed" data-fr="Pas de grand chantier IA. On part d’un vrai irritant métier et on construit un agent qui produit un livrable clair : message, fiche, synthèse, checklist ou brouillon." data-en="No huge AI project. We start from a real business irritation and build an agent that produces a clear deliverable: message, brief, summary, checklist or draft.">Pas de grand chantier IA. On part d’un vrai irritant métier et on construit un agent qui produit un livrable clair : message, fiche, synthèse, checklist ou brouillon.</p></div><div class="grid md:grid-cols-3 gap-3"><article class="card p-4"><span class="text-xs text-slate-500" data-fr="1. Vous donnez" data-en="1. You provide">1. Vous donnez</span><p class="font-semibold mt-2" data-fr="Une matière brute" data-en="Raw material">Une matière brute</p><p class="text-sm text-slate-400 mt-2" data-fr="email, notes, formulaire, transcription ou demande client." data-en="email, notes, form, transcript or client request.">email, notes, formulaire, transcription ou demande client.</p></article><article class="gold-card rounded-3xl p-4"><span class="text-xs text-amber-100" data-fr="2. L’Agent prépare" data-en="2. The Agent prepares">2. L’Agent prépare</span><p class="font-semibold mt-2" data-fr="Le travail structuré" data-en="Structured work">Le travail structuré</p><p class="text-sm text-slate-300 mt-2" data-fr="analyse, tri, qualification, synthèse ou brouillon à valider." data-en="analysis, sorting, qualification, summary or draft to review.">analyse, tri, qualification, synthèse ou brouillon à valider.</p></article><article class="card p-4"><span class="text-xs text-slate-500" data-fr="3. Vous validez" data-en="3. You validate">3. Vous validez</span><p class="font-semibold mt-2" data-fr="Un résultat utilisable" data-en="A usable result">Un résultat utilisable</p><p class="text-sm text-slate-400 mt-2" data-fr="message prêt, fiche claire, checklist ou prochaines actions." data-en="ready message, clear brief, checklist or next actions.">message prêt, fiche claire, checklist ou prochaines actions.</p></article></div></div></section>
+    <section id="offers" class="max-w-7xl mx-auto px-5 sm:px-6 py-20 border-t border-white/10">
+      <div class="max-w-3xl mb-12">
+        <p class="text-gold font-semibold mb-3">L'offre qui va ouvrir la porte</p>
+        <h2 class="text-3xl md:text-5xl font-semibold mb-4">Commencez par votre Agent IA. Passez aux autres offres ensuite.</h2>
+        <p class="text-slate-400 text-lg leading-relaxed">L'offre phare est volontairement simple, rapide et désirable : un Agent IA à vous, livré sous 7 jours, pour 1000€ HT. Les offres Academy et Studio restent disponibles pour aller plus loin.</p>
+      </div>
 
-    <section id="offer" class="max-w-6xl mx-auto px-5 py-14 border-t border-line"><div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-8 items-start"><div><p class="text-gold font-semibold mb-3" data-fr="L’offre d’entrée" data-en="The entry offer">L’offre d’entrée</p><h2 class="text-3xl md:text-5xl font-semibold leading-tight mb-4" data-fr-html="Votre premier Agent IA.<br><span class='text-gold'>1000€ HT.</span><br>Prêt en 7 jours." data-en-html="Your first AI Agent.<br><span class='text-gold'>€1000 excl. VAT.</span><br>Ready in 7 days.">Votre premier Agent IA.<br><span class="text-gold">1000€ HT.</span><br>Prêt en 7 jours.</h2><p class="text-slate-400 text-lg leading-relaxed mb-5" data-fr="Une offre simple pour transformer une tâche répétitive en agent utilisable, sans abonnement imposé et sans projet interminable." data-en="A simple offer to turn one repetitive task into a usable agent, with no forced subscription and no endless project.">Une offre simple pour transformer une tâche répétitive en agent utilisable, sans abonnement imposé et sans projet interminable.</p><a href="https://calendly.com/cyril-fikolasai/rdv-cyril-fikolasai-agent" target="_blank" rel="noreferrer" class="inline-flex justify-center bg-gold text-slate-950 px-6 py-4 rounded-lg font-bold shadow-gold" data-fr="Trouver mon Agent IA rentable" data-en="Find my profitable AI Agent">Trouver mon Agent IA rentable</a></div><div class="rounded-3xl border border-gold/40 bg-gold/10 p-6 md:p-8 shadow-gold"><div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 pb-6 border-b border-gold/25"><div><p class="text-sm text-amber-100 font-semibold">Pack Agent IA</p><p class="text-5xl md:text-6xl font-semibold text-gold leading-none">1000€</p><p class="text-slate-300 mt-1" data-fr="HT, prix fixe" data-en="excl. VAT, fixed price">HT, prix fixe</p></div><p class="rounded-full border border-gold/35 bg-slate-950/35 px-4 py-2 text-sm text-amber-100" data-fr="Livré en 7 jours" data-en="Delivered in 7 days">Livré en 7 jours</p></div><div class="grid sm:grid-cols-2 gap-3 mt-6"><div class="card p-4"><strong data-fr="1 tâche métier" data-en="1 business task">1 tâche métier</strong><p class="text-sm text-slate-400 mt-2" data-fr="relancer, qualifier, résumer, préparer, classer ou rédiger." data-en="follow up, qualify, summarize, prepare, classify or draft.">relancer, qualifier, résumer, préparer, classer ou rédiger.</p></div><div class="card p-4"><strong data-fr="1 Agent IA prêt" data-en="1 ready AI Agent">1 Agent IA prêt</strong><p class="text-sm text-slate-400 mt-2" data-fr="adapté à vos mots, vos exemples et votre façon de travailler." data-en="adapted to your words, examples and way of working.">adapté à vos mots, vos exemples et votre façon de travailler.</p></div><div class="card p-4"><strong data-fr="1 mois inclus" data-en="1 month included">1 mois inclus</strong><p class="text-sm text-slate-400 mt-2" data-fr="hébergement, test en conditions réelles et ajustements." data-en="hosting, real-world testing and adjustments.">hébergement, test en conditions réelles et ajustements.</p></div><div class="card p-4"><strong data-fr="Libre ensuite" data-en="Free after">Libre ensuite</strong><p class="text-sm text-slate-400 mt-2" data-fr="vous récupérez l’agent ou vous continuez avec Agent Care." data-en="retrieve the agent or continue with Agent Care.">vous récupérez l’agent ou vous continuez avec Agent Care.</p></div></div></div></div></section>
+      <article class="rounded-3xl border border-gold/60 bg-gradient-to-br from-gold/20 via-slate-900/95 to-slate-950 p-7 md:p-10 shadow-gold mb-8 overflow-hidden relative">
+        <div class="absolute right-6 top-6 rounded-full bg-gold text-slate-950 px-4 py-2 text-xs font-bold uppercase tracking-wide">Offre principale</div>
+        <div class="grid lg:grid-cols-[1.2fr_0.8fr] gap-10 items-center">
+          <div>
+            <p class="text-amber-100 font-semibold mb-3">FikolasAI Agent</p>
+            <h3 class="text-4xl md:text-6xl font-semibold leading-tight mb-5">Votre Agent IA</h3>
+            <p class="text-xl md:text-2xl text-slate-200 leading-relaxed mb-6">Votre propre Agent IA opérationnel en moins de 7 jours. Une offre simple, rare et faite pour passer à l'action tout de suite.</p>
+            <ul class="grid sm:grid-cols-2 gap-3 text-slate-200 mb-8">
+              <li class="rounded-xl bg-white/5 border border-white/10 p-4">✓ Cadrage de votre besoin métier</li>
+              <li class="rounded-xl bg-white/5 border border-white/10 p-4">✓ Construction de votre Agent IA</li>
+              <li class="rounded-xl bg-white/5 border border-white/10 p-4">✓ Tests sur vos cas concrets</li>
+              <li class="rounded-xl bg-white/5 border border-white/10 p-4">✓ Livraison et prise en main simple</li>
+            </ul>
+            <p class="text-slate-300">Pas besoin de devenir expert IA. Vous repartez avec un agent utile, adapté à votre activité et prêt à être utilisé.</p>
+          </div>
+          <div class="rounded-2xl bg-slate-950/75 border border-gold/30 p-7 md:p-8">
+            <p class="text-slate-400 mb-2">Prix de lancement</p>
+            <p class="text-6xl md:text-7xl font-semibold text-white mb-2">1000€</p>
+            <p class="text-xl text-amber-100 mb-6">HT · livraison sous 7 jours</p>
+            <div class="space-y-3 text-slate-300 mb-7">
+              <p class="flex justify-between gap-4 border-b border-white/10 pb-3"><span>Votre Agent IA</span><strong>inclus</strong></p>
+              <p class="flex justify-between gap-4 border-b border-white/10 pb-3"><span>Cadrage + mise en place</span><strong>inclus</strong></p>
+              <p class="flex justify-between gap-4 border-b border-white/10 pb-3"><span>Prise en main</span><strong>incluse</strong></p>
+            </div>
+            <a href="https://tally.so/r/2EbyZL" target="_blank" class="block text-center py-4 bg-gold text-slate-950 rounded-lg font-bold hover:bg-amber-200 transition">Je veux mon Agent IA</a>
+          </div>
+        </div>
+      </article>
 
-    <section id="before-after" class="max-w-6xl mx-auto px-5 py-14 border-t border-line"><div class="grid lg:grid-cols-[0.8fr_1.2fr] gap-8"><div><p class="text-gold font-semibold mb-3" data-fr="Avant / Après" data-en="Before / After">Avant / Après</p><h2 class="text-3xl md:text-5xl font-semibold leading-tight mb-4" data-fr-html="Vous ne gagnez pas “un outil”.<br>Vous retirez une friction." data-en-html="You are not getting “a tool”.<br>You are removing friction.">Vous ne gagnez pas “un outil”.<br>Vous retirez une friction.</h2><p class="text-slate-400 text-lg" data-fr="Le but : moins de tâches qui traînent, moins d’allers-retours, plus d’exécution propre." data-en="The goal: fewer lingering tasks, fewer back-and-forths, cleaner execution.">Le but : moins de tâches qui traînent, moins d’allers-retours, plus d’exécution propre.</p></div><div class="grid md:grid-cols-2 gap-4"><article class="card p-6"><h3 class="text-xl font-semibold mb-4" data-fr="Avant" data-en="Before">Avant</h3><ul class="space-y-3 text-slate-300"><li data-fr="Relances commerciales oubliées ou faites trop tard." data-en="Sales follow-ups forgotten or sent too late.">Relances commerciales oubliées ou faites trop tard.</li><li data-fr="Leads à relire, trier et qualifier à la main." data-en="Leads to reread, sort and qualify by hand.">Leads à relire, trier et qualifier à la main.</li><li data-fr="Notes, emails et réunions dispersés partout." data-en="Notes, emails and meetings scattered everywhere.">Notes, emails et réunions dispersés partout.</li><li data-fr="Temps perdu sur des tâches utiles mais répétitives." data-en="Time lost on useful but repetitive tasks.">Temps perdu sur des tâches utiles mais répétitives.</li></ul></article><article class="gold-card rounded-3xl p-6"><h3 class="text-xl font-semibold mb-4" data-fr="Après" data-en="After">Après</h3><ul class="space-y-3 text-slate-200"><li data-fr="Relances préparées, structurées et prêtes à envoyer." data-en="Follow-ups prepared, structured and ready to send.">Relances préparées, structurées et prêtes à envoyer.</li><li data-fr="Demandes triées avec un résumé clair avant l’échange." data-en="Requests sorted with a clear summary before the exchange.">Demandes triées avec un résumé clair avant l’échange.</li><li data-fr="Synthèses propres avec actions et prochaines étapes." data-en="Clean summaries with actions and next steps.">Synthèses propres avec actions et prochaines étapes.</li><li data-fr="Une tâche métier exécutée plus vite chaque semaine." data-en="One business task executed faster every week.">Une tâche métier exécutée plus vite chaque semaine.</li></ul></article></div></div></section>
+      <div class="grid lg:grid-cols-3 gap-6">
+        <article class="rounded-2xl border border-white/10 bg-slate-900/70 p-7 flex flex-col">
+          <p class="text-primary text-sm font-semibold mb-2">Academy</p>
+          <h3 class="text-2xl font-semibold mb-3">Formation IA personnalisée</h3>
+          <p class="text-slate-400 mb-6 leading-relaxed">Pour apprendre vite, sans se disperser, avec une session hebdomadaire et un livrable concret.</p>
+          <ul class="space-y-3 text-slate-300 mb-8">
+            <li>✓ 4 sessions de mentorat par mois</li>
+            <li>✓ Cas d'usage adaptés à votre métier</li>
+            <li>✓ Prompts, méthodes et workflows réutilisables</li>
+            <li>✓ Aucun prérequis technique</li>
+          </ul>
+          <div class="mt-auto"><p class="text-3xl font-semibold">499€ <span class="text-sm text-slate-400">/mois HT</span></p><a href="https://tally.so/r/2EbyZL" target="_blank" class="mt-5 block text-center py-3 bg-primary rounded-lg font-semibold hover:bg-primary/90 transition">Discuter de mon besoin IA</a></div>
+        </article>
 
-    <section id="why-cyril-home" class="max-w-6xl mx-auto px-5 py-14 border-t border-line"><div class="grid lg:grid-cols-[0.85fr_1.15fr] gap-6 items-start"><div><p class="text-gold font-semibold mb-3" data-fr="Pourquoi Cyril" data-en="Why Cyril">Pourquoi Cyril</p><h2 class="text-3xl md:text-4xl font-semibold leading-tight" data-fr="Un accompagnement direct, concret, orienté usage réel." data-en="Direct, concrete support focused on real usage.">Un accompagnement direct, concret, orienté usage réel.</h2><a href="/qui-est-cyril/" class="inline-flex mt-5 text-gold font-semibold hover:text-white" data-fr="Découvrir qui est Cyril →" data-en="Discover who Cyril is →">Découvrir qui est Cyril →</a></div><div class="grid sm:grid-cols-3 gap-3"><div class="card p-5"><strong data-fr="France + États-Unis" data-en="France + United States">France + États-Unis</strong><p class="text-sm text-slate-400 mt-2" data-fr="agents IA déployés dans des contextes professionnels réels." data-en="AI agents deployed in real professional contexts.">agents IA déployés dans des contextes professionnels réels.</p></div><div class="card p-5"><strong data-fr="Vous gardez la main" data-en="You stay in control">Vous gardez la main</strong><p class="text-sm text-slate-400 mt-2" data-fr="l’agent prépare, vous validez les décisions sensibles." data-en="the agent prepares, you validate sensitive decisions.">l’agent prépare, vous validez les décisions sensibles.</p></div><div class="card p-5"><strong data-fr="Pas de gadget" data-en="No gadget">Pas de gadget</strong><p class="text-sm text-slate-400 mt-2" data-fr="on construit seulement si le résultat sert vraiment votre activité." data-en="we build only if the result truly serves your business.">on construit seulement si le résultat sert vraiment votre activité.</p></div></div></div></section>
+        <article class="rounded-2xl border border-accent/40 bg-accent/10 p-7 flex flex-col">
+          <p class="text-emerald-200 text-sm font-semibold mb-2">Studio</p>
+          <h3 class="text-2xl font-semibold mb-3">Système d'agents IA</h3>
+          <p class="text-slate-300 mb-6 leading-relaxed">Pour les solopreneurs et PME qui veulent orchestrer plusieurs agents autour d'un même objectif business.</p>
+          <ul class="space-y-3 text-slate-300 mb-8">
+            <li>✓ Agent maître d'orchestration</li>
+            <li>✓ 2 à 3 agents satellites</li>
+            <li>✓ Automatisations connectées à vos outils</li>
+            <li>✓ Maintenance, sécurité et évolution</li>
+          </ul>
+          <div class="mt-auto"><p class="text-3xl font-semibold">Dès 799€ <span class="text-sm text-slate-400">/mois HT</span></p><p class="text-sm text-slate-400">+ onboarding à partir de 3990€ HT</p><a href="https://tally.so/r/2EbyZL" target="_blank" class="mt-5 block text-center py-3 bg-emerald-600 rounded-lg font-semibold hover:bg-emerald-500 transition">Discuter de mon besoin IA</a></div>
+        </article>
+      </div>
+    </section>
 
-    <section id="after" class="max-w-6xl mx-auto px-5 py-14 border-t border-line"><div class="grid lg:grid-cols-[0.8fr_1.2fr] gap-8"><div><p class="text-gold font-semibold mb-3" data-fr="Après 30 jours" data-en="After 30 days">Après 30 jours</p><h2 class="text-3xl md:text-5xl font-semibold leading-tight mb-4" data-fr="Vous testez pendant 1 mois. Puis vous décidez." data-en="Use it for 1 month. Then decide.">Vous testez pendant 1 mois. Puis vous décidez.</h2><p class="text-slate-400 text-lg" data-fr="L’agent est hébergé, disponible et utilisable pendant 30 jours inclus. Après, il n’y a pas d’abonnement forcé." data-en="The agent is hosted, available and usable for 30 included days. After that, there is no forced subscription.">L’agent est hébergé, disponible et utilisable pendant 30 jours inclus. Après, il n’y a pas d’abonnement forcé.</p></div><div class="grid md:grid-cols-2 gap-4"><article class="card p-6"><p class="text-sm text-slate-400 mb-2">Option A</p><h3 class="text-2xl font-semibold mb-3" data-fr="Vous récupérez l’agent." data-en="You retrieve the agent.">Vous récupérez l’agent.</h3><p class="text-slate-300" data-fr="Vous repartez avec l’agent et les éléments nécessaires pour l’utiliser de façon autonome." data-en="You leave with the agent and the necessary elements to use it autonomously.">Vous repartez avec l’agent et les éléments nécessaires pour l’utiliser de façon autonome.</p></article><article class="gold-card rounded-3xl p-6"><p class="text-sm text-amber-100 mb-2">Option B</p><h3 class="text-2xl font-semibold mb-3" data-fr="Vous continuez avec Agent Care." data-en="You continue with Agent Care.">Vous continuez avec Agent Care.</h3><p class="text-slate-200" data-fr="À partir de 500€ HT / mois : hébergement, maintenance, ajustements, optimisation et nouveaux leviers." data-en="From €500 excl. VAT / month: hosting, maintenance, adjustments, optimization and new opportunities.">À partir de 500€ HT / mois : hébergement, maintenance, ajustements, optimisation et nouveaux leviers.</p></article></div></div></section>
+    <section id="outcomes" class="max-w-7xl mx-auto px-5 sm:px-6 py-20 border-t border-white/10">
+      <div class="max-w-3xl mb-12">
+        <p class="text-gold font-semibold mb-3">Pourquoi ça donne envie</p>
+        <h2 class="text-3xl md:text-5xl font-semibold mb-4">Un Agent IA à vous. Pas une promesse floue.</h2>
+        <p class="text-slate-400 text-lg leading-relaxed">L'offre est pensée pour créer un premier résultat rapide. Ensuite, vous pouvez choisir la formation, l'optimisation continue ou un système d'agents complet.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <article class="rounded-2xl bg-white/5 border border-white/10 p-6"><p class="text-primary font-semibold mb-2">Relances manuelles réduites</p><p class="text-slate-400">Un agent peut préparer, structurer ou accélérer les suivis qui prennent trop de temps.</p></article>
+        <article class="rounded-2xl bg-white/5 border border-white/10 p-6"><p class="text-primary font-semibold mb-2">Leads mieux qualifiés</p><p class="text-slate-400">Les demandes entrantes peuvent être triées, contextualisées et préparées avant l'échange commercial.</p></article>
+        <article class="rounded-2xl bg-white/5 border border-white/10 p-6"><p class="text-primary font-semibold mb-2">Onboarding fluidifié</p><p class="text-slate-400">Les informations client, documents et prochaines étapes suivent un chemin plus clair.</p></article>
+        <article class="rounded-2xl bg-white/5 border border-white/10 p-6"><p class="text-primary font-semibold mb-2">Prospection structurée</p><p class="text-slate-400">Les listes, angles d'approche et suivis deviennent exploitables au quotidien.</p></article>
+        <article class="rounded-2xl bg-white/5 border border-white/…4574 tokens truncated…nt transforme un email, un formulaire ou des notes commerciales en proposition structurée. Il repère les informations manquantes et prépare le périmètre, tandis que le dirigeant conserve la validation du prix et des engagements.</p>
 
-    <section class="max-w-6xl mx-auto px-5 py-14 border-t border-line"><div class="grid lg:grid-cols-[0.8fr_1.2fr] gap-8 items-start"><div><p class="text-gold font-semibold mb-3" data-fr="La suite naturelle" data-en="The natural next step">La suite naturelle</p><h2 class="text-3xl md:text-5xl font-semibold leading-tight mb-4" data-fr="Vous commencez par un gain rapide. Vous développez ensuite." data-en="Start with a quick win. Expand next.">Vous commencez par un gain rapide. Vous développez ensuite.</h2><p class="text-slate-400 text-lg" data-fr="L’Agent IA à 1000€ HT est la porte d’entrée. Quand le besoin est confirmé, vous pouvez apprendre à mieux utiliser l’IA ou construire un système plus complet." data-en="The €1000 AI Agent is the entry point. Once the need is confirmed, you can learn to use AI better or build a more complete system.">L’Agent IA à 1000€ HT est la porte d’entrée. Quand le besoin est confirmé, vous pouvez apprendre à mieux utiliser l’IA ou construire un système plus complet.</p></div><div class="grid md:grid-cols-2 gap-4"><article class="card p-6"><p class="text-gold font-semibold">Academy</p><h3 class="text-2xl font-semibold mt-2 mb-3" data-fr="Formation IA personnalisée" data-en="Personalized AI training">Formation IA personnalisée</h3><p class="text-slate-300 mb-4" data-fr="Pour dirigeants et équipes qui veulent devenir autonomes, comprendre quoi déléguer à l’IA, et utiliser les bons réflexes au quotidien." data-en="For leaders and teams who want autonomy, clarity on what to delegate to AI, and better daily habits.">Pour dirigeants et équipes qui veulent devenir autonomes, comprendre quoi déléguer à l’IA, et utiliser les bons réflexes au quotidien.</p><p class="text-2xl font-semibold text-gold">500€ <span class="text-base text-slate-400" data-fr="/mois HT" data-en="/month excl. VAT">/mois HT</span></p></article><article class="card p-6"><p class="text-gold font-semibold">Studio</p><h3 class="text-2xl font-semibold mt-2 mb-3" data-fr="Système d’agents IA" data-en="AI agent system">Système d’agents IA</h3><p class="text-slate-300 mb-4" data-fr="Pour connecter plusieurs usages, automatiser davantage et structurer une vraie chaîne d’exécution." data-en="To connect several use cases, automate more and structure a real execution chain.">Pour connecter plusieurs usages, automatiser davantage et structurer une vraie chaîne d’exécution.</p><p class="text-2xl font-semibold text-gold" data-fr="Dès 800€ /mois HT" data-en="From €800 /month excl. VAT">Dès 800€ /mois HT</p><p class="text-sm text-slate-400 mt-2" data-fr="+ onboarding à partir de 4000€ HT" data-en="+ onboarding from €4000 excl. VAT">+ onboarding à partir de 4000€ HT</p></article></div></div></section>
+            <div class="mt-8 grid gap-4 sm:grid-cols-2">
+              <div class="rounded-2xl border border-rose-400/20 bg-rose-400/5 p-5">
+                <p class="text-sm font-semibold text-rose-300">Avant</p>
+                <p class="mt-2 text-2xl font-semibold">30 à 60 min</p>
+                <p class="mt-1 text-sm text-slate-400">pour relire, cadrer, chiffrer et rédiger chaque proposition.</p>
+              </div>
+              <div class="rounded-2xl border border-emerald-400/20 bg-emerald-400/5 p-5">
+                <p class="text-sm font-semibold text-emerald-300">Objectif du pilote</p>
+                <p class="mt-2 text-2xl font-semibold">10 à 15 min</p>
+                <p class="mt-1 text-sm text-slate-400">pour contrôler, ajuster et valider une proposition préparée.</p>
+              </div>
+            </div>
+          </div>
 
-    <section class="max-w-4xl mx-auto px-5 py-16 text-center"><h2 class="text-3xl md:text-5xl font-semibold mb-5" data-fr="Quelle tâche vous fait perdre trop de temps ?" data-en="Which task is costing you too much time?">Quelle tâche vous fait perdre trop de temps ?</h2><p class="text-slate-300 mb-8" data-fr="Décrivez-la en 2 minutes. Je vous réponds avec le meilleur Agent IA à construire en premier." data-en="Describe it in 2 minutes. I will reply with the best AI Agent to build first.">Décrivez-la en 2 minutes. Je vous réponds avec le meilleur Agent IA à construire en premier.</p><div class="flex flex-col sm:flex-row justify-center gap-3"><a href="https://calendly.com/cyril-fikolasai/rdv-cyril-fikolasai-agent" target="_blank" rel="noreferrer" class="inline-flex justify-center bg-gold text-slate-950 px-7 py-4 rounded-lg font-bold" data-fr="Trouver mon Agent IA rentable" data-en="Find my profitable AI Agent">Trouver mon Agent IA rentable</a><a href="https://tally.so/r/2EbyZL" target="_blank" rel="noreferrer" class="inline-flex justify-center border border-gold/35 bg-gold/10 px-7 py-4 rounded-lg font-semibold text-amber-100" data-fr="Remplir le diagnostic complet" data-en="Complete the full diagnostic">Remplir le diagnostic complet</a></div></section>
-  <section class="max-w-6xl mx-auto px-5 py-14 border-t border-line" id="ressources-strategiques"><p class="text-gold font-semibold mb-3">Ressources stratégiques</p><h2 class="text-3xl md:text-5xl font-semibold mb-6">IA, ChatGPT et Agents IA : choisissez le bon point d’entrée.</h2><div class="grid md:grid-cols-3 gap-4"><a href="/creer-agent-ia-pme/" class="card p-6 hover:bg-white/10"><p class="text-gold font-semibold">Créer un Agent IA pour une PME</p><p class="text-slate-400 mt-3">Méthode en 7 jours pour transformer une tâche répétitive en résultat utilisable.</p></a><a href="/formation-chatgpt-dirigeants/" class="card p-6 hover:bg-white/10"><p class="text-gold font-semibold">Formation ChatGPT dirigeants</p><p class="text-slate-400 mt-3">Passer de la curiosité à des usages concrets pour dirigeants et équipes.</p></a><a href="/formateur-ia-francophone/" class="card p-6 hover:bg-white/10"><p class="text-gold font-semibold">Formateur IA francophone</p><p class="text-slate-400 mt-3">Comprendre le rôle de Cyril Cieslak et l’approche FikolasAI.</p></a><a href="/conferencier-ia-french-tech/" class="card p-6 hover:bg-white/10"><p class="text-gold font-semibold">Conférencier IA</p><p class="text-slate-400 mt-3">Conférences, ateliers et démonstrations pour entrepreneurs et réseaux.</p></a><a href="/formation-chatgpt-vs-agent-ia/" class="card p-6 hover:bg-white/10"><p class="text-gold font-semibold">Formation ou Agent IA ?</p><p class="text-slate-400 mt-3">Comparer les deux approches pour choisir le bon levier.</p></a><a href="/interventions-ia/" class="card p-6 hover:bg-white/10"><p class="text-gold font-semibold">Interventions et médias</p><p class="text-slate-400 mt-3">Page de preuves publiques à enrichir avec replays et liens validés.</p></a></div></section><!-- GEO_AUTHORITY_LINKS_2026_06 --></main>
+          <div class="relative border-t border-white/10 bg-gradient-to-br from-gold/15 via-slate-950 to-slate-950 p-7 md:p-10 lg:border-l lg:border-t-0 lg:p-12">
+            <div class="absolute right-0 top-0 h-48 w-48 rounded-full bg-gold/15 blur-3xl"></div>
+            <div class="relative rounded-2xl border border-white/10 bg-slate-950/80 p-6">
+              <div class="flex items-center justify-between gap-4 border-b border-white/10 pb-4">
+                <div>
+                  <p class="text-xs uppercase tracking-wider text-slate-500">Demande entrante</p>
+                  <p class="mt-1 font-semibold">Formation IA · équipe commerciale</p>
+                </div>
+                <span class="h-3 w-3 rounded-full bg-amber-300 shadow-[0_0_18px_rgba(252,211,77,0.8)]"></span>
+              </div>
+              <blockquote class="mt-5 text-sm leading-relaxed text-slate-300">« Nous sommes 18 personnes et souhaitons former notre équipe commerciale à ChatGPT, puis identifier deux tâches à automatiser avant septembre. »</blockquote>
+              <div class="mt-6 space-y-3">
+                <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+                  <p class="text-xs font-semibold uppercase tracking-wider text-blue-300">Besoin identifié</p>
+                  <p class="mt-2 text-sm text-slate-300">Formation commerciale, cas d'usage concrets et échéance définie.</p>
+                </div>
+                <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+                  <p class="text-xs font-semibold uppercase tracking-wider text-violet-300">À clarifier</p>
+                  <p class="mt-2 text-sm text-slate-300">Niveau de l'équipe, format, nombre de sessions, outils et confidentialité.</p>
+                </div>
+                <div class="rounded-xl border border-gold/25 bg-gold/10 p-4">
+                  <p class="text-xs font-semibold uppercase tracking-wider text-amber-200">Livrable préparé</p>
+                  <p class="mt-2 text-sm text-slate-200">Périmètre proposé, questions manquantes, brouillon de proposition et email d'accompagnement.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-  <footer class="relative z-10 border-t border-line py-8"><div class="max-w-6xl mx-auto px-5 flex flex-col sm:flex-row justify-between gap-3 text-sm text-slate-400"><p>© 2026 FikolasAI - cyril.fikolasai@gmail.com</p><div class="flex gap-4"><a href="https://tally.so/r/2EbyZL" target="_blank" rel="noreferrer" class="hover:text-gold" data-fr="Nous contacter" data-en="Contact">Nous contacter</a><a href="https://www.linkedin.com/in/cyrilfikolasaiacademy/" target="_blank" rel="noreferrer" class="hover:text-gold">LinkedIn</a></div></div></footer>
-  <a href="https://calendly.com/cyril-fikolasai/rdv-cyril-fikolasai-agent" target="_blank" rel="noreferrer" class="sm:hidden fixed bottom-4 left-4 right-4 z-50 inline-flex justify-center rounded-lg bg-gold px-5 py-4 font-bold text-slate-950 shadow-gold" data-fr="Trouver mon Agent IA rentable" data-en="Find my profitable AI Agent">Trouver mon Agent IA rentable</a>
+        <div class="border-t border-white/10 bg-slate-950/50 p-7 md:p-10 lg:p-12">
+          <div class="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+            <div>
+              <p class="font-semibold text-primary">Ce que l'agent ne décide jamais</p>
+              <h3 class="mt-2 text-2xl font-semibold">Le prix et les engagements restent humains.</h3>
+              <p class="mt-4 leading-relaxed text-slate-400">L'agent prépare une base de travail. Le dirigeant contrôle le tarif, le périmètre, les conditions contractuelles et l'envoi au prospect.</p>
+            </div>
+            <div class="grid gap-3 sm:grid-cols-2">
+              <div class="rounded-xl border border-white/10 bg-white/5 p-5"><span class="text-sm text-slate-400">Temps par proposition</span><strong class="mt-2 block text-xl">45 min → 10 à 15 min</strong></div>
+              <div class="rounded-xl border border-white/10 bg-white/5 p-5"><span class="text-sm text-slate-400">Premier retour</span><strong class="mt-2 block text-xl">Objectif : moins de 4 h</strong></div>
+              <div class="rounded-xl border border-white/10 bg-white/5 p-5"><span class="text-sm text-slate-400">Demandes incomplètes</span><strong class="mt-2 block text-xl">Détection systématique</strong></div>
+              <div class="rounded-xl border border-white/10 bg-white/5 p-5"><span class="text-sm text-slate-400">Relances oubliées</span><strong class="mt-2 block text-xl">Objectif : proche de zéro</strong></div>
+            </div>
+          </div>
+          <p class="mt-8 border-t border-white/10 pt-5 text-xs leading-relaxed text-slate-500">Scénario de démonstration à transformer en véritable étude de cas après un pilote de 30 jours. Les durées affichées sont des objectifs de mesure, pas des résultats clients revendiqués.</p>
+        </div>
+      </div>
+    </section>
 
-  <script>
-    let currentLang='fr';
-    function setLang(lang){
-      currentLang=lang;document.documentElement.lang=lang;document.getElementById('lang-btn').textContent=lang==='fr'?'EN':'FR';
-      document.querySelectorAll('[data-fr]').forEach(el=>{const value=el.dataset[lang];if(value)el.textContent=value});
-      document.querySelectorAll('[data-fr-html]').forEach(el=>{const value=el.dataset[lang+'Html'];if(value)el.innerHTML=value});
-      document.title=lang==='fr'?'FikolasAI | Agent IA prêt en 7 jours':'FikolasAI | AI Agent ready in 7 days';
-      localStorage.setItem('fikolasai-lang',lang);
-    }
-    function toggleLang(){setLang(currentLang==='fr'?'en':'fr')}
-    setLang(localStorage.getItem('fikolasai-lang')||'fr');
-  </script>
+    <section id="process" class="max-w-7xl mx-auto px-5 sm:px-6 py-20 border-t border-white/10">
+      <div class="grid lg:grid-cols-[0.8fr_1.2fr] gap-10 items-start">
+        <div>
+          <p class="text-primary font-semibold mb-3">Process simple</p>
+          <h2 class="text-3xl md:text-5xl font-semibold mb-4">En moins de 7 jours, votre agent est prêt.</h2>
+          <p class="text-slate-400 text-lg leading-relaxed">On part d'un besoin clair, on construit vite, on teste sur vos cas concrets, puis on vous remet un agent utilisable sans jargon.</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-5">
+          <div class="rounded-2xl bg-white/5 border border-white/10 p-6"><span class="text-primary font-semibold">01</span><h3 class="text-xl font-semibold mt-3 mb-2">Cadrer</h3><p class="text-slate-400">On choisit le cas d'usage le plus utile pour votre activité.</p></div>
+          <div class="rounded-2xl bg-white/5 border border-white/10 p-6"><span class="text-primary font-semibold">02</span><h3 class="text-xl font-semibold mt-3 mb-2">Construire</h3><p class="text-slate-400">Je mets en place votre Agent IA autour de ce besoin précis.</p></div>
+          <div class="rounded-2xl bg-white/5 border border-white/10 p-6"><span class="text-primary font-semibold">03</span><h3 class="text-xl font-semibold mt-3 mb-2">Tester</h3><p class="text-slate-400">On vérifie l'agent sur vos vrais exemples et vos vrais usages.</p></div>
+          <div class="rounded-2xl bg-white/5 border border-white/10 p-6"><span class="text-primary font-semibold">04</span><h3 class="text-xl font-semibold mt-3 mb-2">Livrer</h3><p class="text-slate-400">Vous repartez avec votre agent et une prise en main simple.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="max-w-7xl mx-auto px-5 sm:px-6 py-20 border-t border-white/10">
+      <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center">
+        <div class="text-center lg:text-left"><img src="assets/photo-cyril.png" alt="Cyril Cieslak, fondateur de FikolasAI" width="256" height="256" class="w-64 h-64 rounded-3xl mx-auto lg:mx-0 mb-6 object-cover object-top border border-white/15 bg-slate-950"><a href="https://www.linkedin.com/in/cyrilfikolasaiacademy/" target="_blank" rel="noopener noreferrer" class="inline-flex px-5 py-3 bg-[#0077b5] rounded-lg font-semibold hover:bg-[#00669c] transition">Voir le profil LinkedIn</a></div>
+        <div>
+          <p class="text-primary font-semibold mb-3">Qui est derrière FikolasAI</p>
+          <h2 class="text-3xl md:text-5xl font-semibold mb-5">Un profil hybride : pédagogie, tech, terrain et business.</h2>
+          <p class="text-slate-300 text-lg mb-5 leading-relaxed">Je construis FikolasAI pour aider les professionnels à utiliser l'IA avec discernement. Mon rôle : rendre les concepts simples, relier les outils aux vrais besoins métier, et transformer les idées en agents utilisables.</p>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="rounded-xl bg-white/5 border border-white/10 p-5"><strong>Transmission</strong><p class="text-slate-400 text-sm mt-1">Mentorat, formation et accompagnement individuel.</p></div>
+            <div class="rounded-xl bg-white/5 border border-white/10 p-5"><strong>Exécution</strong><p class="text-slate-400 text-sm mt-1">Livrables concrets, agents utiles, automatisations testées.</p></div>
+            <div class="rounded-xl bg-white/5 border border-white/10 p-5"><strong>Clarté</strong><p class="text-slate-400 text-sm mt-1">Prix clair, délai court, résultat concret.</p></div>
+            <div class="rounded-xl bg-white/5 border border-white/10 p-5"><strong>Vision</strong><p class="text-slate-400 text-sm mt-1">Commencer simple, puis structurer plus loin.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="preuves" class="max-w-7xl mx-auto px-5 sm:px-6 py-20 border-t border-white/10" aria-labelledby="preuves-title">
+      <div class="max-w-3xl mb-12">
+        <p class="text-gold font-semibold mb-3">Présence et travaux publics</p>
+        <h2 id="preuves-title" class="text-3xl md:text-5xl font-semibold mb-4">Vérifiez l'approche avant de prendre rendez-vous.</h2>
+        <p class="text-slate-400 text-lg leading-relaxed">Pas de témoignage inventé ni de chiffre client impossible à contrôler. Ces ressources publiques permettent d'évaluer la pédagogie, les sujets traités et la régularité du travail de Cyril.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-5">
+        <article class="rounded-2xl bg-white/5 border border-white/10 p-7 flex flex-col">
+          <p class="text-sm text-primary font-semibold mb-3">LinkedIn</p>
+          <h3 class="text-2xl font-semibold mb-3">Parcours et publications</h3>
+          <p class="text-slate-400 leading-relaxed mb-6">Consultez directement le profil professionnel, les publications et les échanges publics de Cyril Cieslak.</p>
+          <a href="https://www.linkedin.com/in/cyrilfikolasaiacademy/" target="_blank" rel="noopener noreferrer" class="mt-auto text-gold font-semibold hover:text-white">Voir le profil LinkedIn →</a>
+        </article>
+
+        <article class="rounded-2xl bg-white/5 border border-white/10 p-7 flex flex-col">
+          <p class="text-sm text-primary font-semibold mb-3">YouTube · The AI Corner</p>
+          <h3 class="text-2xl font-semibold mb-3">Conversations IA de terrain</h3>
+          <p class="text-slate-400 leading-relaxed mb-6">Des échanges publics autour de l'IA appliquée à différents métiers et secteurs. Le contenu est visible avant tout engagement.</p>
+          <a href="https://www.youtube.com/@TheAIcornerbyFikolasAI" target="_blank" rel="noopener noreferrer" class="mt-auto text-gold font-semibold hover:text-white">Voir la chaîne YouTube →</a>
+        </article>
+
+        <article class="rounded-2xl bg-white/5 border border-white/10 p-7 flex flex-col">
+          <p class="text-sm text-primary font-semibold mb-3">Udemy</p>
+          <h3 class="text-2xl font-semibold mb-3">IA pour les pros · 15 mini-projets concrets</h3>
+          <p class="text-slate-400 leading-relaxed mb-6">Un cours public consacré aux usages pratiques de ChatGPT, Gemini et NotebookLM dans le travail quotidien.</p>
+          <a href="https://www.udemy.com/course/ia-pour-les-pros-15-mini-projets-concrets" target="_blank" rel="noopener noreferrer" class="mt-auto text-gold font-semibold hover:text-white">Consulter le cours Udemy →</a>
+        </article>
+
+        <article class="rounded-2xl bg-white/5 border border-white/10 p-7 flex flex-col">
+          <p class="text-sm text-primary font-semibold mb-3">Interventions publiques</p>
+          <h3 class="text-2xl font-semibold mb-3">Conférences et démonstrations</h3>
+          <p class="text-slate-400 leading-relaxed mb-6">Retrouvez les formats d'intervention présentés publiquement pour dirigeants, PME et communautés professionnelles.</p>
+          <a href="https://fikolasai.com/interventions-ia/" class="mt-auto text-gold font-semibold hover:text-white">Voir les interventions →</a>
+        </article>
+      </div>
+
+      <p class="mt-8 text-sm text-slate-500">Ces liens prouvent une présence et une production publiques. Ils ne sont pas présentés comme des témoignages clients ni comme une garantie de résultat.</p>
+    </section>
+
+    <section id="faq" class="max-w-7xl mx-auto px-5 sm:px-6 py-20 border-t border-white/10">
+      <h2 class="text-3xl md:text-5xl font-semibold mb-10">Les questions qui reviennent avant de se lancer.</h2>
+      <div class="grid md:grid-cols-2 gap-5">
+        <article class="rounded-2xl bg-white/5 border border-white/10 p-6"><h3 class="text-xl font-semibold mb-3">Qu'est-ce que je reçois pour 1000€ HT ?</h3><p class="text-slate-400">Votre propre Agent IA, cadré autour d'un cas d'usage clair, testé sur vos exemples et livré avec une prise en main simple.</p></article>
+        <article class="rounded-2xl bg-white/5 border border-white/10 p-6"><h3 class="text-xl font-semibold mb-3">Est-ce vraiment livré en moins de 7 jours ?</h3><p class="text-slate-400">Oui. L'offre est volontairement cadrée pour livrer vite un premier agent utile, sans transformer cela en grand projet.</p></article>
+        <article class="rounded-2xl bg-white/5 border border-white/10 p-6"><h3 class="text-xl font-semibold mb-3">Et après ?</h3><p class="text-slate-400">Vous pouvez rester autonome, passer sur l'offre Agent pour optimiser, rejoindre Academy pour monter en compétence, ou évoluer vers Studio.</p></article>
+        <article class="rounded-2xl bg-white/5 border border-white/10 p-6"><h3 class="text-xl font-semibold mb-3">Dois-je être technique ?</h3><p class="text-slate-400">Non. L'objectif est justement de rendre l'IA utilisable sans jargon, à partir de vos tâches réelles.</p></article>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-5 sm:px-6 py-20">
+      <div class="rounded-2xl bg-gradient-to-r from-gold/20 via-primary/20 to-accent/20 border border-white/10 p-8 md:p-12 text-center">
+        <h2 class="text-3xl md:text-5xl font-semibold mb-4">Votre Agent IA peut être prêt la semaine prochaine.</h2>
+        <p class="text-slate-300 max-w-2xl mx-auto mb-8 leading-relaxed">Décrivez votre besoin en 2 minutes. Je vous réponds avec le meilleur cas d'usage pour démarrer vite.</p>
+        <a href="https://tally.so/r/2EbyZL" target="_blank" class="inline-flex px-7 py-3 bg-gold text-slate-950 rounded-lg font-bold hover:bg-amber-200 transition shadow-gold">Je veux mon Agent IA</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="relative z-10 border-t border-white/10 bg-slate-950 py-12">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 text-center">
+      <p class="text-slate-500 text-sm mb-6">© 2026 FikolasAI - cyril.fikolasai@gmail.com</p>
+      <div class="flex justify-center flex-wrap gap-8 text-sm font-medium">
+        <a href="https://tally.so/r/2EbyZL" target="_blank" class="text-gold hover:text-white transition-colors">Nous contacter</a>
+        <a href="https://www.linkedin.com/in/cyrilfikolasaiacademy/" target="_blank" class="text-gold hover:text-white transition-colors">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+  <script src="translations.js"></script>
 </body>
 </html>

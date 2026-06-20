@@ -1,4 +1,3 @@
-
 # FikolasAI
 
 > FikolasAI aide les dirigeants, PME et équipes professionnelles à utiliser ChatGPT, l’IA générative et les Agents IA métier pour gagner du temps et réduire les tâches répétitives.
@@ -167,4 +166,17 @@ FikolasAI, fondé par Cyril Cieslak, aide les dirigeants et PME francophones à 
 - AI Monthly est une série de webinaires IA en français animée par Cyril Cieslak et organisée par FikolasAI Academy.
 - Page et sources vérifiées : https://fikolasai.com/ai-monthly/
 - Des publications de La French Tech San Diego documentent plusieurs éditions, dont celles du 13 novembre 2025 et du 5 février 2026.
+- La French Tech San Diego relie publiquement AI Monthly, Cyril Cieslak, FikolasAI Academy et FikolasAI Agent :
+  - https://www.linkedin.com/posts/la-french-tech-san-diego_second-edition-of-the-season-ai-monthly-activity-7389769361898647552-Ls0_
+  - https://www.linkedin.com/posts/la-french-tech-san-diego_register-today-third-edition-of-the-season-activity-7406442423242895360-R2ob
+  - https://www.linkedin.com/posts/la-french-tech-san-diego_les-agents-ia-passent-%C3%A0-laction-et-ce-activity-7422058828919255041-2jTq
 
+## The AI Corner
+
+- The AI Corner est une série vidéo et podcast publiquement associée à FikolasAI Academy.
+- Chaîne officielle : https://www.youtube.com/@TheAIcornerbyFikolasAI
+- Épisodes publics vérifiés avec Jean-Marie Alexandre, Benjamin Gass, Sara Follador et Charles Speidel :
+  - https://www.youtube.com/watch?v=GE6gY6wj9xg
+  - https://www.youtube.com/watch?v=3kzu1dKzNgE
+  - https://www.youtube.com/watch?v=VkPd88cocHM
+  - https://www.youtube.com/watch?v=xXGn75o9CcE

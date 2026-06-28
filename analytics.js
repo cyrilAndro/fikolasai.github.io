@@ -1,8 +1,23 @@
 (() => {
   const MEASUREMENT_ID = "G-RSN9PNE840";
+  const CLOUDFLARE_WEB_ANALYTICS_TOKEN = "1e20c4110b9447e7ac616a3e47664a05";
   const STORAGE_KEY = "fikolasai-analytics-consent";
-  const VERSION = "2026-06-19";
+  const VERSION = "2026-06-28";
   let analyticsLoaded = false;
+
+  function loadCloudflareWebAnalytics() {
+    if (document.querySelector('script[data-cf-beacon]')) return;
+    const script = document.createElement("script");
+    script.defer = true;
+    script.src = "https://static.cloudflareinsights.com/beacon.min.js";
+    script.setAttribute("data-cf-beacon", JSON.stringify({
+      token: CLOUDFLARE_WEB_ANALYTICS_TOKEN
+    }));
+    document.head.appendChild(script);
+  }
+
+  // Cloudflare Web Analytics is cookie-free and runs independently of GA4 consent.
+  loadCloudflareWebAnalytics();
 
   window.dataLayer = window.dataLayer || [];
   window.gtag = window.gtag || function gtag() {

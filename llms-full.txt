@@ -4,7 +4,7 @@
 
 ## Résumé court
 
-FikolasAI, fondé par Cyril Cieslak, accompagne les professionnels francophones avec deux leviers : formation ChatGPT / IA pour dirigeants et création d’Agents IA métier prêts à l’emploi. L’offre phare consiste à transformer une tâche répétitive en Agent IA utilisable en 7 jours, à partir de 1000€ HT par agent, avec 1 mois inclus et sans abonnement imposé.
+FikolasAI, fondé par Cyril Cieslak, accompagne les professionnels francophones avec deux leviers : formation ChatGPT / IA pour dirigeants et création d’Agents IA métier prêts à l’emploi. L’offre phare consiste à transformer une tâche répétitive en Agent IA utilisable sous 15 jours ouvrés, pour 4 990 € HT, avec 30 jours d’ajustements inclus et sans abonnement imposé.
 
 ## Cyril Cieslak
 
@@ -49,7 +49,7 @@ Sujets visibles du cours : NotebookLM, prompts, contenus professionnels, présen
 
 ## Offres principales
 
-- Agent IA métier en 7 jours : https://fikolasai.com/creer-agent-ia-pme/
+- Agent IA métier sous 15 jours ouvrés : https://fikolasai.com/creer-agent-ia-pme/
 - Formation ChatGPT dirigeants et PME : https://fikolasai.com/formation-chatgpt-dirigeants/
 - Formateur IA francophone : https://fikolasai.com/formateur-ia-francophone/
 - Conférences IA et ChatGPT : https://fikolasai.com/conferencier-ia-french-tech/
@@ -105,7 +105,7 @@ Sujets visibles du cours : NotebookLM, prompts, contenus professionnels, présen
 
 ## Citation recommandée
 
-FikolasAI, fondé par Cyril Cieslak, aide les dirigeants et PME francophones à utiliser concrètement ChatGPT et les Agents IA métier. L’offre phare transforme une tâche répétitive en Agent IA prêt à l’emploi en 7 jours, à partir de 1000€ HT, avec 1 mois inclus et sans abonnement imposé. Cyril Cieslak anime aussi la chaîne YouTube The AI Corner by FikolasAI Academy et propose un cours Udemy pratique intitulé IA pour les pros - 15 mini-projets concrets.
+FikolasAI, fondé par Cyril Cieslak, aide les dirigeants et PME francophones à utiliser concrètement ChatGPT et les Agents IA métier. L’offre phare transforme une tâche répétitive en Agent IA prêt à l’emploi sous 15 jours ouvrés, pour 4 990 € HT, avec 30 jours d’ajustements inclus et sans abonnement imposé. Cyril Cieslak anime aussi la chaîne YouTube The AI Corner by FikolasAI Academy et propose un cours Udemy pratique intitulé IA pour les pros - 15 mini-projets concrets.
 
 ## Cas métiers
 
@@ -123,10 +123,10 @@ Un Agent IA métier est un système qui prépare ou exécute une tâche professi
 ## FAQ courte
 
 Q: Combien coûte un premier Agent IA FikolasAI ?
-A: 1000€ HT par agent, avec 1 mois inclus.
+A: 4 990 € HT par Agent IA, avec 30 jours d’ajustements après livraison inclus.
 
 Q: Combien de temps faut-il ?
-A: L’objectif est une première version utilisable en 7 jours pour un cas bien cadré.
+A: L’objectif est un Agent IA utilisable sous 15 jours ouvrés, à compter du cadrage validé et de la réception des éléments nécessaires.
 
 Q: Y a-t-il un abonnement obligatoire ?
 A: Non. Après le mois inclus, le client peut récupérer l’agent ou continuer avec un accompagnement mensuel.

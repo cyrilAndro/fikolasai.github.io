@@ -29,8 +29,20 @@
     .hero-portrait { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center top; }
     .hero-badge { position: absolute; top: 1rem; left: 1rem; }
     .hero-identity { position: absolute; right: 0; bottom: 0; left: 0; background: linear-gradient(180deg, transparent 0%, rgba(2, 6, 23, .78) 35%, rgba(2, 6, 23, .98) 100%); }
+    @media (min-width: 768px) {
+      .md\:col-span-2 { grid-column: span 2 / span 2; }
+      .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .md\:pt-16 { padding-top: 4rem; }
+      .md\:pb-16 { padding-bottom: 4rem; }
+      .md\:text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+    }
     @media (min-width: 1024px) {
       .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; }
+      .lg\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .lg\:grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+      .lg\:gap-14 { gap: 3.5rem; }
+      .offer-summary-grid { grid-template-columns: minmax(0, 1fr) minmax(0, .7fr); }
     }
   </style>
 <style id="fikolasai-consent-styles">
@@ -123,7 +135,7 @@
       <nav aria-label="Détails de l’offre" class="mb-10 flex flex-wrap gap-3 text-sm"><a href="#fonctionnement" class="rounded-lg border border-white/10 bg-white/5 px-4 py-2">Fonctionnement</a><a href="#livrables" class="rounded-lg border border-white/10 bg-white/5 px-4 py-2">Livrables</a><a href="/securite-donnees-agent-ia/" class="rounded-lg border border-white/10 bg-white/5 px-4 py-2">Sécurité & données</a><a href="#couts" class="rounded-lg border border-white/10 bg-white/5 px-4 py-2">Coûts</a><a href="#faq" class="rounded-lg border border-white/10 bg-white/5 px-4 py-2">FAQ</a></nav>
       <div class="rounded-3xl border border-gold/50 bg-gold/10 p-7 md:p-10">
         <p class="text-gold font-semibold mb-3">Agent IA sur mesure</p><h2 class="text-3xl md:text-5xl font-semibold mb-5">Un cas d’usage précis, cadré avant le démarrage.</h2>
-        <div class="grid lg:grid-cols-[1fr_.7fr] gap-8 items-start"><div><p class="text-xl text-slate-200 mb-5">Conception, tests, documentation et prise en main inclus.</p><p class="text-slate-300">Le prix final dépend du nombre de sources de données, d’intégrations, d’utilisateurs et d’automatisations nécessaires. Le périmètre et le prix sont validés avant le démarrage.</p></div><div><p class="text-4xl font-semibold">À partir de 4 990 € HT</p><p class="mt-3 text-amber-100">Livraison cible sous 15 jours ouvrés</p></div></div>
+        <div class="offer-summary-grid grid gap-8 items-start"><div><p class="text-xl text-slate-200 mb-5">Conception, tests, documentation et prise en main inclus.</p><p class="text-slate-300">Le prix final dépend du nombre de sources de données, d’intégrations, d’utilisateurs et d’automatisations nécessaires. Le périmètre et le prix sont validés avant le démarrage.</p></div><div><p class="text-4xl font-semibold">À partir de 4 990 € HT</p><p class="mt-3 text-amber-100">Livraison cible sous 15 jours ouvrés</p></div></div>
       </div>
       <div id="livrables" class="mt-12"><h2 class="text-3xl md:text-4xl font-semibold mb-6">Ce que vous recevez</h2><p class="text-slate-300 mb-6">À la fin du projet, vous recevez :</p><ul class="grid md:grid-cols-2 gap-3 text-slate-200"><li class="rounded-xl border border-white/10 bg-white/5 p-4">Un Agent IA configuré pour le cas d’usage validé</li><li class="rounded-xl border border-white/10 bg-white/5 p-4">Les instructions et prompts nécessaires</li><li class="rounded-xl border border-white/10 bg-white/5 p-4">La documentation d’utilisation</li><li class="rounded-xl border border-white/10 bg-white/5 p-4">La liste des outils, comptes et intégrations</li><li class="rounded-xl border border-white/10 bg-white/5 p-4">Un scénario de test et les résultats des tests</li><li class="rounded-xl border border-white/10 bg-white/5 p-4">Une session de prise en main à distance</li><li class="rounded-xl border border-white/10 bg-white/5 p-4">Des recommandations de maintenance et d’évolution</li><li class="rounded-xl border border-white/10 bg-white/5 p-4">Une description des éventuels coûts récurrents</li></ul><p class="mt-5 text-sm text-slate-400">Le périmètre exact des livrables est indiqué dans la proposition commerciale avant le démarrage.</p></div>
       <div class="mt-14"><h2 class="text-3xl md:text-4xl font-semibold mb-7">Exemples de cas d’usage</h2><div class="grid lg:grid-cols-3 gap-5">

@@ -1,5 +1,6 @@
 (() => {
   const MEASUREMENT_ID = "G-RSN9PNE840";
+  const CLARITY_PROJECT_ID = "xtet4qw9zj";
   const CLOUDFLARE_WEB_ANALYTICS_TOKEN = "1e20c4110b9447e7ac616a3e47664a05";
   const STORAGE_KEY = "fikolasai-analytics-consent";
   const VERSION = "2026-06-28";
@@ -78,6 +79,19 @@
     document.head.appendChild(script);
   }
 
+  function loadClarity() {
+    if (window.clarity || document.querySelector(`script[data-clarity="${CLARITY_PROJECT_ID}"]`)) return;
+    window.clarity = function clarity() {
+      (window.clarity.q = window.clarity.q || []).push(arguments);
+    };
+
+    const script = document.createElement("script");
+    script.async = true;
+    script.dataset.clarity = CLARITY_PROJECT_ID;
+    script.src = `https://www.clarity.ms/tag/${CLARITY_PROJECT_ID}`;
+    document.head.appendChild(script);
+  }
+
   function updateConsent(value) {
     const granted = value === "granted";
     saveConsent(value);
@@ -87,7 +101,10 @@
       ad_personalization: "denied",
       analytics_storage: granted ? "granted" : "denied"
     });
-    if (granted) loadAnalytics();
+    if (granted) {
+      loadAnalytics();
+      loadClarity();
+    }
     else clearAnalyticsCookies();
     renderConsentUi(false);
   }
@@ -220,6 +237,7 @@
     if (consent === "granted") {
       window.gtag("consent", "update", { analytics_storage: "granted" });
       loadAnalytics();
+      loadClarity();
       renderConsentUi(false);
     } else if (consent === "denied") {
       renderConsentUi(false);

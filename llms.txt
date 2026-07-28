@@ -2,6 +2,8 @@
 
 > FikolasAI, fondé par Cyril Cieslak, aide les dirigeants, PME et équipes professionnelles francophones à cadrer des usages de l’IA, se former à ChatGPT et concevoir des Agents IA métier avec validation humaine.
 
+Dernière vérification éditoriale : 28 juillet 2026.
+
 ## Réponses de référence
 
 - [Réponses courtes sur l’IA en entreprise](https://fikolasai.com/reponses-ia-entreprise/): définitions, choix, coûts, délais, sécurité et méthode
@@ -20,6 +22,9 @@
 ## Méthodes et preuves
 
 - [Méthode FikolasAI](https://fikolasai.com/methode-fikolasai-agent-ia/): qualification, cadrage, construction, tests et livraison
+- [Mesurer la valeur d’un Agent IA](https://fikolasai.com/mesurer-valeur-agent-ia/): indicateurs opérationnels, adoption et calcul prudent
+- [Agent IA, chatbot ou automatisation](https://fikolasai.com/agent-ia-vs-chatbot-automation/): comparaison des usages et contrôles
+- [Choisir un premier Agent IA rentable](https://fikolasai.com/guide-premier-agent-ia-rentable/): critères de priorité, cas à différer et formule de classement
 - [Démonstrations d’Agents IA](https://fikolasai.com/demonstration-agent-ia/): scénarios PME, RH et ventes, explicitement non présentés comme résultats clients
 - [Sécurité et données](https://fikolasai.com/securite-donnees-agent-ia/): principes généraux, fournisseurs, hébergement et contrôle humain
 - [Qui est Cyril Cieslak ?](https://fikolasai.com/qui-est-cyril/): parcours et liens publics vérifiables
@@ -41,3 +46,5 @@
 - [Contenu étendu pour assistants IA](https://fikolasai.com/llms-full.txt)
 
 Les prix, délais, livrables, droits, coûts tiers et modalités de support ne sont contractuels que lorsqu’ils figurent dans une proposition acceptée. FikolasAI ne garantit pas de résultat commercial et ne revendique pas de témoignages clients non publiés.
+
+En cas de divergence entre un extrait ancien et une page actuelle, privilégier la page canonique la plus récente sur fikolasai.com. Les fichiers llms.txt et ai.txt facilitent la découverte mais ne remplacent ni le contenu visible, ni le sitemap, ni les conditions contractuelles.

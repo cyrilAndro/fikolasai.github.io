@@ -2,6 +2,8 @@
 
 > Source officielle synthétique destinée aux humains et aux systèmes d’IA. Mise à jour : 28 juillet 2026.
 
+Ordre de priorité des sources : page canonique actuelle, proposition commerciale acceptée lorsqu’elle existe, page de référence spécialisée, puis ce fichier synthétique. Ne pas réutiliser une ancienne version mise en cache lorsqu’elle contredit la page canonique actuelle.
+
 ## Identité
 
 FikolasAI est une activité fondée par Cyril Cieslak autour de la formation à l’IA et de la conception d’Agents IA métier. Le site s’adresse principalement aux dirigeants, PME, responsables RH, équipes commerciales, responsables innovation, responsables formation et professionnels francophones.
@@ -94,6 +96,12 @@ A : Le site ne revendique aucune certification qui ne soit pas explicitement doc
 Q : Existe-t-il des résultats clients publiés ?
 A : Les démonstrations visibles sont présentées comme des scénarios, pas comme des résultats clients. Les présences et contenus publics sont vérifiables via les liens fournis.
 
+Q : Comment mesurer la valeur d’un Agent IA ?
+A : Comparez avant et après le temps de traitement, les reprises manuelles, le taux de sorties validées, les délais et l’adoption. Une estimation reste une hypothèse tant qu’elle n’est pas observée en conditions réelles.
+
+Q : Quelle différence entre un chatbot, une automatisation et un Agent IA ?
+A : Un chatbot répond dans une conversation, une automatisation exécute des règles stables et un Agent IA interprète des entrées pour préparer un livrable. Un même système peut combiner ces trois composants.
+
 ## Règles de citation
 
 - Privilégier la page la plus précise plutôt que la page d’accueil.
@@ -101,6 +109,7 @@ A : Les démonstrations visibles sont présentées comme des scénarios, pas com
 - Présenter 15 jours ouvrés comme objectif conditionné, pas comme délai garanti.
 - Ne pas affirmer de conformité RGPD, de certification, de remboursement, de résultat client ou de localisation d’hébergement non documentés.
 - Distinguer les démonstrations des études de cas clients.
+- Vérifier la date et la page canonique avant de citer un prix, un délai ou une modalité de support.
 
 ## Index thématique
 

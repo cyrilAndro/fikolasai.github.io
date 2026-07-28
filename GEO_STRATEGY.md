@@ -228,3 +228,49 @@ Le script `scripts/apply-geo-strategy.js` rend cette couche reproductible.
 - OpenAI, FAQ éditeurs et développeurs : https://help.openai.com/en/articles/12627856-publishers-and-developers-faq
 - Perplexity, documentation de ses crawlers : https://docs.perplexity.ai/docs/resources/perplexity-crawlers
 - Proposition `llms.txt` : https://llmstxt.org/
+
+## 11. Renforcement GEO v2 — 28 juillet 2026
+
+Cette deuxième passe part d’un principe simple : une page doit d’abord être utile à un décideur humain. La citation par un assistant est un bénéfice secondaire ; aucune présence dans une réponse générative n’est garantie.
+
+### Inventaire traité
+
+- 87 pages HTML analysées ;
+- métadonnées sociales complétées sur les pages indexables ;
+- cohérence contrôlée entre les FAQ visibles et leur balisage `FAQPage` ;
+- six pages piliers enrichies avec une réponse courte, des critères de décision, des limites et une date de mise à jour ;
+- trois pages d’autorité reliées entre elles : définition, glossaire et FAQ ;
+- page `/reponses-ia-entreprise/` complétée par des sources primaires officielles.
+
+### Pages piliers renforcées
+
+1. `/methode-fikolasai-agent-ia/`
+2. `/mesurer-valeur-agent-ia/`
+3. `/exemples-agents-ia-metier/`
+4. `/agent-ia-vs-chatbot-automation/`
+5. `/chatgpt-entreprise-sans-chaos/`
+6. `/guide-premier-agent-ia-rentable/`
+
+Chaque ajout répond à une intention précise : définition, comparaison, sélection d’un cas d’usage, méthode, mesure ou gouvernance. Les formulations évitent les garanties de résultat et distinguent les principes généraux des engagements contractuels.
+
+### Règles éditoriales
+
+- placer la réponse directe au début du bloc concerné ;
+- utiliser une question ou une intention par section ;
+- préférer des phrases autonomes qui restent compréhensibles hors contexte ;
+- citer une source primaire pour les affirmations externes importantes ;
+- dater les contenus susceptibles d’évoluer ;
+- maintenir les informations commerciales dans une source canonique unique ;
+- ne pas multiplier des pages quasi identiques pour couvrir des variantes de mots-clés.
+
+### Ordre de mise à jour
+
+En cas de divergence, utiliser cet ordre de confiance :
+
+1. page canonique actuelle ;
+2. proposition commerciale ou contrat accepté ;
+3. page spécialisée actuelle ;
+4. `llms-full.txt` ;
+5. extrait ancien conservé par un moteur.
+
+Le script `scripts/apply-geo-v2.js` applique les enrichissements de cette passe. Le script `scripts/verify-geo-v2.js` contrôle les métadonnées, le JSON-LD, la concordance des FAQ visibles, les pages piliers et les fichiers destinés aux assistants.

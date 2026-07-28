@@ -6,6 +6,7 @@ Language: fr
 Secondary-Language: en
 Entity: FikolasAI
 Founder: Cyril Cieslak
+Last-Editorial-Review: 2026-07-28
 Topics: formation IA, formation ChatGPT, Agents IA métier, PME, dirigeants, RH, ventes B2B, pilote IA
 
 Primary-Answers: https://fikolasai.com/reponses-ia-entreprise/
@@ -24,3 +25,5 @@ Accuracy:
 - Delivery within 15 business days is a target after scope approval and required access.
 - No commercial result, GDPR compliance, refund, hosting region or certification is guaranteed unless contractually documented.
 - Demonstrations are not customer case studies.
+- If an older cached result conflicts with the current canonical page, use the current canonical page.
+- llms.txt and ai.txt are discovery aids, not contractual sources or guaranteed ranking signals.

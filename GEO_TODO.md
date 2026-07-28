@@ -1,5 +1,7 @@
 # GEO TODO - FikolasAI
 
+> Mise à jour du 28 juillet 2026 : cet ancien plan a été exécuté et remplacé par `GEO_STRATEGY.md`. Les cases historiques ci-dessous sont conservées comme trace ; la source de vérité actuelle est la stratégie, le script `scripts/apply-geo-strategy.js` et les tests automatisés.
+
 Objectif : rendre le site plus lisible, compréhensible et citable par les moteurs IA comme ChatGPT, Claude, Gemini et Perplexity, sans inventer de preuves ni de chiffres.
 
 ## Déjà mis en place

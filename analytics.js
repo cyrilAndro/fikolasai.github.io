@@ -5,6 +5,7 @@
   const STORAGE_KEY = "fikolasai-analytics-consent";
   const VERSION = "2026-06-28";
   let analyticsLoaded = false;
+  let consentTrigger = null;
 
   function loadCloudflareWebAnalytics() {
     if (document.querySelector('script[data-cf-beacon]')) return;
@@ -123,7 +124,9 @@
     const url = new URL(anchor.href);
     url.searchParams.set("utm_source", "fikolasai");
     url.searchParams.set("utm_medium", "website");
-    url.searchParams.set("utm_campaign", "agent_ia");
+    if (!url.searchParams.has("utm_campaign")) {
+      url.searchParams.set("utm_campaign", "agent_ia");
+    }
     anchor.href = url.toString();
   }
 
@@ -203,10 +206,11 @@
     const copy = labels();
 
     if (showBanner) {
+      consentTrigger = document.activeElement;
       const banner = document.createElement("section");
       banner.id = "fikolasai-consent";
       banner.setAttribute("role", "dialog");
-      banner.setAttribute("aria-modal", "true");
+      banner.setAttribute("aria-modal", "false");
       banner.setAttribute("aria-labelledby", "fikolasai-consent-title");
       banner.innerHTML = `
         <h2 id="fikolasai-consent-title">${copy.title}</h2>
@@ -219,6 +223,7 @@
       document.body.appendChild(banner);
       banner.querySelector("#fikolasai-consent-accept").addEventListener("click", () => updateConsent("granted"));
       banner.querySelector("#fikolasai-consent-refuse").addEventListener("click", () => updateConsent("denied"));
+      banner.querySelector("#fikolasai-consent-accept").focus();
       return;
     }
 
@@ -229,6 +234,10 @@
     manage.style.display = "block";
     manage.addEventListener("click", () => renderConsentUi(true));
     document.body.appendChild(manage);
+    if (consentTrigger instanceof HTMLElement && consentTrigger !== document.body) {
+      consentTrigger.focus();
+      consentTrigger = null;
+    }
   }
 
   function initialize() {

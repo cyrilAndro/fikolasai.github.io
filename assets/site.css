@@ -319,3 +319,25 @@ img, video { max-width: 100%; height: auto; }
 }
 .gap-x-7 { column-gap: 1.75rem; }
 .gap-y-3 { row-gap: 0.75rem; }
+
+/* Accessibility safeguards; the skip link is visible only on keyboard focus. */
+.skip-link {
+  position: fixed; z-index: 10000; top: 0.75rem; left: 0.75rem;
+  padding: 0.75rem 1rem; border-radius: 0.5rem;
+  background: #f4c76b; color: #07111f; font-weight: 700;
+  transform: translateY(-200%);
+}
+.skip-link:focus { transform: translateY(0); }
+:where(a, button, input, select, textarea, summary):focus-visible {
+  outline: 3px solid #f4c76b; outline-offset: 3px;
+}
+#main-content { scroll-margin-top: 5rem; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

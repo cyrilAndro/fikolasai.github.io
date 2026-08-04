@@ -11,6 +11,7 @@ User-agent: Google-Extended
 Allow: /
 
 Sitemap: https://fikolasai.com/sitemap.xml
+Sitemap: https://fikolasai.com/sitemap-ai-act.xml
 
 # AI discovery manifests
 # https://fikolasai.com/llms.txt

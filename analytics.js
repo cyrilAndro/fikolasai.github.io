@@ -1,9 +1,11 @@
 (() => {
+  // Keep local previews and unrelated hosts out of production analytics.
+  if (!["fikolasai.com", "www.fikolasai.com"].includes(window.location.hostname)) return;
   const MEASUREMENT_ID = "G-RSN9PNE840";
   const CLARITY_PROJECT_ID = "xtet4qw9zj";
   const CLOUDFLARE_WEB_ANALYTICS_TOKEN = "1e20c4110b9447e7ac616a3e47664a05";
   const STORAGE_KEY = "fikolasai-analytics-consent";
-  const VERSION = "2026-08-04";
+  const VERSION = "2026-10-07-clarity-consent-v2";
   let analyticsLoaded = false;
   let consentTrigger = null;
 
@@ -66,8 +68,9 @@
   }
 
   function loadClarity() {
-    if (window.clarity || document.querySelector(`script[data-clarity="${CLARITY_PROJECT_ID}"]`)) return;
-    window.clarity = function clarity() { (window.clarity.q = window.clarity.q || []).push(arguments); };
+    window.clarity = window.clarity || function clarity() { (window.clarity.q = window.clarity.q || []).push(arguments); };
+    window.clarity("consentv2", { analytics_Storage: "granted", ad_Storage: "denied" });
+    if (document.querySelector(`script[data-clarity="${CLARITY_PROJECT_ID}"]`)) return;
     const script = document.createElement("script");
     script.async = true;
     script.dataset.clarity = CLARITY_PROJECT_ID;
@@ -88,6 +91,9 @@
       loadAnalytics();
       loadClarity();
     } else {
+      if (typeof window.clarity === "function") {
+        window.clarity("consentv2", { analytics_Storage: "denied", ad_Storage: "denied" });
+      }
       clearAnalyticsCookies();
     }
     renderConsentUi(false);
@@ -176,16 +182,17 @@
   }
 
   function labels() {
-    const english = document.documentElement.lang === "en";
+    const requestedLanguage = new URLSearchParams(window.location.search).get("lang");
+    const english = requestedLanguage === "en" || (requestedLanguage !== "fr" && document.documentElement.lang === "en");
     return english ? {
       title: "Audience measurement",
-      text: "With your permission, Google Analytics helps us understand which pages and services are useful. No advertising cookies are enabled.",
+      text: "With your permission, Google Analytics and Microsoft Clarity help us understand visits, clicks and scrolling to improve this site. Entered values are masked in Clarity. No advertising cookies are enabled.",
       accept: "Accept analytics",
       refuse: "Refuse",
       manage: "Manage cookies"
     } : {
       title: "Mesure d’audience",
-      text: "Avec votre accord, Google Analytics nous aide à comprendre quelles pages et offres sont utiles. Aucun cookie publicitaire n’est activé.",
+      text: "Avec votre accord, Google Analytics et Microsoft Clarity nous aident à comprendre les visites, clics et défilements pour améliorer le site. Les valeurs saisies sont masquées dans Clarity. Aucun cookie publicitaire n’est activé.",
       accept: "Accepter Analytics",
       refuse: "Refuser",
       manage: "Gérer les cookies"
@@ -258,6 +265,19 @@
     } else {
       renderConsentUi(true);
     }
+    // Refresh the wording when the bilingual calculator changes language, without stealing focus.
+    new MutationObserver(() => {
+      const copy = labels();
+      const banner = document.getElementById("fikolasai-consent");
+      if (banner) {
+        banner.querySelector("h2").textContent = copy.title;
+        banner.querySelector("p").textContent = copy.text;
+        banner.querySelector("#fikolasai-consent-accept").textContent = copy.accept;
+        banner.querySelector("#fikolasai-consent-refuse").textContent = copy.refuse;
+      }
+      const manage = document.getElementById("fikolasai-consent-manage");
+      if (manage) manage.textContent = copy.manage;
+    }).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initialize, { once: true });
@@ -270,3 +290,4 @@
     openPreferences: () => renderConsentUi(true)
   };
 })();
+

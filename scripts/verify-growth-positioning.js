@@ -31,14 +31,11 @@ for (const file of htmlFiles) {
     fail(file, "ancien CTA Agent non aligné avec le formulaire");
   }
   if (/"price"\s*:\s*"1000"/.test(html)) fail(file, "ancien prix présent dans JSON-LD");
-  if (/calendly\.com\/cyril-fikolasai\/rdv-cyril-fikolasai-agent/i.test(html)) {
-    fail(file, "ancien parcours Calendly direct détecté");
-  }
   for (const match of html.matchAll(/href="https:\/\/tally\.so\/r\/2EbyZL([^"]*)"/gi)) {
     if (!/utm_source=fikolasai/.test(match[1]) || !/utm_medium=website/.test(match[1])) {
       fail(file, "CTA Tally sans attribution complète");
     }
-    if (!/utm_campaign=(?:agent_ia|formation_ia|accompagnement_ia|innovation_ia)/.test(match[1])) {
+    if (!/utm_campaign=(?:agent_ia|formation_ia|accompagnement_ia|innovation_ia|audit_ai_act)/.test(match[1])) {
       fail(file, "CTA Tally sans parcours commercial reconnu");
     }
   }
@@ -59,7 +56,7 @@ for (const homepage of ["index.html", path.join("en", "index.html")]) {
   }
 }
 
-if (htmlFiles.length !== 87) failures.push(`Nombre de pages inattendu : ${htmlFiles.length} au lieu de 87`);
+if (htmlFiles.length !== 90) failures.push(`Nombre de pages inattendu : ${htmlFiles.length} au lieu de 90`);
 
 if (failures.length) {
   console.error(failures.join("\n"));

@@ -187,13 +187,13 @@
     return english ? {
       title: "Audience measurement",
       text: "With your permission, Google Analytics and Microsoft Clarity help us understand visits, clicks and scrolling to improve this site. Entered values are masked in Clarity. No advertising cookies are enabled.",
-      accept: "Accept analytics",
+      accept: "Accept audience measurement",
       refuse: "Refuse",
       manage: "Manage cookies"
     } : {
       title: "Mesure d’audience",
       text: "Avec votre accord, Google Analytics et Microsoft Clarity nous aident à comprendre les visites, clics et défilements pour améliorer le site. Les valeurs saisies sont masquées dans Clarity. Aucun cookie publicitaire n’est activé.",
-      accept: "Accepter Analytics",
+      accept: "Accepter la mesure d’audience",
       refuse: "Refuser",
       manage: "Gérer les cookies"
     };

@@ -92,7 +92,7 @@ for (const relative of [
 ]) {
   const html = fs.readFileSync(path.join(root, relative), "utf8");
   if (!html.includes('data-geo-depth="v2"')) failures.push(`${relative}: approfondissement GEO absent`);
-  if (!html.includes('"dateModified":"2026-07-28"')) failures.push(`${relative}: dateModified absente`);
+  if (!html.includes('"dateModified":"2026-10-08"')) failures.push(`${relative}: dateModified absente`);
 }
 
 for (const relative of [

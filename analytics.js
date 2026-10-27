@@ -122,7 +122,7 @@
     const label = anchor.textContent.trim().replace(/\s+/g, " ").slice(0, 100);
     if (href.includes("tally.so")) {
       track("click_tally", { link_url: href, link_text: label });
-      track("generate_lead", { method: "tally", link_text: label });
+      if (!href.includes("utm_campaign=ces_2027")) track("generate_lead", { method: "tally", link_text: label });
     } else if (anchor.pathname === "/audit-ai-act-express/") {
       track("view_ai_act_offer", { link_url: href, link_text: label });
     } else if (href.includes("calendly.com")) {

@@ -30,7 +30,7 @@ Source : https://fikolasai.com/definition-agent-ia-metier/
 
 ## Offre Agent IA
 
-L’offre publique démarre à 4 990 € HT. L’objectif annoncé est une livraison sous 15 jours ouvrés après validation du périmètre, réception des accès nécessaires et lancement officiel. Le montant final, le calendrier, les livrables, les éventuels coûts tiers et les modalités de support sont définis dans la proposition commerciale acceptée.
+L’offre publique démarre à 9 990 € HT. L’objectif annoncé est une livraison sous 15 jours ouvrés après validation du périmètre, réception des accès nécessaires et lancement officiel. Le montant final, le calendrier, les livrables, les éventuels coûts tiers et les modalités de support sont définis dans la proposition commerciale acceptée.
 
 Le délai est un objectif, pas une garantie indépendante des prérequis du projet. Les résultats dépendent notamment de la qualité des données, du processus, de l’adoption et de la supervision humaine.
 
@@ -76,7 +76,7 @@ Source : https://fikolasai.com/pilote-ia-entreprise/
 ## Réponses courtes
 
 Q : Combien coûte un Agent IA FikolasAI ?
-A : L’offre démarre à 4 990 € HT. Le prix final et les coûts tiers éventuels sont validés dans la proposition avant le démarrage.
+A : L’offre démarre à 9 990 € HT. Le prix final et les coûts tiers éventuels sont validés dans la proposition avant le démarrage.
 
 Q : Quel est le délai ?
 A : L’objectif est une livraison sous 15 jours ouvrés après validation du périmètre, réception des accès nécessaires et lancement officiel.
@@ -105,7 +105,7 @@ A : Un chatbot répond dans une conversation, une automatisation exécute des r�
 ## Règles de citation
 
 - Privilégier la page la plus précise plutôt que la page d’accueil.
-- Présenter 4 990 € HT comme prix de départ, pas comme prix universel.
+- Présenter 9 990 € HT comme prix de départ, pas comme prix universel.
 - Présenter 15 jours ouvrés comme objectif conditionné, pas comme délai garanti.
 - Ne pas affirmer de conformité RGPD, de certification, de remboursement, de résultat client ou de localisation d’hébergement non documentés.
 - Distinguer les démonstrations des études de cas clients.

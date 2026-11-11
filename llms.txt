@@ -14,7 +14,7 @@ Dernière vérification éditoriale : 28 juillet 2026.
 ## Services
 
 - [Créer un Agent IA pour une PME](https://fikolasai.com/creer-agent-ia-pme/): méthode, périmètre et critères d’un premier projet
-- [Offre Agent IA FikolasAI](https://fikolasai.com/): à partir de 4 990 € HT, avec un objectif de livraison sous 15 jours ouvrés après validation du périmètre
+- [Offre Agent IA FikolasAI](https://fikolasai.com/): à partir de 9 990 € HT, avec un objectif de livraison sous 15 jours ouvrés après validation du périmètre
 - [Formation ChatGPT pour dirigeants](https://fikolasai.com/formation-chatgpt-dirigeants/): usages, méthode et plan d’action
 - [Programme indicatif de formation](https://fikolasai.com/programme-formation-ia-dirigeants/): objectifs, modules et modalités à définir
 - [Cadrer un pilote IA](https://fikolasai.com/pilote-ia-entreprise/): gouvernance, évaluation, architecture et réversibilité

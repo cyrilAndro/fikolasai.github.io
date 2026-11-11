@@ -22,7 +22,7 @@ Sitemap: https://fikolasai.com/sitemap.xml
 
 Accuracy:
 - Price starts at 9,990 EUR excluding VAT.
-- Delivery within 15 business days is a target after scope approval and required access.
+- Delivery within 4 weeks is a target after scope approval and required access.
 - No commercial result, GDPR compliance, refund, hosting region or certification is guaranteed unless contractually documented.
 - Demonstrations are not customer case studies.
 - If an older cached result conflicts with the current canonical page, use the current canonical page.

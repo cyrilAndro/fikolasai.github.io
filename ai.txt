@@ -21,7 +21,7 @@ LLMS-Full: https://fikolasai.com/llms-full.txt
 Sitemap: https://fikolasai.com/sitemap.xml
 
 Accuracy:
-- Price starts at 4,990 EUR excluding VAT.
+- Price starts at 9,990 EUR excluding VAT.
 - Delivery within 15 business days is a target after scope approval and required access.
 - No commercial result, GDPR compliance, refund, hosting region or certification is guaranteed unless contractually documented.
 - Demonstrations are not customer case studies.
